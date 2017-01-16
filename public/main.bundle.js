@@ -45390,7 +45390,44 @@ var HomeComponent = (function () {
         });
     };
     HomeComponent.prototype.selectExpiring = function (e) {
-        console.log(e);
+        console.log(e.element._model.label);
+        var data = [];
+        for (var _i = 0, _a = this.dataTable; _i < _a.length; _i++) {
+            var item = _a[_i];
+            var date1 = new Date();
+            var date2 = new Date(item.Expires);
+            var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            switch (e.element._model.label) {
+                case 'Recently Expired':
+                    if (diffDays === 0 || diffDays < 0) {
+                        data.push(item);
+                    }
+                    break;
+                case 'Under 30':
+                    if (diffDays < 30) {
+                        data.push(item);
+                    }
+                    break;
+                case '30 to 60':
+                    if (diffDays >= 30 && diffDays < 60) {
+                        data.push(item);
+                    }
+                    break;
+                case '60 to 90':
+                    if (diffDays >= 60 && diffDays < 90) {
+                        data.push(item);
+                    }
+                    break;
+                case 'Over 90':
+                    if (function (diffDays) { return 90; }) {
+                        data.push(item);
+                    }
+                    break;
+            }
+            console.log(data);
+        }
+        this.dataTable = data;
     };
     HomeComponent.prototype.refresh = function () {
         var _this = this;
@@ -45412,7 +45449,8 @@ var HomeComponent = (function () {
                 "expires": this.getDate(item.Expires),
                 "alt": item.AltNameCount,
                 "OverlappingCertificateIds": item.OverlappingCertificateIds,
-                "AltNames": item.AltNames
+                "AltNames": item.AltNames,
+                "Expires": item.Expires
             });
         }
     };
@@ -77990,7 +78028,7 @@ module.exports = "\n<main>\n\t<router-outlet></router-outlet>\n</main>\n\n\n<foo
 /* 720 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"ui-g wrap\" *ngIf=\"data\">\n  <b class=\"ui-g-12 center\">Certificate Report</b>\n  <div class=\"ui-g-12 center\">{{data.Domain}}</div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Domain Scanned: {{data.NumberOfDomainsWithCertificate}}</div>\n    <div class=\"ui-g-5 center\">Websites Analyzed: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Unique Certificates: {{data.NumberOfCertificates}}</div>\n    <div class=\"ui-g-5 center\">Secure Websites: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Overlaps: {{data.Overlaps}}</div>\n    <div class=\"ui-g-5 center\">Total Savings: ${{data.SavingsPotential | number}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Gaps: {{data.Gaps}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Vulnerabilities: {{data.Vulnerabilies}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n</div>\n<div class=\"ui-g\">\n  <p-chart class=\"ui-g-6\" *ngIf=\"certifcateExpiring\" type=\"pie\" [data]=\"certifcateExpiring\" (onDataSelect)=\"selectExpiring($event)\"></p-chart>\n  <p-chart class=\"ui-g-6\" *ngIf=\"certifcateIssuers\" type=\"pie\" [data]=\"certifcateIssuers\" (onDataSelect)=\"selectIssuers($event)\"></p-chart>\n</div>\n\n\n<p-dataTable *ngIf=\"dataTable\" [value]=\"dataTable\"  [globalFilter]=\"gb\" #dt [style]=\"{'margin-bottom':'30px'}\" expandableRows=\"true\">\n  <header>\n    <button (click)=\"refresh()\" pButton type=\"button\" icon=\"fa-refresh\" ></button>\n    <input #gb type=\"text\" placeholder=\"Global search\">\n  </header>\n  <p-column expander=\"true\" styleClass=\"col-icon\" [style]=\"{'width': '30px'}\"></p-column>\n  <p-column field=\"subject\" header=\"Subject\" [sortable]=\"true\"></p-column>\n  <p-column field=\"issuer\" header=\"Issuer\" [sortable]=\"true\"></p-column>\n  <p-column field=\"overlapping\" header=\"Overlapping\" [sortable]=\"true\" [style]=\"{'width': '130px'}\"></p-column>\n  <p-column field=\"overlappingby\" header=\"Overlapping By\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>\n  <p-column field=\"grade\" header=\"Grade\" [sortable]=\"true\" [style]=\"{'width': '90px'}\"></p-column>\n  <p-column field=\"expires\" header=\"Expires\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>\n  <p-column field=\"alt\" header=\"Alt Names\" [sortable]=\"true\" [style]=\"{'width': '120px'}\"></p-column>\n  <template let-car pTemplate=\"rowexpansion\">\n    <div class=\"center ui-g-6\">\n      <b>Overlapping Subjects:</b>\n      <div *ngFor=\"let item of car.OverlappingCertificateIds\">{{item}}</div>\n    </div>\n    <div class=\"center ui-g-6\">\n      <b>Alt Names:</b>\n      <div *ngFor=\"let item of car.AltNames\">{{item}}</div>\n    </div>\n\n    <!--<div class=\"ui-grid ui-grid-responsive ui-fluid\" style=\"font-size:16px;padding:20px\">-->\n      <!--<div class=\"ui-grid-row\">-->\n        <!--<div class=\"ui-grid-col-3\" style=\"text-align:center\">-->\n          <!--<i class=\"fa fa-search\" (click)=\"showCar(car)\" style=\"cursor:pointer;float:left;margin-top:40px\"></i>-->\n          <!--<img src=\"showcase/resources/demo/images/car/{{car.brand}}-big.gif\">-->\n        <!--</div>-->\n        <!--<div class=\"ui-grid-col-9\">-->\n          <!--<div class=\"ui-grid ui-grid-responsive ui-grid-pad\">-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Vin: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.vin}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Year: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.year}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Brand: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.brand}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Color: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.color}}</div>-->\n            <!--</div>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n  </template>\n</p-dataTable>\n\n<!--<p-treeTable *ngIf=\"dataTable\" [value]=\"dataTable\" [style]=\"{'margin-bottom':'30px'}\">-->\n  <!--<header>Basic</header>-->\n  <!--<p-column field=\"subject\" header=\"Subject\"></p-column>-->\n  <!--<p-column field=\"issuer\" header=\"Issuer\"></p-column>-->\n  <!--<p-column field=\"overlapping\" header=\"Overlapping\"></p-column>-->\n  <!--<p-column field=\"overlappingby\" header=\"Overlapping By\"></p-column>-->\n  <!--<p-column field=\"grade\" header=\"Grade\"></p-column>-->\n  <!--<p-column field=\"expires\" header=\"Expires\"></p-column>-->\n  <!--<p-column field=\"alt\" header=\"Alt Names\"></p-column>-->\n\n<!--</p-treeTable>-->\n"
+module.exports = "<div class=\"ui-g wrap\" *ngIf=\"data\">\n  <b class=\"ui-g-12 center\">Certificate Report</b>\n  <div class=\"ui-g-12 center\">{{data.Domain}}</div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Domain Scanned: {{data.NumberOfDomainsWithCertificate}}</div>\n    <div class=\"ui-g-5 center\">Websites Analyzed: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Unique Certificates: {{data.NumberOfCertificates}}</div>\n    <div class=\"ui-g-5 center\">Secure Websites: {{data.NumberOfDomainsWithCertificate}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Overlaps: {{data.Overlaps}}</div>\n    <div class=\"ui-g-5 center\">Total Savings: ${{data.SavingsPotential | number}}</div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Gaps: {{data.Gaps}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n  <div class=\"ui-g-12\">\n    <div class=\"ui-g-5 center\">Vulnerabilities: {{data.Vulnerabilies}}</div>\n    <div class=\"ui-g-5 center\"></div>\n  </div>\n</div>\n<div class=\"ui-g\">\n  <p-chart class=\"ui-g-6\" *ngIf=\"certifcateExpiring\" type=\"pie\" [data]=\"certifcateExpiring\" (onDataSelect)=\"selectExpiring($event)\"></p-chart>\n  <p-chart class=\"ui-g-6\" *ngIf=\"certifcateIssuers\" type=\"pie\" [data]=\"certifcateIssuers\" (onDataSelect)=\"selectIssuers($event)\"></p-chart>\n</div>\n\n<p-dataTable *ngIf=\"dataTable\" [value]=\"dataTable\"  [globalFilter]=\"gb\" #dt [style]=\"{'margin-bottom':'30px'}\" expandableRows=\"true\">\n  <header>\n    <button (click)=\"refresh()\" pButton type=\"button\" icon=\"fa-refresh\" ></button>\n    <input #gb type=\"text\" placeholder=\"Global search\">\n  </header>\n  <p-column expander=\"true\" styleClass=\"col-icon\" [style]=\"{'width': '30px'}\"></p-column>\n  <p-column field=\"subject\" header=\"Subject\" [sortable]=\"true\"></p-column>\n  <p-column field=\"issuer\" header=\"Issuer\" [sortable]=\"true\"></p-column>\n  <p-column field=\"overlapping\" header=\"Overlapping\" [sortable]=\"true\" [style]=\"{'width': '130px'}\"></p-column>\n  <p-column field=\"overlappingby\" header=\"Overlapping By\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>\n  <p-column field=\"grade\" header=\"Grade\" [sortable]=\"true\" [style]=\"{'width': '90px'}\"></p-column>\n  <p-column field=\"expires\" header=\"Expires\" [sortable]=\"true\" [style]=\"{'width': '110px'}\"></p-column>\n  <p-column field=\"alt\" header=\"Alt Names\" [sortable]=\"true\" [style]=\"{'width': '120px'}\"></p-column>\n  <template let-car pTemplate=\"rowexpansion\">\n    <div class=\"center ui-g-6\">\n      <b>Overlapping Subjects:</b>\n      <div *ngFor=\"let item of car.OverlappingCertificateIds\">{{item}}</div>\n    </div>\n    <div class=\"center ui-g-6\">\n      <b>Alt Names:</b>\n      <div *ngFor=\"let item of car.AltNames\">{{item}}</div>\n    </div>\n\n    <!--<div class=\"ui-grid ui-grid-responsive ui-fluid\" style=\"font-size:16px;padding:20px\">-->\n      <!--<div class=\"ui-grid-row\">-->\n        <!--<div class=\"ui-grid-col-3\" style=\"text-align:center\">-->\n          <!--<i class=\"fa fa-search\" (click)=\"showCar(car)\" style=\"cursor:pointer;float:left;margin-top:40px\"></i>-->\n          <!--<img src=\"showcase/resources/demo/images/car/{{car.brand}}-big.gif\">-->\n        <!--</div>-->\n        <!--<div class=\"ui-grid-col-9\">-->\n          <!--<div class=\"ui-grid ui-grid-responsive ui-grid-pad\">-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Vin: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.vin}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Year: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.year}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Brand: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.brand}}</div>-->\n            <!--</div>-->\n            <!--<div class=\"ui-grid-row\">-->\n              <!--<div class=\"ui-grid-col-2 label\">Color: </div>-->\n              <!--<div class=\"ui-grid-col-10\">{{car.color}}</div>-->\n            <!--</div>-->\n          <!--</div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n  </template>\n</p-dataTable>\n\n<!--<p-treeTable *ngIf=\"dataTable\" [value]=\"dataTable\" [style]=\"{'margin-bottom':'30px'}\">-->\n  <!--<header>Basic</header>-->\n  <!--<p-column field=\"subject\" header=\"Subject\"></p-column>-->\n  <!--<p-column field=\"issuer\" header=\"Issuer\"></p-column>-->\n  <!--<p-column field=\"overlapping\" header=\"Overlapping\"></p-column>-->\n  <!--<p-column field=\"overlappingby\" header=\"Overlapping By\"></p-column>-->\n  <!--<p-column field=\"grade\" header=\"Grade\"></p-column>-->\n  <!--<p-column field=\"expires\" header=\"Expires\"></p-column>-->\n  <!--<p-column field=\"alt\" header=\"Alt Names\"></p-column>-->\n\n<!--</p-treeTable>-->\n"
 
 /***/ },
 /* 721 */
