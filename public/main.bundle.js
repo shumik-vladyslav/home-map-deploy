@@ -45533,10 +45533,6 @@ var HomeComponent = (function () {
                             name: '60 to 90',
                             y: this.data["CertificateExpiring60to90"]
                         },
-                        {
-                            name: 'Over 90',
-                            y: this.data["CertifcateExpiringOver90"]
-                        },
                     ]
                 }]
         };
