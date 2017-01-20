@@ -45418,9 +45418,9 @@ var HomeComponent = (function () {
                 var item = _a[_i];
                 var date1 = new Date();
                 var date2 = new Date(item.Expires);
-                var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                var timeDiff = date2.getTime() - date1.getTime();
                 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-                console.log(diffDays);
+                // console.log(diffDays, date1, date2)
                 switch (e.point.name) {
                     case 'Recently Expired':
                         if (diffDays === 0 || diffDays < 0) {
@@ -45428,7 +45428,7 @@ var HomeComponent = (function () {
                         }
                         break;
                     case 'Under 30':
-                        if (diffDays < 30) {
+                        if (diffDays < 30 && diffDays > 0) {
                             data.push(item);
                         }
                         break;
