@@ -1,51 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset=UTF-8>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Angular2 Seed</title>
-    <base href="/">
-    <link rel="stylesheet" type="text/css" href="./css/resources/themes/omega/theme.css" />
-    <link rel="stylesheet" type="text/css" href="./css/resources/primeng.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<head>
+  <meta charset="utf-8">
+  <title>AniThemeCli</title>
+  <base href="/">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
-  </head>
-  <body>
-
-    <app>
-<div id="foo">
-
-</div>
-    </app>
-
-    <script async src="/main.bundle.js"></script>
-    <script>
-      var opts = {
-        lines: 13 // The number of lines to draw
-        , length: 28 // The length of each line
-        , width: 14 // The line thickness
-        , radius: 42 // The radius of the inner circle
-        , scale: 1 // Scales overall size of the spinner
-        , corners: 1 // Corner roundness (0..1)
-        , color: '#000' // #rgb or #rrggbb or array of colors
-        , opacity: 0.25 // Opacity of the lines
-        , rotate: 0 // The rotation offset
-        , direction: 1 // 1: clockwise, -1: counterclockwise
-        , speed: 1 // Rounds per second
-        , trail: 60 // Afterglow percentage
-        , fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
-        , zIndex: 2e9 // The z-index (defaults to 2000000000)
-        , className: 'spinner' // The CSS class to assign to the spinner
-        , top: '50%' // Top position relative to parent
-        , left: '50%' // Left position relative to parent
-        , shadow: false // Whether to render a shadow
-        , hwaccel: false // Whether to use hardware acceleration
-        , position: 'absolute' // Element positioning
-      }
-      var target = document.getElementById('foo')
-      var spinner = new Spinner(opts).spin(target);
-    </script>
-  </body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+    <div class="spinner"></div>
+  </app-root>
+<script type="text/javascript" src="inline.d41d8cd98f00b204e980.bundle.js"></script><script type="text/javascript" src="styles.2e1de0747a530d4bccfc.bundle.js"></script><script type="text/javascript" src="scripts.c35d89804132dc4e1a11.bundle.js"></script><script type="text/javascript" src="main.88f92a8d2ff27486441f.bundle.js"></script></body>
 </html>
