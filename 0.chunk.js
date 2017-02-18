@@ -30996,7 +30996,7 @@ module.exports = "<router-outlet></router-outlet>"
 /* 956 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"login-page animate\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-4 col-lg-offset-4\">\n      <img src=\"assets/images/flat-avatar.png\" class=\"user-avatar\" />\n\t\t\t<h1>Ani Theme</h1>\n\t\t\t<form role=\"form\">\n\t\t\t\t<div class=\"form-content\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input type=\"text\" class=\"form-control input-underline input-lg\" id=\"\" placeholder=\"Email\" [(ngModel)]=\"user.email\"  [ngModelOptions]=\"{standalone: true}\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<a class=\"btn rounded-btn\" (click)=\"forget()\"> Send Password </a>\n\t\t\t\t&nbsp;\n\t\t\t</form>\n\t\t</div>\n\t</div>\n</div>\n"
+module.exports = "<div class=\"login-page animate\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-4 col-lg-offset-4\">\n      <img src=\"assets/images/flat-avatar.png\" class=\"user-avatar\" />\n\t\t\t<h1>Ani Theme</h1>\n\t\t\t<form role=\"form\">\n\t\t\t\t<div class=\"form-content\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input type=\"text\" class=\"form-control input-underline input-lg\" id=\"\" placeholder=\"Email\" [(ngModel)]=\"user.email\"  [ngModelOptions]=\"{standalone: true}\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<a class=\"btn rounded-btn\" (click)=\"forget()\"> Send Password </a>\n\t\t\t\t<a class=\"btn rounded-btn\"  routerLink=\"/\"> Go Back </a>\n\t\t\t\t&nbsp;\n\t\t\t</form>\n\t\t</div>\n\t</div>\n</div>\n"
 
 /***/ },
 /* 957 */
