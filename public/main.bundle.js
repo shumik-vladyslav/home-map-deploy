@@ -146,12 +146,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__ = __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_wrapper_filter_buttons_filter_buttons_component__ = __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -185,7 +187,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_12__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__["a" /* ItemModalComponent */]
             ],
             imports: [__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */]],
-            providers: [],
+            providers: [__WEBPACK_IMPORTED_MODULE_14__components_shared_filter_service__["a" /* FilterService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -272,7 +274,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "header {\n  margin-bottom: 30px;\n  border-bottom: 4px solid rgba(151, 151, 151, 0.24); }\n  header .container {\n    padding: 0; }\n    header .container .navbar-collapse {\n      padding-left: 0;\n      padding-right: 0; }\n    header .container .navbar-header button {\n      border-color: transparent;\n      position: absolute;\n      right: 0; }\n    header .container .navbar-brand-centered {\n      font-size: 22px;\n      color: #000 !important; }\n  header nav {\n    position: relative;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    font: 300 22px \"NunitoSans\";\n    text-transform: uppercase;\n    color: #000000;\n    margin-bottom: 0; }\n    header nav .navbar-nav li a {\n      cursor: pointer;\n      font-size: 19px;\n      color: #000 !important; }\n    header nav .navbar-nav li svg {\n      display: none; }\n    header nav .navbar-left .submenu_link a {\n      padding-left: 0; }\n    header nav .navbar-left .submenu_link .submenu {\n      display: none;\n      list-style: none; }\n      header nav .navbar-left .submenu_link .submenu li:first-child a {\n        cursor: pointer;\n        padding-left: 0; }\n\n.navbar-default {\n  background: none;\n  border: none; }\n\n@media screen and (min-width: 768px) {\n  .navbar-brand-centered {\n    position: absolute;\n    left: 50%;\n    display: block;\n    width: 160px;\n    text-align: center; }\n  .navbar > .container .navbar-brand-centered,\n  .navbar > .container-fluid .navbar-brand-centered {\n    margin-left: -80px; } }\n\n@media (max-width: 768px) {\n  header .inner_wrapper .navbar .container .navbar-collapse {\n    text-align: center; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link a {\n      display: inline-block;\n      vertical-align: middle; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link svg {\n      display: inline-block; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left li:first-child a {\n      padding-left: 5px;\n      padding-right: 5px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu {\n      max-height: 0;\n      overflow-y: hidden; }\n      header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu a {\n        font-size: 14px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .active {\n      display: block;\n      max-height: 300px; }\n  .navbar-collapse.in {\n    overflow-y: unset; } }\n", ""]);
+exports.push([module.i, "header {\n  margin-bottom: 30px;\n  border-bottom: 4px solid rgba(151, 151, 151, 0.24); }\n  header .container {\n    width: 100%;\n    padding: 0; }\n    header .container .navbar-collapse {\n      padding-left: 0;\n      padding-right: 0; }\n    header .container .navbar-header {\n      margin: 0; }\n      header .container .navbar-header button {\n        border-color: transparent;\n        position: absolute;\n        right: 0; }\n    header .container .navbar-brand-centered {\n      text-align: center;\n      float: none;\n      top: 0;\n      font-size: 22px;\n      color: #000 !important; }\n  header nav {\n    position: relative;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    font: 300 22px \"NunitoSans\";\n    text-transform: uppercase;\n    color: #000000;\n    margin-bottom: 0; }\n    header nav .navbar-nav li a {\n      cursor: pointer;\n      font-size: 19px;\n      color: #000 !important; }\n    header nav .navbar-nav li svg {\n      display: none; }\n    header nav .navbar-left .submenu_link a {\n      padding-left: 0; }\n    header nav .navbar-left .submenu_link .submenu {\n      display: none;\n      list-style: none; }\n      header nav .navbar-left .submenu_link .submenu li:first-child a {\n        cursor: pointer;\n        padding-left: 0; }\n\n.navbar-default {\n  background: none;\n  border: none; }\n\n@media (max-width: 1020px) {\n  header .container {\n    width: calc(100% - 20px); } }\n\n@media (max-width: 920px) and (min-width: 768px) {\n  header nav .navbar-nav li a {\n    font-size: 16px; } }\n\n@media (min-width: 768px) {\n  .navbar-brand-centered {\n    position: absolute;\n    left: 50%;\n    display: block;\n    width: 160px;\n    text-align: center; }\n  .navbar > .container .navbar-brand-centered,\n  .navbar > .container-fluid .navbar-brand-centered {\n    margin-left: -80px; } }\n\n@media (max-width: 768px) {\n  header .inner_wrapper .navbar .container .navbar-collapse {\n    text-align: center; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link a {\n      display: inline-block;\n      vertical-align: middle; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link svg {\n      display: inline-block; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left li:first-child a {\n      padding-left: 5px;\n      padding-right: 5px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu {\n      max-height: 0;\n      overflow-y: hidden; }\n      header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu a {\n        font-size: 14px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .active {\n      display: block;\n      max-height: 300px; }\n  .navbar-collapse.in {\n    overflow-y: unset; } }\n", ""]);
 
 // exports
 
@@ -339,6 +341,33 @@ var HeaderComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/shared/filter.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var FilterService = (function () {
+    function FilterService() {
+        this.changePrice = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+    }
+    FilterService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+    ], FilterService);
+    return FilterService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.html":
 /***/ (function(module, exports) {
 
@@ -354,7 +383,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".add_product {\n  width: 100%;\n  position: relative;\n  text-align: center; }\n  .add_product .contribute {\n    position: absolute;\n    top: -50px;\n    left: 13px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    text-align: right;\n    text-transform: none; }\n    .add_product .contribute p {\n      margin-top: 6px;\n      opacity: 1;\n      -webkit-transform: rotate(-20deg);\n              transform: rotate(-20deg);\n      font: 200 12px \"NunitoSans\";\n      color: #ca464a; }\n  .add_product > p {\n    margin-bottom: 7px;\n    text-transform: uppercase;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    opacity: 0.27; }\n  .add_product .drag_n_drop {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    margin: 0 auto;\n    width: 180px;\n    height: 180px;\n    background-color: #d8d8d8;\n    border: 1px solid #979797;\n    border-radius: 8px;\n    opacity: 0.27;\n    margin-bottom: 12px; }\n    .add_product .drag_n_drop span {\n      -webkit-transform: rotate(-45deg);\n              transform: rotate(-45deg);\n      font: 400 10px \"NunitoSans\";\n      color: #000; }\n  .add_product .link_block {\n    opacity: 0.27;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-left: 6px; }\n    .add_product .link_block a {\n      text-align: center;\n      color: #fff;\n      height: 21px; }\n      .add_product .link_block a:first-child {\n        width: 18px;\n        background-color: #488abe; }\n      .add_product .link_block a:last-child {\n        text-transform: uppercase;\n        font-size: 10px;\n        line-height: 21px;\n        width: 30px;\n        background-color: #5792c0; }\n", ""]);
+exports.push([module.i, ".add_product {\n  width: 100%;\n  position: relative;\n  text-align: center; }\n  .add_product .contribute {\n    position: absolute;\n    top: -50px;\n    left: 13px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    text-align: right;\n    text-transform: none; }\n    .add_product .contribute p {\n      opacity: 1;\n      -webkit-transform: rotate(-20deg);\n              transform: rotate(-20deg);\n      font: 200 12px \"NunitoSans\";\n      color: #ca464a; }\n  .add_product > p {\n    margin-top: 11px;\n    height: 32px;\n    margin-bottom: 12px;\n    margin-bottom: 11px;\n    text-transform: uppercase;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    opacity: 0.27; }\n  .add_product .drag_n_drop {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    width: 100%;\n    height: 180px;\n    background-color: #d8d8d8;\n    border: 1px solid #979797;\n    border-radius: 8px;\n    opacity: 0.27;\n    margin-bottom: 12px; }\n    .add_product .drag_n_drop span {\n      -webkit-transform: rotate(-45deg);\n              transform: rotate(-45deg);\n      font: 400 10px \"NunitoSans\";\n      color: #000; }\n  .add_product .link_block {\n    opacity: 0.27;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-left: 6px; }\n    .add_product .link_block a {\n      text-align: center;\n      color: #fff;\n      height: 21px; }\n      .add_product .link_block a:first-child {\n        width: 18px;\n        background-color: #488abe; }\n      .add_product .link_block a:last-child {\n        text-transform: uppercase;\n        font-size: 10px;\n        line-height: 21px;\n        width: 30px;\n        background-color: #5792c0; }\n", ""]);
 
 // exports
 
@@ -403,7 +432,7 @@ var AddYourProductComponent = (function () {
 /***/ "../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"sort\">\r\n  <div class=\"sort_link\">\r\n    <a [ngClass]=\"{'selected': type === 'essentials'}\" (click)=\"go('essentials')\">essentials</a>\r\n    <a [ngClass]=\"{'selected': type === 'our pick'}\" (click)=\"go('our pick')\">our pick</a>\r\n    <a [ngClass]=\"{'selected': type === 'latest'}\" (click)=\"go('latest')\">latest</a>\r\n    <a [ngClass]=\"{'selected': type === 'price'}\" (click)=\"go('price')\">price</a>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section class=\"sort\">\r\n  <div class=\"sort_link\">\r\n    <a [ngClass]=\"{'selected': type === 'essentials'}\" (click)=\"go('essentials')\">essentials</a>\r\n    <a [ngClass]=\"{'selected': type === 'our pick'}\" (click)=\"go('our pick')\">our pick</a>\r\n    <a [ngClass]=\"{'selected': type === 'latest'}\" (click)=\"go('latest')\">latest</a>\r\n    <a [ngClass]=\"{'selected': type === 'price'}\" (click)=\"go('price')\">price\r\n      <span *ngIf=\"arrowSwitch\">&#8593;</span>\r\n      <span *ngIf=\"!arrowSwitch\">&darr;</span>\r\n    </a>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -432,6 +461,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterButtonsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -443,16 +473,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var FilterButtonsComponent = (function () {
-    function FilterButtonsComponent(route, router) {
+    function FilterButtonsComponent(route, router, filterService) {
         this.route = route;
         this.router = router;
+        this.filterService = filterService;
         this.type = "";
+        this.arrowSwitch = true;
         this.type = this.route.snapshot.params["sort"];
     }
     FilterButtonsComponent.prototype.ngOnInit = function () { };
     FilterButtonsComponent.prototype.go = function (str) {
         this.type = str;
+        if (str === 'price') {
+            this.arrowSwitch = !this.arrowSwitch;
+            this.filterService.changePrice.emit(this.arrowSwitch);
+        }
         var type = this.route.snapshot.params["type"];
         this.router.navigate(["/" + type + "/" + str]);
     };
@@ -462,7 +499,7 @@ var FilterButtonsComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
     ], FilterButtonsComponent);
     return FilterButtonsComponent;
 }());
@@ -474,7 +511,7 @@ var FilterButtonsComponent = (function () {
 /***/ "../../../../../src/app/components/wrapper/left-menu/left-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"left_menu\">\r\n  <a (click)=\"go('everything')\">Everything</a>\r\n  <a (click)=\"go('vanlife')\">Vanlife</a>\r\n  <a (click)=\"go('clothing')\">Clothing</a>\r\n  <a (click)=\"go('outdoor')\">Outdoor</a>\r\n  <a (click)=\"go('camping')\">Camping</a>\r\n  <a (click)=\"go('living')\">Living</a>\r\n  <a (click)=\"go('parts')\">Parts</a>\r\n  <a (click)=\"go('photography')\">Photography</a>\r\n</div>"
+module.exports = "<div class=\"left_menu\">\r\n  <a [ngClass]=\"{'selected': type === 'everything'}\" (click)=\"go('everything')\">Everything</a>\r\n  <a [ngClass]=\"{'selected': type === 'vanlife'}\" (click)=\"go('vanlife')\">Vanlife</a>\r\n  <a [ngClass]=\"{'selected': type === 'clothing'}\" (click)=\"go('clothing')\">Clothing</a>\r\n  <a [ngClass]=\"{'selected': type === 'outdoor'}\" (click)=\"go('outdoor')\">Outdoor</a>\r\n  <a [ngClass]=\"{'selected': type === 'camping'}\" (click)=\"go('camping')\">Camping</a>\r\n  <a [ngClass]=\"{'selected': type === 'living'}\" (click)=\"go('living')\">Living</a>\r\n  <a [ngClass]=\"{'selected': type === 'parts'}\" (click)=\"go('parts')\">Parts</a>\r\n  <a [ngClass]=\"{'selected': type === 'photography'}\" (click)=\"go('photography')\">Photography</a>\r\n</div>"
 
 /***/ }),
 
@@ -486,7 +523,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".left_menu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .left_menu a {\n    font: 300 22px \"NunitoSans\";\n    color: #6b6060;\n    opacity: 0.34;\n    margin-bottom: 16px;\n    cursor: pointer; }\n", ""]);
+exports.push([module.i, ".left_menu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .left_menu a {\n    font: 300 22px \"NunitoSans\";\n    color: #6b6060;\n    opacity: 0.34;\n    margin-bottom: 16px;\n    cursor: pointer; }\n\n.left_menu .selected {\n  opacity: 1; }\n", ""]);
 
 // exports
 
@@ -518,11 +555,15 @@ var LeftMenuComponent = (function () {
     function LeftMenuComponent(route, router) {
         this.route = route;
         this.router = router;
+        this.type = "";
     }
-    LeftMenuComponent.prototype.ngOnInit = function () { };
+    LeftMenuComponent.prototype.ngOnInit = function () {
+        this.type = this.route.snapshot.params["type"];
+    };
     LeftMenuComponent.prototype.go = function (str) {
         var sort = this.route.snapshot.params["sort"];
         this.router.navigate(["/" + str + "/" + sort]);
+        this.type = str;
     };
     LeftMenuComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -542,7 +583,7 @@ var LeftMenuComponent = (function () {
 /***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-wrap-massege\" *ngIf=\"show\" (click)=\"onClick()\">\r\n  <div class=\"massege-wrapper\" (click)=\"$event.stopPropagation();\">\r\n    <div class=\"content\">\r\n      <div class=\"left-content\">\r\n        <button class=\"button-left-caret\">\r\n          <span class=\"caret-left\">\r\n\r\n          </span>\r\n          <span class=\"caret-left-sec\">\r\n\r\n          </span>\r\n        </button>\r\n        <img src={{item.imagePath}} alt=\"\" style=\" width: 90%;    height: 100%;\r\n                border: 1px solid rgba(147, 154, 148, 1);\r\n                border-radius: 24px;\">\r\n        <button class=\"button-right-caret\">\r\n          <span class=\"right-caret\">\r\n\r\n          </span>\r\n          <span class=\"caret-right-sec\">\r\n\r\n          </span>\r\n        </button>\r\n      </div>\r\n      <div class=\"right-content\" style=\"display: grid\">\r\n        <h6>\r\n          {{item.name}}\r\n        </h6>\r\n        <P class=\"text-right\">\r\n          WHEN IT COMES TO CHOOSING AN ANTIAGING EYE CREAM, THE POSSIBILITIES ARE ENDLESS, THE CHOISES FROM HIGH END DEPARTMENT STORE\r\n          BRANDS, TO AFFORDABLE NAMES BRANDS AND\r\n        </P>\r\n        <P class=\"money\">\r\n          <span class=\"old\">${{item.oldPrice}}</span>\r\n          <span class=\"new\">${{item.discountedPrice}}</span>\r\n        </P>\r\n        <button class=\"but-ali\">BUY ON ALIXPRESS</button>\r\n        <span class=\"but-star\">\r\n          <button>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n          </button>\r\n          <button>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n          </button>\r\n          <button>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n          </button>\r\n          <button>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n          </button>\r\n          <button>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n          </button>\r\n          <span>\r\n            20 Orders\r\n          </span>\r\n        </span>\r\n        <span class=\"but-added-wrap\">\r\n          <button>ADDED BY: LOVEYOURCAMPER</button>\r\n        </span>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-wrap-massege\" *ngIf=\"show\" (click)=\"onClick()\">\r\n  <div class=\"massege-wrapper\" (click)=\"$event.stopPropagation();\">\r\n    <div class=\"content\">\r\n      <i class=\"fa fa-times-circle\" *ngIf=\"show\" (click)=\"onClick()\" aria-hidden=\"true\"></i>\r\n\r\n      <div class=\"left-content\">\r\n\r\n        <svg width=\"13px\" height=\"21px\" viewBox=\"0 0 13 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n          <g id=\"Home-Screen\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\r\n            <g id=\"Desktop-Modal-Overlay\" transform=\"translate(-208.000000, -471.000000)\" stroke=\"#979797\" fill=\"#D8D8D8\">\r\n              <g id=\"Picture\" transform=\"translate(208.000000, 367.000000)\">\r\n                <polygon id=\"Triangle\" transform=\"translate(6.000000, 114.500000) rotate(-90.000000) translate(-6.000000, -114.500000) \"\r\n                  points=\"6 108.5 15.5 120.5 -3.5 120.5\"></polygon>\r\n              </g>\r\n            </g>\r\n          </g>\r\n        </svg>\r\n        <div class=\"img\">\r\n          <img src={{item.imagePath}} alt=\"\">\r\n        </div>\r\n        <svg width=\"13px\" height=\"21px\" viewBox=\"0 0 13 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n          <g id=\"Home-Screen\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\r\n            <g id=\"Desktop-Modal-Overlay\" transform=\"translate(-208.000000, -471.000000)\" stroke=\"#979797\" fill=\"#D8D8D8\">\r\n              <g id=\"Picture\" transform=\"translate(208.000000, 367.000000)\">\r\n                <polygon id=\"Triangle\" transform=\"translate(6.000000, 114.500000) rotate(-90.000000) translate(-6.000000, -114.500000) \"\r\n                  points=\"6 108.5 15.5 120.5 -3.5 120.5\"></polygon>\r\n              </g>\r\n            </g>\r\n          </g>\r\n        </svg>\r\n      </div>\r\n      <div class=\"right-content\">\r\n        <div class=\"item_info\">\r\n          <p>{{item.name}}</p>\r\n          <p> WHEN IT COMES TO CHOOSING AN ANTIAGING EYE CREAM, THE POSSIBILITIES ARE ENDLESS, THE CHOISES FROM HIGH END DEPARTMENT\r\n            STORE BRANDS, TO AFFORDABLE NAMES BRANDS AND</p>\r\n          <div class=\"ali\">\r\n            <div class=\"money\">\r\n              <span class=\"old\">${{item.oldPrice}}</span>\r\n              <span class=\"new\">${{item.discountedPrice}}</span>\r\n            </div>\r\n            <button class=\"but-ali\">BUY ON ALIXPRESS</button>\r\n          </div>\r\n          <div class=\"but-stars\">\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <p>20 Orders</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"item_info_bottom\">\r\n          <p>ADDED BY: LOVEYOURCAMPER</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -554,7 +595,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".items {\n  margin-top: 20px;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: (200px)[auto-fill];\n      grid-template-columns: repeat(auto-fill, 200px);\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  grid-gap: 10px; }\n\n.main-wrap-massege {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(255, 255, 255, 0.78);\n  z-index: 1; }\n\n.massege-wrapper {\n  position: absolute;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  left: 50%;\n  background: white;\n  width: 80%;\n  max-width: 810px;\n  border-radius: 11px;\n  z-index: 1;\n  border: 1px solid #989898; }\n\n.content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n  -ms-flex-pack: justify;\n  justify-content: space-between;\n  margin-top: 25px;\n  width: 94%;\n  margin-left: 3%;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap; }\n\n.left-content {\n  text-align: center;\n  position: relative;\n  background: white;\n  width: 44%;\n  height: 302px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 300px;\n          flex: 1 1 300px; }\n\n.right-content {\n  background: white;\n  width: 52%;\n  height: 336px;\n  text-align: center;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 320px;\n          flex: 1 1 320px; }\n\nh6 {\n  font-size: 12px;\n  color: #3c3c3c; }\n\n.text-right {\n  text-align: center;\n  font-size: 11px;\n  color: #828282; }\n\n.old {\n  font-size: 13px;\n  position: relative;\n  bottom: 5px;\n  color: #cccccc;\n  text-decoration: line-through; }\n\n.new {\n  color: #262626;\n  font-size: 19px;\n  font-weight: 600; }\n\n.but-ali {\n  width: 80%;\n  margin-left: 10%;\n  height: 39px;\n  border: none;\n  border-radius: 9px;\n  background: #4990df;\n  color: #a4c1e3;\n  font-size: 18px;\n  text-align: center;\n  outline: none; }\n\n.but-star > span {\n  color: #e0e0e0;\n  font-size: 12px;\n  margin-left: 15px; }\n\n.but-added-wrap > button {\n  background: white;\n  color: #6e6e6e;\n  position: relative;\n  top: 14px;\n  font-size: 11px;\n  font-weight: bold;\n  border: none; }\n\n.button-left-caret {\n  position: absolute;\n  left: 0px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.caret-left {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-right: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-left-sec {\n  width: 0;\n  height: 0;\n  position: absolute;\n  border-top: 10px solid transparent;\n  border-right: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 3px;\n  top: 3px; }\n\n.button-right-caret {\n  position: absolute;\n  right: -7px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.right-caret {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-left: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-right-sec {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-left: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 2px;\n  top: 3px; }\n\n.left-content > img {\n  width: 90%; }\n\n.but-star > button {\n  font-size: 20px;\n  border: none;\n  background: none;\n  color: #6e6e6e;\n  margin-right: 5px;\n  outline: none; }\n\n.but-star > button:focus {\n  color: #e0cf33; }\n\n@media screen and (max-width: 1000px) {\n  .button-right-caret {\n    position: absolute;\n    top: 45%;\n    width: 24px;\n    height: 28px;\n    background: no-repeat;\n    border: none;\n    outline: none; }\n  .button-left-caret {\n    position: absolute;\n    top: 45%;\n    width: 24px;\n    height: 28px;\n    background: no-repeat;\n    border: none;\n    outline: none; } }\n\n@media screen and (max-width: 768px) {\n  .right-content {\n    margin-top: 10px;\n    height: 226px; }\n  .massege-wrapper {\n    height: auto;\n    top: 45%;\n    -webkit-transform: translate(-50%, -45%);\n            transform: translate(-50%, -45%); } }\n\n@media (max-width: 480px) {\n  .content {\n    margin-top: 10px; }\n  .but-added-wrap > button {\n    top: 0; }\n  .massege-wrapper {\n    position: fixed;\n    background: white;\n    max-width: 810px;\n    min-height: 395px;\n    border-radius: 11px;\n    z-index: 1;\n    border: 1px solid #989898; }\n  .left-content {\n    height: 203px; }\n  .but-star > span {\n    color: #e0e0e0;\n    font-size: 12px; }\n  .but-ali {\n    margin-bottom: 10px; }\n  .button-left-caret {\n    left: -7px; }\n  .button-right-caret {\n    right: -12px; } }\n", ""]);
+exports.push([module.i, ".main-wrap-massege {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(255, 255, 255, 0.78);\n  z-index: 1; }\n  .main-wrap-massege .massege-wrapper {\n    width: 63.4%;\n    height: 328px;\n    border: 1px solid #979797;\n    border-radius: 8px;\n    margin: 0 auto;\n    background-color: #fff; }\n    .main-wrap-massege .massege-wrapper .content {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      height: 100%; }\n      .main-wrap-massege .massege-wrapper .content .fa-times-circle {\n        display: none;\n        position: absolute; }\n      .main-wrap-massege .massege-wrapper .content .left-content {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        width: 37.24%;\n        margin-left: 20px; }\n        .main-wrap-massege .massege-wrapper .content .left-content svg {\n          min-width: 13px; }\n          .main-wrap-massege .massege-wrapper .content .left-content svg:last-of-type {\n            -webkit-transform: rotateY(180deg);\n                    transform: rotateY(180deg); }\n        .main-wrap-massege .massege-wrapper .content .left-content .img {\n          margin: 0 9px; }\n          .main-wrap-massege .massege-wrapper .content .left-content .img img {\n            min-width: 200px;\n            max-width: 100%;\n            height: 229px; }\n      .main-wrap-massege .massege-wrapper .content .right-content {\n        width: calc(100% - 37.24%);\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n          display: -webkit-box;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-orient: vertical;\n          -webkit-box-direction: normal;\n              -ms-flex-direction: column;\n                  flex-direction: column;\n          -webkit-box-align: center;\n              -ms-flex-align: center;\n                  align-items: center;\n          margin-top: 46px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info p {\n            font: 400 10px \"NunitoSans\";\n            color: #000;\n            text-transform: uppercase;\n            margin-bottom: 21px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info p:nth-child(2) {\n              width: 64%;\n              text-align: center;\n              font-size: 8px;\n              margin-bottom: 13px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .money {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center;\n            margin-bottom: 25px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .money .old {\n              font: 200 10px \"NunitoSans\";\n              text-decoration: line-through;\n              margin-right: 5px;\n              color: #6b6060;\n              opacity: 0.34; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .money .new {\n              font: 400 14px \"NunitoSans\";\n              color: #000; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-orient: vertical;\n            -webkit-box-direction: normal;\n                -ms-flex-direction: column;\n                    flex-direction: column;\n            -webkit-box-pack: center;\n                -ms-flex-pack: center;\n                    justify-content: center;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali button {\n              border: none;\n              width: 208px;\n              height: 32px;\n              text-align: center;\n              background: #4a90e2;\n              border-radius: 8px;\n              font: 400 15px/32px \"NunitoSans\";\n              color: #000000;\n              margin-bottom: 15px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars i {\n              cursor: pointer;\n              margin-right: 5px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars p {\n              margin: 0;\n              font: 200 8px \"NunitoSans\"; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .item_info_bottom p {\n            font-size: 10px; }\n\n@media (max-width: 850px) {\n  .main-wrap-massege .massege-wrapper {\n    height: auto; }\n    .main-wrap-massege .massege-wrapper .content {\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      .main-wrap-massege .massege-wrapper .content .left-content {\n        width: auto;\n        margin: 20px 20px 0; }\n      .main-wrap-massege .massege-wrapper .content .right-content {\n        width: auto; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n          margin-top: 20px;\n          margin-bottom: 20px; } }\n\n@media (max-width: 480px) {\n  .main-wrap-massege .massege-wrapper {\n    width: 90%;\n    border: 1px solid #979797;\n    border-radius: 8px; }\n    .main-wrap-massege .massege-wrapper .content .fa-times-circle {\n      display: block;\n      font-size: 40px;\n      height: 36px;\n      right: -11px;\n      top: -17px;\n      background-color: #fff;\n      opacity: 0.7;\n      cursor: pointer; }\n    .main-wrap-massege .massege-wrapper .content .left-content {\n      margin-left: 33px;\n      margin-right: 33px; }\n      .main-wrap-massege .massege-wrapper .content .left-content svg {\n        display: none; }\n      .main-wrap-massege .massege-wrapper .content .left-content .img {\n        margin: 0; }\n        .main-wrap-massege .massege-wrapper .content .left-content .img img {\n          height: 270px; }\n    .main-wrap-massege .massege-wrapper .content .right-content {\n      margin-top: 5px; }\n      .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n        margin-top: 0; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info p:nth-child(2) {\n          width: auto;\n          margin-left: 33px;\n          margin-right: 33px;\n          margin-bottom: 19px; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info p:first-of-type {\n          text-align: center;\n          margin: 0 33px 12px;\n          font: 400 14px \"NunitoSans\"; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali {\n          display: -webkit-box;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-align: center;\n              -ms-flex-align: center;\n                  align-items: center;\n          -webkit-box-orient: horizontal;\n          -webkit-box-direction: normal;\n              -ms-flex-direction: row;\n                  flex-direction: row;\n          margin-bottom: 18px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali button {\n            font-size: 12px;\n            width: 160px;\n            margin-right: 16px;\n            margin-bottom: 0; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali .money {\n            -webkit-box-ordinal-group: 3;\n                -ms-flex-order: 2;\n                    order: 2;\n            margin-bottom: 0; } }\n", ""]);
 
 // exports
 
@@ -585,8 +626,7 @@ var ItemModalComponent = (function () {
         this._eref = _eref;
         this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
     }
-    ItemModalComponent.prototype.ngOnInit = function () {
-    };
+    ItemModalComponent.prototype.ngOnInit = function () { };
     ItemModalComponent.prototype.ngOnChanges = function () {
         console.log(this.show);
     };
@@ -607,9 +647,9 @@ var ItemModalComponent = (function () {
     ], ItemModalComponent.prototype, "close", void 0);
     ItemModalComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-item-modal',
+            selector: "app-item-modal",
             template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.scss")],
+            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.scss")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]])
     ], ItemModalComponent);
@@ -635,7 +675,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".custom_col {\n  padding-left: 5px;\n  padding-right: 5px;\n  margin-bottom: 10px; }\n\n.item {\n  position: relative;\n  text-align: center;\n  text-transform: uppercase;\n  border: 1px solid rgba(242, 242, 242, 0.47);\n  border-radius: 8px;\n  -webkit-transform: translateZ(0);\n          transform: translateZ(0);\n  box-sizing: border-box; }\n  .item > p {\n    width: 80%;\n    margin: 14px auto;\n    height: 36px;\n    margin-top: 10px;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    margin-bottom: 6px; }\n  .item img {\n    width: 180px;\n    height: 180px;\n    margin-bottom: 12px; }\n  .item .bottom_text {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .item .bottom_text .bottom_text_left {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      margin-left: 6px;\n      position: absolute;\n      bottom: 6px;\n      left: 0;\n      color: #ffffff;\n      font-weight: 700;\n      text-transform: uppercase;\n      font-size: 0.9em;\n      opacity: 0;\n      background-color: #409ad5;\n      -webkit-transform: rotateX(-90deg);\n      transform: rotateX(-90deg);\n      -webkit-transform-origin: 100% 0;\n      transform-origin: 100% 0; }\n      .item .bottom_text .bottom_text_left a {\n        color: #fff;\n        height: 21px; }\n        .item .bottom_text .bottom_text_left a:first-child {\n          width: 18px;\n          background-color: #2980b9; }\n        .item .bottom_text .bottom_text_left a:last-child {\n          font-size: 10px;\n          line-height: 21px;\n          width: 30px;\n          background-color: #409ad5; }\n    .item .bottom_text .bottom_text_right {\n      margin-right: 6px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: baseline;\n          -ms-flex-align: baseline;\n              align-items: baseline; }\n      .item .bottom_text .bottom_text_right p {\n        display: inline-block; }\n        .item .bottom_text .bottom_text_right p:first-child {\n          font: 200 11px \"NunitoSans\";\n          color: #6b6060;\n          opacity: 0.34;\n          text-decoration: line-through; }\n        .item .bottom_text .bottom_text_right p:last-child {\n          margin-left: 4px;\n          font: 400 14px \"NunitoSans\";\n          color: #000; }\n  .item:hover .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0deg);\n    transform: rotateX(0deg); }\n\n.item * {\n  transition: all 0.3s ease-out; }\n\n@media (max-width: 768px) {\n  .item .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0);\n            transform: rotateX(0); } }\n\n@media (max-width: 480px) {\n  .item p {\n    height: 36px; }\n  .item img {\n    width: 150px;\n    height: 150px; } }\n", ""]);
+exports.push([module.i, ".custom_col {\n  padding-left: 5px;\n  padding-right: 5px;\n  margin-bottom: 10px; }\n\n.item {\n  position: relative;\n  text-align: center;\n  text-transform: uppercase;\n  border: 1px solid rgba(242, 242, 242, 0.47);\n  border-radius: 8px;\n  -webkit-transform: translateZ(0);\n          transform: translateZ(0);\n  box-sizing: border-box; }\n  .item > p {\n    width: 80%;\n    margin: 14px auto;\n    height: 36px;\n    margin-top: 10px;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    margin-bottom: 6px; }\n  .item img {\n    width: 180px;\n    height: 180px;\n    margin-bottom: 12px; }\n  .item .bottom_text {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .item .bottom_text .bottom_text_left {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      margin-left: 6px;\n      position: absolute;\n      bottom: 6px;\n      left: 0;\n      color: #ffffff;\n      font-weight: 700;\n      text-transform: uppercase;\n      font-size: 0.9em;\n      opacity: 0;\n      background-color: #409ad5;\n      -webkit-transform: rotateX(-90deg);\n      transform: rotateX(-90deg);\n      -webkit-transform-origin: 100% 0;\n      transform-origin: 100% 0; }\n      .item .bottom_text .bottom_text_left a {\n        color: #fff;\n        height: 21px; }\n        .item .bottom_text .bottom_text_left a:first-child {\n          width: 18px;\n          background-color: #2980b9; }\n        .item .bottom_text .bottom_text_left a:last-child {\n          font-size: 10px;\n          line-height: 21px;\n          width: 30px;\n          background-color: #409ad5; }\n    .item .bottom_text .bottom_text_right {\n      margin-right: 6px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: baseline;\n          -ms-flex-align: baseline;\n              align-items: baseline; }\n      .item .bottom_text .bottom_text_right p {\n        display: inline-block; }\n        .item .bottom_text .bottom_text_right p:first-child {\n          font: 200 11px \"NunitoSans\";\n          color: #6b6060;\n          opacity: 0.34;\n          text-decoration: line-through; }\n        .item .bottom_text .bottom_text_right p:last-child {\n          margin-left: 4px;\n          font: 400 14px \"NunitoSans\";\n          color: #000; }\n  .item:hover .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0deg);\n    transform: rotateX(0deg); }\n\n.item * {\n  transition: all 0.3s ease-out; }\n\n@media (max-width: 768px) {\n  .item .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0);\n            transform: rotateX(0); } }\n\n@media (max-width: 480px) {\n  .item img {\n    width: 90%;\n    height: 150px; } }\n", ""]);
 
 // exports
 
@@ -706,7 +746,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".container-fluid {\n  padding: 0; }\n  .container-fluid .row {\n    margin-left: -5px;\n    margin-right: -5px; }\n\n.main-wrap-massege {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 147%;\n  background: rgba(255, 255, 255, 0.548); }\n\n.massege-wrapper {\n  position: absolute;\n  top: 11%;\n  left: 22%;\n  background: white;\n  width: 810px;\n  height: 395px;\n  border-radius: 11px;\n  z-index: 1;\n  border: 1px solid #989898; }\n\n.content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 45px;\n  width: 94%;\n  margin-left: 3%; }\n\n.left-content {\n  position: relative;\n  background: white;\n  width: 44%;\n  height: 302px; }\n\n.right-content {\n  background: white;\n  width: 52%;\n  height: 336px;\n  text-align: center; }\n\nh6 {\n  font-size: 12px;\n  color: #3c3c3c; }\n\n.text-right {\n  font-size: 11px;\n  color: #828282; }\n\n.old {\n  font-size: 13px;\n  position: relative;\n  bottom: 5px;\n  color: #cccccc;\n  text-decoration: line-through; }\n\n.new {\n  color: #262626;\n  font-size: 19px;\n  font-weight: 600; }\n\n.but-ali {\n  width: 70%;\n  margin-left: 15%;\n  height: 39px;\n  border: none;\n  border-radius: 9px;\n  background: #4990df;\n  color: #a4c1e3;\n  font-size: 18px;\n  text-align: initial;\n  padding-left: 34px;\n  outline: none; }\n\n.but-star {\n  padding-left: 42px; }\n\n.but-star > span {\n  color: #e0e0e0;\n  font-size: 12px;\n  margin-left: 15px; }\n\n.but-added-wrap > button {\n  background: white;\n  color: #6e6e6e;\n  position: relative;\n  top: 31px;\n  font-size: 11px;\n  font-weight: bold;\n  border: none; }\n\n.button-left-caret {\n  position: absolute;\n  left: -18px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.caret-left {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-right: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-left-sec {\n  width: 0;\n  height: 0;\n  position: absolute;\n  border-top: 10px solid transparent;\n  border-right: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 3px;\n  top: 3px; }\n\n.button-right-caret {\n  position: absolute;\n  right: -6px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.right-caret {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-left: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-right-sec {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-left: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 2px;\n  top: 3px; }\n\n.left-content > img {\n  width: 90%;\n  margin-left: 8px; }\n\n.but-star > button {\n  font-size: 20px;\n  border: none;\n  background: none;\n  color: #6e6e6e;\n  margin-right: 5px;\n  outline: none; }\n\n.but-star > button:focus {\n  color: #e0cf33; }\n", ""]);
+exports.push([module.i, ".container-fluid {\n  padding: 0; }\n  .container-fluid .row {\n    margin: 0; }\n\n.main-wrap-massege {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 147%;\n  background: rgba(255, 255, 255, 0.548); }\n\n.massege-wrapper {\n  position: absolute;\n  top: 11%;\n  left: 22%;\n  background: white;\n  width: 810px;\n  height: 395px;\n  border-radius: 11px;\n  z-index: 1;\n  border: 1px solid #989898; }\n\n.content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 45px;\n  width: 94%;\n  margin-left: 3%; }\n\n.left-content {\n  position: relative;\n  background: white;\n  width: 44%;\n  height: 302px; }\n\n.right-content {\n  background: white;\n  width: 52%;\n  height: 336px;\n  text-align: center; }\n\nh6 {\n  font-size: 12px;\n  color: #3c3c3c; }\n\n.text-right {\n  font-size: 11px;\n  color: #828282; }\n\n.old {\n  font-size: 13px;\n  position: relative;\n  bottom: 5px;\n  color: #cccccc;\n  text-decoration: line-through; }\n\n.new {\n  color: #262626;\n  font-size: 19px;\n  font-weight: 600; }\n\n.but-ali {\n  width: 70%;\n  margin-left: 15%;\n  height: 39px;\n  border: none;\n  border-radius: 9px;\n  background: #4990df;\n  color: #a4c1e3;\n  font-size: 18px;\n  text-align: initial;\n  padding-left: 34px;\n  outline: none; }\n\n.but-star {\n  padding-left: 42px; }\n\n.but-star > span {\n  color: #e0e0e0;\n  font-size: 12px;\n  margin-left: 15px; }\n\n.but-added-wrap > button {\n  background: white;\n  color: #6e6e6e;\n  position: relative;\n  top: 31px;\n  font-size: 11px;\n  font-weight: bold;\n  border: none; }\n\n.button-left-caret {\n  position: absolute;\n  left: -18px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.caret-left {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-right: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-left-sec {\n  width: 0;\n  height: 0;\n  position: absolute;\n  border-top: 10px solid transparent;\n  border-right: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 3px;\n  top: 3px; }\n\n.button-right-caret {\n  position: absolute;\n  right: -6px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.right-caret {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-left: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-right-sec {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-left: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 2px;\n  top: 3px; }\n\n.left-content > img {\n  width: 90%;\n  margin-left: 8px; }\n\n.but-star > button {\n  font-size: 20px;\n  border: none;\n  background: none;\n  color: #6e6e6e;\n  margin-right: 5px;\n  outline: none; }\n\n.but-star > button:focus {\n  color: #e0cf33; }\n", ""]);
 
 // exports
 
@@ -723,6 +763,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -734,10 +775,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ItemsComponent = (function () {
-    function ItemsComponent(route, router) {
+    function ItemsComponent(route, router, filterService) {
+        var _this = this;
         this.route = route;
         this.router = router;
+        this.filterService = filterService;
         this.arr = [
             {
                 name: "Mother Earth Hosts Our Travels",
@@ -874,21 +918,16 @@ var ItemsComponent = (function () {
             }
         ];
         this.filterData = [];
+        this.filterService.changePrice.subscribe(function (data) {
+            _this.priceSort(data);
+        });
     }
     ItemsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.filterData = Object.assign([], this.arr);
         this.route.params.subscribe(function (param) {
             if (param['sort'] === 'price') {
-                _this.arr = _this.arr.sort(function (t1, t2) {
-                    if (+t1.discountedPrice > +t2.discountedPrice) {
-                        return 1;
-                    }
-                    if (+t1.discountedPrice < +t2.discountedPrice) {
-                        return -1;
-                    }
-                    return 0;
-                });
+                _this.priceSort(true, _this.arr);
             }
             if (param['type'] === 'everything') {
                 _this.filterData = Object.assign([], _this.arr);
@@ -899,13 +938,44 @@ var ItemsComponent = (function () {
             });
         });
     };
+    ItemsComponent.prototype.priceSort = function (b, sortA) {
+        var sortArr;
+        if (sortA) {
+            sortArr = sortA;
+        }
+        else {
+            sortArr = this.filterData;
+        }
+        if (b) {
+            sortArr = sortArr.sort(function (t1, t2) {
+                if (+t1.discountedPrice > +t2.discountedPrice) {
+                    return 1;
+                }
+                if (+t1.discountedPrice < +t2.discountedPrice) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
+        else {
+            sortArr = sortArr.sort(function (t1, t2) {
+                if (+t1.discountedPrice < +t2.discountedPrice) {
+                    return 1;
+                }
+                if (+t1.discountedPrice > +t2.discountedPrice) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
+    };
     ItemsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: "app-items",
             template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/items.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/items.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
     ], ItemsComponent);
     return ItemsComponent;
 }());
@@ -995,7 +1065,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".inner_wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .inner_wrapper .left_item,\n  .inner_wrapper .right_item {\n    width: 19%; }\n  .inner_wrapper .central_item {\n    width: 62%; }\n\n@media (max-width: 768px) {\n  .inner_wrapper .right_item,\n  .inner_wrapper .left_item {\n    display: none; }\n  .inner_wrapper .central_item {\n    width: 100%; } }\n", ""]);
+exports.push([module.i, ".inner_wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .inner_wrapper .left_item,\n  .inner_wrapper .right_item {\n    width: 19%; }\n  .inner_wrapper .central_item {\n    width: 62%; }\n  .inner_wrapper .right_item {\n    margin-left: 5px; }\n\n@media (max-width: 768px) {\n  .inner_wrapper .right_item,\n  .inner_wrapper .left_item {\n    display: none; }\n  .inner_wrapper .central_item {\n    width: 100%; } }\n", ""]);
 
 // exports
 
