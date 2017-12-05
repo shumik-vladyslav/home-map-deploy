@@ -25,6 +25,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__ = __webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -34,18 +35,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     {
         path: "home",
-        component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__["a" /* HomeComponent */]
     },
     {
-        path: ":type/:sort",
+        path: "items/:type/:sort",
         component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
     },
     {
         path: "",
-        redirectTo: "/everything/price",
+        redirectTo: "items/everything/price",
         pathMatch: "full"
     }
 ];
@@ -141,12 +143,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_wrapper_filter_buttons_filter_buttons_component__ = __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__ = __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -178,7 +182,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__components_wrapper_left_menu_left_menu_component__["a" /* LeftMenuComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_wrapper_wrapper_component__["a" /* WrapperComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__["a" /* ItemModalComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__["a" /* ModalItemComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__["a" /* ModalItemComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__["a" /* HomeComponent */]
             ],
             imports: [__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */]],
             providers: [__WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__["a" /* FilterService */]],
@@ -268,6 +273,67 @@ var HeaderComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  home works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomeComponent = (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-home',
+            template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/home/home.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
@@ -511,7 +577,7 @@ var FilterButtonsComponent = (function () {
             this.filterService.changePrice.emit(this.arrowSwitch);
         }
         var type = this.route.snapshot.params["type"];
-        this.router.navigate(["/" + type + "/" + str]);
+        this.router.navigate(["/items/" + type + "/" + str]);
     };
     FilterButtonsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -582,7 +648,7 @@ var LeftMenuComponent = (function () {
     };
     LeftMenuComponent.prototype.go = function (str) {
         var sort = this.route.snapshot.params['sort'];
-        this.router.navigate(['/' + str + '/' + sort]);
+        this.router.navigate(['/items/' + str + '/' + sort]);
         this.type = str;
     };
     LeftMenuComponent = __decorate([
