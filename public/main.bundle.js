@@ -25,7 +25,6 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__ = __webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35,20 +34,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var routes = [
     {
-        path: "home",
-        component: __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__["a" /* HomeComponent */]
-    },
-    {
-        path: "items/:type/:sort",
+        path: "",
         component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
     },
     {
-        path: "",
-        redirectTo: "items/everything/price",
-        pathMatch: "full"
+        path: ":type/:sort",
+        component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
     }
 ];
 var AppRoutingModule = (function () {
@@ -143,14 +136,12 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_wrapper_filter_buttons_filter_buttons_component__ = __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__ = __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -182,8 +173,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_9__components_wrapper_left_menu_left_menu_component__["a" /* LeftMenuComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_wrapper_wrapper_component__["a" /* WrapperComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__["a" /* ItemModalComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__["a" /* ModalItemComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_home_home_component__["a" /* HomeComponent */]
+                __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__["a" /* ModalItemComponent */]
             ],
             imports: [__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */]],
             providers: [__WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__["a" /* FilterService */]],
@@ -200,7 +190,7 @@ var AppModule = (function () {
 /***/ "../../../../../src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n  <div class=\"inner_wrapper\">\r\n    <nav class=\"navbar navbar-default\" role=\"navigation\">\r\n      <div class=\"container\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-brand-centered\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n          <div class=\"navbar-brand navbar-brand-centered\">\r\n            <a routerLink=\"/home\">Vanlife.cool</a>\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"navbar-brand-centered\">\r\n          <ul class=\"nav navbar-nav navbar-left\">\r\n            <li class=\"submenu_link\" (click)=\"doSomething($event); false\">\r\n              <a href=\"#\">categories</a>\r\n              <svg class=\"arrow\" width=\"9px\" height=\"8px\">\r\n                <path fill-rule=\"evenodd\" fill=\"rgba(151, 151, 151, 0.24)\" d=\"M4.489,8.006 L-0.008,0.012 L8.987,0.012 L4.489,8.006 Z\" />\r\n              </svg>\r\n              <ul class=\"submenu\">\r\n                <li>\r\n                  <a (click)=\"go('everything')\">Everything</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('vanlife')\">Vanlife</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('clothing')\">Clothing</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('outdoor')\">Outdoor</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('camping')\">Camping</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('living')\">Living</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('parts')\">Parts</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('photography')\">Photography</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">join us</a>\r\n            </li>\r\n          </ul>\r\n          <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <!-- /.navbar-collapse -->\r\n      </div>\r\n      <!-- /.container-fluid -->\r\n    </nav>\r\n\r\n  </div>\r\n</header>\r\n"
+module.exports = "<header>\r\n  <div class=\"inner_wrapper\">\r\n    <nav class=\"navbar navbar-default\" role=\"navigation\">\r\n      <div class=\"container\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-brand-centered\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n          <div class=\"navbar-brand navbar-brand-centered\">\r\n            <a href=\"home\">Vanlife.cool</a>\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"navbar-brand-centered\">\r\n          <ul class=\"nav navbar-nav navbar-left\">\r\n            <li class=\"submenu_link\" (click)=\"doSomething($event); false\">\r\n              <a href=\"#\">categories</a>\r\n              <svg class=\"arrow\" width=\"9px\" height=\"8px\">\r\n                <path fill-rule=\"evenodd\" fill=\"rgba(151, 151, 151, 0.24)\" d=\"M4.489,8.006 L-0.008,0.012 L8.987,0.012 L4.489,8.006 Z\" />\r\n              </svg>\r\n              <ul class=\"submenu\">\r\n                <li>\r\n                  <a (click)=\"go('everything')\">Everything</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('vanlife')\">Vanlife</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('clothing')\">Clothing</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('outdoor')\">Outdoor</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('camping')\">Camping</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('living')\">Living</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('parts')\">Parts</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('photography')\">Photography</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">join us</a>\r\n            </li>\r\n          </ul>\r\n          <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <!-- /.navbar-collapse -->\r\n      </div>\r\n      <!-- /.container-fluid -->\r\n    </nav>\r\n\r\n  </div>\r\n</header>\r\n"
 
 /***/ }),
 
@@ -273,67 +263,6 @@ var HeaderComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
     ], HeaderComponent);
     return HeaderComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/home/home.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  home works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/home/home.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/home/home.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var HomeComponent = (function () {
-    function HomeComponent() {
-    }
-    HomeComponent.prototype.ngOnInit = function () {
-    };
-    HomeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-home',
-            template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/home/home.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], HomeComponent);
-    return HomeComponent;
 }());
 
 
@@ -568,6 +497,9 @@ var FilterButtonsComponent = (function () {
         this.type = "";
         this.arrowSwitch = true;
         this.type = this.route.snapshot.params["sort"];
+        if (!this.type) {
+            this.type = 'price';
+        }
     }
     FilterButtonsComponent.prototype.ngOnInit = function () { };
     FilterButtonsComponent.prototype.go = function (str) {
@@ -577,7 +509,10 @@ var FilterButtonsComponent = (function () {
             this.filterService.changePrice.emit(this.arrowSwitch);
         }
         var type = this.route.snapshot.params["type"];
-        this.router.navigate(["/items/" + type + "/" + str]);
+        if (!type) {
+            type = 'everything';
+        }
+        this.router.navigate(["/" + type + "/" + str]);
     };
     FilterButtonsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -645,10 +580,16 @@ var LeftMenuComponent = (function () {
     }
     LeftMenuComponent.prototype.ngOnInit = function () {
         this.type = this.route.snapshot.params['type'];
+        if (!this.type) {
+            this.type = 'everything';
+        }
     };
     LeftMenuComponent.prototype.go = function (str) {
         var sort = this.route.snapshot.params['sort'];
-        this.router.navigate(['/items/' + str + '/' + sort]);
+        if (!sort) {
+            sort = 'price';
+        }
+        this.router.navigate(['/' + str + '/' + sort]);
         this.type = str;
     };
     LeftMenuComponent = __decorate([
@@ -1012,10 +953,10 @@ var ItemsComponent = (function () {
         var _this = this;
         this.filterData = Object.assign([], this.arr);
         this.route.params.subscribe(function (param) {
-            if (param['sort'] === 'price') {
+            if (param['sort'] === 'price' || !param['sort']) {
                 _this.priceSort(true, _this.arr);
             }
-            if (param['type'] === 'everything') {
+            if (param['type'] === 'everything' || !param['type']) {
                 _this.filterData = Object.assign([], _this.arr);
                 return;
             }
