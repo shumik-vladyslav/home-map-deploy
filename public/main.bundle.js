@@ -219,6 +219,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -230,10 +231,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HeaderComponent = (function () {
-    function HeaderComponent(route, router) {
+    function HeaderComponent(route, router, filterService) {
         this.route = route;
         this.router = router;
+        this.filterService = filterService;
+        this.type = "";
+        this.arrowSwitch = true;
     }
     HeaderComponent.prototype.ngOnInit = function () {
         var link = document.querySelector(".submenu_link");
@@ -244,10 +249,22 @@ var HeaderComponent = (function () {
                 submenu.classList.toggle("active");
             });
         }
+        this.type = this.route.snapshot.params["sort"];
+        if (!this.type) {
+            this.type = 'price';
+        }
     };
     HeaderComponent.prototype.go = function (str) {
-        var sort = this.route.snapshot.params["sort"];
-        this.router.navigate(["/" + str + "/" + sort]);
+        this.type = str;
+        if (str === 'price') {
+            this.arrowSwitch = !this.arrowSwitch;
+            this.filterService.changePrice.emit(this.arrowSwitch);
+        }
+        var type = this.route.snapshot.params["type"];
+        if (!type) {
+            type = 'everything';
+        }
+        this.router.navigate(["/" + type + "/" + str]);
     };
     HeaderComponent.prototype.doSomething = function (e) {
         e.preventDefault();
@@ -260,7 +277,7 @@ var HeaderComponent = (function () {
             template: __webpack_require__("../../../../../src/app/components/header/header.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/header/header.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
     ], HeaderComponent);
     return HeaderComponent;
 }());
