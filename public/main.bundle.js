@@ -1,6 +1,6 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,61 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/app-routing.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__ = __webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var routes = [
-    {
-        path: "",
-        component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
-    },
-    {
-        path: ":type/:sort",
-        component: __WEBPACK_IMPORTED_MODULE_2__components_wrapper_wrapper_component__["a" /* WrapperComponent */]
-    }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
-    }
-    AppRoutingModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(routes)],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
-        })
-    ], AppRoutingModule);
-    return AppRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<app-header></app-header>\r\n\r\n\r\n<router-outlet>\r\n</router-outlet>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.scss":
+/***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -85,12 +35,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-header></app-header>\n\n<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>\n\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!-- <app-proposals></app-proposals> -->\n\n<app-footer></app-footer>\n"
+
+/***/ }),
+
 /***/ "../../../../../src/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -102,17 +59,17 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'app';
     }
-    AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-root',
-            template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.scss")]
-        })
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-root',
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+    })
+], AppComponent);
 
-
+//# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
@@ -121,27 +78,37 @@ var AppComponent = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_wrapper_list_wrap_list_wrap_component__ = __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_wrapper_list_wrap_items_items_component__ = __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/items.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_wrapper_list_wrap_items_item_item_component__ = __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_wrapper_add_your_product_add_your_product_component__ = __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_wrapper_left_menu_left_menu_component__ = __webpack_require__("../../../../../src/app/components/wrapper/left-menu/left-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_wrapper_wrapper_component__ = __webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__ = __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_wrapper_filter_buttons_filter_buttons_component__ = __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__ = __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__wizard_wizard_component__ = __webpack_require__("../../../../../src/app/wizard/wizard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wizard_info_info_component__ = __webpack_require__("../../../../../src/app/wizard/info/info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_header_header_component__ = __webpack_require__("../../../../../src/app/shared/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__wizard_calculator_side_panel_calculator_side_panel_component__ = __webpack_require__("../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__wizard_genderselect_genderselect_component__ = __webpack_require__("../../../../../src/app/wizard/genderselect/genderselect.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__wizard_birthdate_birthdate_component__ = __webpack_require__("../../../../../src/app/wizard/birthdate/birthdate.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__wizard_smoking_smoking_component__ = __webpack_require__("../../../../../src/app/wizard/smoking/smoking.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__wizard_calculatorsummary_calculatorsummary_component__ = __webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__wizard_profession_profession_component__ = __webpack_require__("../../../../../src/app/wizard/profession/profession.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__proposals_proposals_component__ = __webpack_require__("../../../../../src/app/proposals/proposals.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__shared_autocomplit_autocomplit_component__ = __webpack_require__("../../../../../src/app/shared/autocomplit/autocomplit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__wizard_calculatorsummary_calculatorsummary_modal_calculatorsummary_modal_component__ = __webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__wizard_proposals_modal_calcut_modal_calcut_component__ = __webpack_require__("../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__wizard_proposals_modal_chose_modal_chose_component__ = __webpack_require__("../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
 
 
 
@@ -160,887 +127,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__components_wrapper_list_wrap_list_wrap_component__["a" /* ListWrapComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__components_wrapper_list_wrap_items_items_component__["a" /* ItemsComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_wrapper_list_wrap_items_item_item_component__["a" /* ItemComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_wrapper_filter_buttons_filter_buttons_component__["a" /* FilterButtonsComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_wrapper_add_your_product_add_your_product_component__["a" /* AddYourProductComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_wrapper_left_menu_left_menu_component__["a" /* LeftMenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_wrapper_wrapper_component__["a" /* WrapperComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_wrapper_list_wrap_items_item_item_modal_item_modal_component__["a" /* ItemModalComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_wrapper_add_your_product_modal_item_modal_item_component__["a" /* ModalItemComponent */]
-            ],
-            imports: [__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */]],
-            providers: [__WEBPACK_IMPORTED_MODULE_13__components_shared_filter_service__["a" /* FilterService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__wizard_wizard_component__["a" /* WizardComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__wizard_info_info_component__["a" /* InfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__shared_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__shared_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__wizard_calculator_side_panel_calculator_side_panel_component__["a" /* CalculatorSidePanelComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__wizard_genderselect_genderselect_component__["a" /* GenderselectComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__wizard_birthdate_birthdate_component__["a" /* BirthdateComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__wizard_smoking_smoking_component__["a" /* SmokingComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__wizard_calculatorsummary_calculatorsummary_component__["a" /* CalculatorsummaryComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__wizard_profession_profession_component__["a" /* ProfessionComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__proposals_proposals_component__["a" /* ProposalsComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__shared_autocomplit_autocomplit_component__["a" /* AutocomplitComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__wizard_calculatorsummary_calculatorsummary_modal_calculatorsummary_modal_component__["a" /* CalculatorsummaryModalComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__wizard_proposals_modal_calcut_modal_calcut_component__["a" /* ModalCalcutComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__wizard_proposals_modal_chose_modal_chose_component__["a" /* ModalChoseComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_19__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+        ],
+        providers: [],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
+    })
+], AppModule);
 
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/header/header.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<header>\r\n  <div class=\"inner_wrapper\">\r\n    <nav class=\"navbar navbar-default\" role=\"navigation\">\r\n      <div class=\"container\">\r\n        <!-- Brand and toggle get grouped for better mobile display -->\r\n        <div class=\"navbar-header\">\r\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-brand-centered\">\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n          <div class=\"navbar-brand navbar-brand-centered\">\r\n            <a routerLink=\"/\">Vanlife.cool</a>\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Collect the nav links, forms, and other content for toggling -->\r\n        <div class=\"collapse navbar-collapse\" id=\"navbar-brand-centered\">\r\n          <ul class=\"nav navbar-nav navbar-left\">\r\n            <li class=\"submenu_link\" (click)=\"doSomething($event); false\">\r\n              <a href=\"#\">categories</a>\r\n              <svg class=\"arrow\" width=\"9px\" height=\"8px\">\r\n                <path fill-rule=\"evenodd\" fill=\"rgba(151, 151, 151, 0.24)\" d=\"M4.489,8.006 L-0.008,0.012 L8.987,0.012 L4.489,8.006 Z\" />\r\n              </svg>\r\n              <ul class=\"submenu\">\r\n                <li>\r\n                  <a (click)=\"go('everything')\">Everything</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('vanlife')\">Vanlife</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('clothing')\">Clothing</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('outdoor')\">Outdoor</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('camping')\">Camping</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('living')\">Living</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('parts')\">Parts</a>\r\n                </li>\r\n                <li>\r\n                  <a (click)=\"go('photography')\">Photography</a>\r\n                </li>\r\n              </ul>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">join us</a>\r\n            </li>\r\n          </ul>\r\n          <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">contact</a>\r\n            </li>\r\n            <li>\r\n              <a href=\"#\">blog</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <!-- /.navbar-collapse -->\r\n      </div>\r\n      <!-- /.container-fluid -->\r\n    </nav>\r\n\r\n  </div>\r\n</header>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/header/header.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "header {\n  margin-bottom: 30px;\n  border-bottom: 4px solid rgba(151, 151, 151, 0.24); }\n  header .container {\n    width: 100%;\n    padding: 0; }\n    header .container .navbar-collapse {\n      padding-left: 0;\n      padding-right: 0; }\n    header .container .navbar-header {\n      margin: 0; }\n      header .container .navbar-header button {\n        border-color: transparent;\n        position: absolute;\n        right: 0; }\n    header .container .navbar-brand-centered a {\n      text-align: center;\n      float: none;\n      top: 0;\n      font-size: 22px;\n      color: #000 !important; }\n  header nav {\n    position: relative;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    font: 300 22px \"NunitoSans\";\n    text-transform: uppercase;\n    color: #000000;\n    margin-bottom: 0; }\n    header nav .navbar-nav li a {\n      cursor: pointer;\n      font-size: 19px;\n      color: #000 !important; }\n    header nav .navbar-nav li svg {\n      display: none; }\n    header nav .navbar-left .submenu_link a {\n      padding-left: 0; }\n    header nav .navbar-left .submenu_link .submenu {\n      display: none;\n      list-style: none; }\n      header nav .navbar-left .submenu_link .submenu li:first-child a {\n        cursor: pointer;\n        padding-left: 0; }\n\n.navbar-default {\n  background: none;\n  border: none; }\n\n@media (max-width: 1020px) {\n  header .container {\n    width: calc(100% - 20px); } }\n\n@media (max-width: 920px) and (min-width: 768px) {\n  header nav .navbar-nav li a {\n    font-size: 16px; } }\n\n@media (min-width: 768px) {\n  .navbar-brand-centered {\n    position: absolute;\n    left: 50%;\n    display: block;\n    width: 160px;\n    text-align: center; }\n  .navbar > .container .navbar-brand-centered,\n  .navbar > .container-fluid .navbar-brand-centered {\n    margin-left: -80px; } }\n\n@media (max-width: 768px) {\n  header .inner_wrapper .navbar .container .navbar-header .navbar-brand {\n    float: none;\n    text-align: center; }\n  header .inner_wrapper .navbar .container .navbar-collapse {\n    text-align: center; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link a {\n      display: inline-block;\n      vertical-align: middle; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu_link svg {\n      display: inline-block; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left li:first-child a {\n      padding-left: 5px;\n      padding-right: 5px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu {\n      max-height: 0;\n      overflow-y: hidden; }\n      header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .submenu a {\n        font-size: 14px; }\n    header .inner_wrapper .navbar .container .navbar-collapse .navbar-left .active {\n      display: block;\n      max-height: 300px; }\n  .navbar-collapse.in {\n    overflow-y: unset; } }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/header/header.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var HeaderComponent = (function () {
-    function HeaderComponent(route, router, filterService) {
-        this.route = route;
-        this.router = router;
-        this.filterService = filterService;
-        this.type = "";
-        this.arrowSwitch = true;
-    }
-    HeaderComponent.prototype.ngOnInit = function () {
-        var link = document.querySelector(".submenu_link");
-        var submenu = document.querySelector(".submenu");
-        if (window.matchMedia("(max-width: 768px)").matches) {
-            link.addEventListener("click", function () {
-                // Toggle class "is-active"
-                submenu.classList.toggle("active");
-            });
-        }
-        this.type = this.route.snapshot.params["sort"];
-        if (!this.type) {
-            this.type = 'price';
-        }
-    };
-    HeaderComponent.prototype.go = function (str) {
-        this.type = str;
-        if (str === 'price') {
-            this.arrowSwitch = !this.arrowSwitch;
-            this.filterService.changePrice.emit(this.arrowSwitch);
-        }
-        var type = this.route.snapshot.params["type"];
-        if (!type) {
-            type = 'everything';
-        }
-        this.router.navigate(["/" + type + "/" + str]);
-    };
-    HeaderComponent.prototype.doSomething = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    };
-    HeaderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-header",
-            template: __webpack_require__("../../../../../src/app/components/header/header.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/header/header.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
-    ], HeaderComponent);
-    return HeaderComponent;
-}());
-
-
+//# sourceMappingURL=app.module.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/shared/filter.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var FilterService = (function () {
-    function FilterService() {
-        this.changePrice = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
-    }
-    FilterService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
-    ], FilterService);
-    return FilterService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"add_product\" (click)=\"showEvent()\">\r\n  <div class=\" contribute \">\r\n    <p>Contribute</p>\r\n\r\n    <svg width=\"32px \" height=\"43px \" viewBox=\"0 0 32 43 \">\r\n      <g id=\"Home-Screen \" stroke=\"none \" stroke-width=\"1 \" fill=\"none \" fill-rule=\"evenodd \">\r\n        <g id=\"Desktop \" transform=\"translate(-881.000000, -93.000000) \" stroke=\"#D0021B \">\r\n          <path d=\"M881,96.430576 C895.493975,91.359525 905.143413,94.2234938 909.948311,105.022482 C914.75321,115.821471\r\n  911.88641,125.877215 901.347911,135.189715 \" id=\"Path-2 \"></path>\r\n        </g>\r\n      </g>\r\n    </svg>\r\n  </div>\r\n  <p>add your product</p>\r\n  <div class=\"drag_n_drop \">\r\n    <span>You could see your\r\n      <br>product right here !</span>\r\n  </div>\r\n  <div class=\"link_block \">\r\n    <a href=\" \">+</a>\r\n    <a href=\" \">add</a>\r\n  </div>\r\n</div>\r\n<app-modal-item [show]=\"show\" (close)=\"closeEvent()\"></app-modal-item>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".add_product {\n  width: 100%;\n  position: relative;\n  text-align: center; }\n  .add_product .contribute {\n    position: absolute;\n    top: -50px;\n    left: 13px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    text-align: right;\n    text-transform: none; }\n    .add_product .contribute p {\n      opacity: 1;\n      -webkit-transform: rotate(-20deg);\n              transform: rotate(-20deg);\n      font: 200 12px \"NunitoSans\";\n      color: #ca464a; }\n  .add_product > p {\n    margin-top: 11px;\n    height: 32px;\n    margin-bottom: 12px;\n    margin-bottom: 11px;\n    text-transform: uppercase;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    opacity: 0.27; }\n  .add_product .drag_n_drop {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    width: 100%;\n    max-width: 180px;\n    height: 180px;\n    background-color: #d8d8d8;\n    border: 1px solid #979797;\n    border-radius: 8px;\n    opacity: 0.27;\n    margin: 0 auto 12px; }\n    .add_product .drag_n_drop span {\n      -webkit-transform: rotate(-45deg);\n              transform: rotate(-45deg);\n      font: 400 10px \"NunitoSans\";\n      color: #000; }\n  .add_product .link_block {\n    opacity: 0.27;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    margin-left: 6px; }\n    .add_product .link_block a {\n      text-align: center;\n      color: #fff;\n      height: 21px; }\n      .add_product .link_block a:first-child {\n        width: 18px;\n        background-color: #488abe; }\n      .add_product .link_block a:last-child {\n        text-transform: uppercase;\n        font-size: 10px;\n        line-height: 21px;\n        width: 30px;\n        background-color: #5792c0; }\n\n@media (min-width: 1440px) {\n  .add_product .contribute {\n    left: 63px; } }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddYourProductComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AddYourProductComponent = (function () {
-    function AddYourProductComponent() {
-    }
-    AddYourProductComponent.prototype.ngOnInit = function () { };
-    AddYourProductComponent.prototype.showEvent = function () {
-        this.show = false;
-        this.show = true;
-    };
-    AddYourProductComponent.prototype.closeEvent = function () {
-        this.show = false;
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], AddYourProductComponent.prototype, "item", void 0);
-    AddYourProductComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-add-your-product",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/add-your-product/add-your-product.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], AddYourProductComponent);
-    return AddYourProductComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"modal_wrapper_outer\" *ngIf=\"show\" (click)=\"onClick($event)\">\r\n  <div class=\"modal_wrapper_inner\" (click)=\"$event.stopPropagation();\">\r\n    <form class=\"form-horizontal\">\r\n      <fieldset>\r\n\r\n        <!-- Form Name -->\r\n        <legend>Missing Your Favourite Product here?</legend>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"yourName\">Your Name</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"yourName\" name=\"yourName\" type=\"text\" placeholder=\"Your Name\" class=\"form-control input-md\" required=\"\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"email\">Email</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"email\" name=\"email\" type=\"text\" placeholder=\"Your Email\" class=\"form-control input-md\" required=\"\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"textinput\">Product Name</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"textinput\" name=\"textinput\" type=\"text\" placeholder=\"Please Enter Product Name\" class=\"form-control input-md\"\r\n              required=\"\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"productURL\">Product Link</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"productURL\" name=\"productURL\" type=\"text\" placeholder=\"Enter Product Link\" class=\"form-control input-md\" required=\"\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Select Basic -->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"selectbasic\">Product Category</label>\r\n          <div class=\"col-md-5\">\r\n            <select id=\"selectbasic\" name=\"selectbasic\" class=\"form-control\">\r\n              <option value=\"1\">Option one</option>\r\n              <option value=\"2\">Option two</option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"productPrice\">Price</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"productPrice\" name=\"productPrice\" type=\"text\" placeholder=\"Please Enter Product Price\" class=\"form-control input-md\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Text input-->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"shortDescription\">Short Description</label>\r\n          <div class=\"col-md-5\">\r\n            <input id=\"shortDescription\" name=\"shortDescription\" type=\"text\" placeholder=\"Enter Short Description\" class=\"form-control input-md\">\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <!-- Button -->\r\n        <div class=\"form-group\">\r\n          <label class=\"col-md-4 control-label\" for=\"singlebutton\"></label>\r\n          <div class=\"col-md-4\">\r\n            <button id=\"singlebutton\" name=\"singlebutton\" class=\"btn btn-primary\" (click)=\"onClick($event)\">Submit</button>\r\n          </div>\r\n        </div>\r\n\r\n      </fieldset>\r\n    </form>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".modal_wrapper_outer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  background: rgba(255, 255, 255, 0.78);\n  font-family: \"NunitoSans\"; }\n  .modal_wrapper_outer .modal_wrapper_inner {\n    background-color: #fff;\n    width: 60%;\n    border: 1px solid #979797;\n    border-radius: 8px; }\n    .modal_wrapper_outer .modal_wrapper_inner form {\n      text-align: center; }\n      .modal_wrapper_outer .modal_wrapper_inner form fieldset legend {\n        padding: 15px 0; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalItemComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ModalItemComponent = (function () {
-    function ModalItemComponent(_eref) {
-        this._eref = _eref;
-        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
-    }
-    ModalItemComponent.prototype.ngOnInit = function () { };
-    ModalItemComponent.prototype.ngOnChanges = function () {
-        console.log(this.show);
-    };
-    ModalItemComponent.prototype.onClick = function (e) {
-        e.preventDefault();
-        this.close.emit("");
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], ModalItemComponent.prototype, "show", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),
-        __metadata("design:type", Object)
-    ], ModalItemComponent.prototype, "close", void 0);
-    ModalItemComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-modal-item",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/add-your-product/modal-item/modal-item.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]])
-    ], ModalItemComponent);
-    return ModalItemComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<section class=\"sort\">\r\n  <div class=\"sort_link\">\r\n    <a [ngClass]=\"{'selected': type === 'essentials'}\" (click)=\"go('essentials')\">essentials</a>\r\n    <a [ngClass]=\"{'selected': type === 'our pick'}\" (click)=\"go('our pick')\">our pick</a>\r\n    <a [ngClass]=\"{'selected': type === 'latest'}\" (click)=\"go('latest')\">latest</a>\r\n    <a [ngClass]=\"{'selected': type === 'price'}\" (click)=\"go('price')\">price\r\n      <span *ngIf=\"arrowSwitch\">&#8593;</span>\r\n      <span *ngIf=\"!arrowSwitch\">&darr;</span>\r\n    </a>\r\n  </div>\r\n</section>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".sort {\n  margin-bottom: 13px; }\n  .sort .sort_link {\n    opacity: 0.51;\n    width: 350px;\n    height: 20px;\n    margin: 0 auto;\n    text-align: center;\n    box-sizing: border-box;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between; }\n    .sort .sort_link a {\n      background: rgba(216, 216, 216, 0.17);\n      border: 1px solid #979797;\n      border-radius: 8px;\n      font: 300 14px/20px \"NunitoSans\";\n      color: #6b6060;\n      text-transform: uppercase;\n      cursor: pointer;\n      padding: 0 10px; }\n\n@media (max-width: 480px) {\n  .sort {\n    display: none; } }\n\n.selected {\n  background: #cccccc !important; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterButtonsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var FilterButtonsComponent = (function () {
-    function FilterButtonsComponent(route, router, filterService) {
-        this.route = route;
-        this.router = router;
-        this.filterService = filterService;
-        this.type = "";
-        this.arrowSwitch = true;
-        this.type = this.route.snapshot.params["sort"];
-        if (!this.type) {
-            this.type = 'price';
-        }
-    }
-    FilterButtonsComponent.prototype.ngOnInit = function () { };
-    FilterButtonsComponent.prototype.go = function (str) {
-        this.type = str;
-        if (str === 'price') {
-            this.arrowSwitch = !this.arrowSwitch;
-            this.filterService.changePrice.emit(this.arrowSwitch);
-        }
-        var type = this.route.snapshot.params["type"];
-        if (!type) {
-            type = 'everything';
-        }
-        this.router.navigate(["/" + type + "/" + str]);
-    };
-    FilterButtonsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-filter-buttons",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/filter-buttons/filter-buttons.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
-    ], FilterButtonsComponent);
-    return FilterButtonsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/left-menu/left-menu.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"left_menu\">\r\n  <a [ngClass]=\"{'selected': type === 'everything'}\" (click)=\"go('everything')\">Everything</a>\r\n  <a [ngClass]=\"{'selected': type === 'vanlife'}\" (click)=\"go('vanlife')\">Vanlife</a>\r\n  <a [ngClass]=\"{'selected': type === 'clothing'}\" (click)=\"go('clothing')\">Clothing</a>\r\n  <a [ngClass]=\"{'selected': type === 'outdoor'}\" (click)=\"go('outdoor')\">Outdoor</a>\r\n  <a [ngClass]=\"{'selected': type === 'camping'}\" (click)=\"go('camping')\">Camping</a>\r\n  <a [ngClass]=\"{'selected': type === 'living'}\" (click)=\"go('living')\">Living</a>\r\n  <a [ngClass]=\"{'selected': type === 'parts'}\" (click)=\"go('parts')\">Parts</a>\r\n  <a [ngClass]=\"{'selected': type === 'photography'}\" (click)=\"go('photography')\">Photography</a>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/left-menu/left-menu.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".left_menu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n  .left_menu a {\n    font: 300 22px \"NunitoSans\";\n    color: #6b6060;\n    opacity: 0.34;\n    margin-bottom: 16px;\n    cursor: pointer; }\n\n.left_menu .selected {\n  opacity: 1; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/left-menu/left-menu.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftMenuComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LeftMenuComponent = (function () {
-    function LeftMenuComponent(route, router) {
-        this.route = route;
-        this.router = router;
-        this.type = '';
-    }
-    LeftMenuComponent.prototype.ngOnInit = function () {
-        this.type = this.route.snapshot.params['type'];
-        if (!this.type) {
-            this.type = 'everything';
-        }
-    };
-    LeftMenuComponent.prototype.go = function (str) {
-        var sort = this.route.snapshot.params['sort'];
-        if (!sort) {
-            sort = 'price';
-        }
-        this.router.navigate(['/' + str + '/' + sort]);
-        this.type = str;
-    };
-    LeftMenuComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-left-menu',
-            template: __webpack_require__("../../../../../src/app/components/wrapper/left-menu/left-menu.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/left-menu/left-menu.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
-    ], LeftMenuComponent);
-    return LeftMenuComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"main-wrap-massege\" *ngIf=\"show\" (click)=\"onClick()\">\r\n  <div class=\"massege-wrapper\" (click)=\"$event.stopPropagation();\">\r\n    <div class=\"content\">\r\n      <i class=\"fa fa-times-circle\" *ngIf=\"show\" (click)=\"onClick()\" aria-hidden=\"true\"></i>\r\n\r\n      <div class=\"left-content\">\r\n\r\n        <svg width=\"13px\" height=\"21px\" viewBox=\"0 0 13 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n          <g id=\"Home-Screen\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\r\n            <g id=\"Desktop-Modal-Overlay\" transform=\"translate(-208.000000, -471.000000)\" stroke=\"#979797\" fill=\"#D8D8D8\">\r\n              <g id=\"Picture\" transform=\"translate(208.000000, 367.000000)\">\r\n                <polygon id=\"Triangle\" transform=\"translate(6.000000, 114.500000) rotate(-90.000000) translate(-6.000000, -114.500000) \"\r\n                  points=\"6 108.5 15.5 120.5 -3.5 120.5\"></polygon>\r\n              </g>\r\n            </g>\r\n          </g>\r\n        </svg>\r\n        <div class=\"img\">\r\n          <img src={{item.imagePath}} alt=\"\">\r\n        </div>\r\n        <svg width=\"13px\" height=\"21px\" viewBox=\"0 0 13 21\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n          <g id=\"Home-Screen\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\r\n            <g id=\"Desktop-Modal-Overlay\" transform=\"translate(-208.000000, -471.000000)\" stroke=\"#979797\" fill=\"#D8D8D8\">\r\n              <g id=\"Picture\" transform=\"translate(208.000000, 367.000000)\">\r\n                <polygon id=\"Triangle\" transform=\"translate(6.000000, 114.500000) rotate(-90.000000) translate(-6.000000, -114.500000) \"\r\n                  points=\"6 108.5 15.5 120.5 -3.5 120.5\"></polygon>\r\n              </g>\r\n            </g>\r\n          </g>\r\n        </svg>\r\n      </div>\r\n      <div class=\"right-content\">\r\n        <div class=\"item_info\">\r\n          <p>{{item.name}}</p>\r\n          <p> WHEN IT COMES TO CHOOSING AN ANTIAGING EYE CREAM, THE POSSIBILITIES ARE ENDLESS, THE CHOISES FROM HIGH END DEPARTMENT\r\n            STORE BRANDS, TO AFFORDABLE NAMES BRANDS AND</p>\r\n          <div class=\"ali\">\r\n            <div class=\"money\">\r\n              <span class=\"old\">${{item.oldPrice}}</span>\r\n              <span class=\"new\">${{item.discountedPrice}}</span>\r\n            </div>\r\n            <button class=\"but-ali\">BUY ON ALIXPRESS</button>\r\n          </div>\r\n          <div class=\"but-stars\">\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <i class=\"fa fa-star-o\" aria-hidden=\"true\"></i>\r\n            <p>20 Orders</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"item_info_bottom\">\r\n          <p>ADDED BY: LOVEYOURCAMPER</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".main-wrap-massege {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(255, 255, 255, 0.78);\n  z-index: 1; }\n  .main-wrap-massege .massege-wrapper {\n    width: 63.4%;\n    height: 328px;\n    border: 1px solid #979797;\n    border-radius: 8px;\n    margin: 0 auto;\n    background-color: #fff; }\n    .main-wrap-massege .massege-wrapper .content {\n      position: relative;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      height: 100%; }\n      .main-wrap-massege .massege-wrapper .content .fa-times-circle {\n        display: none;\n        position: absolute; }\n      .main-wrap-massege .massege-wrapper .content .left-content {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        width: 37.24%;\n        margin-left: 20px; }\n        .main-wrap-massege .massege-wrapper .content .left-content svg {\n          min-width: 13px; }\n          .main-wrap-massege .massege-wrapper .content .left-content svg:last-of-type {\n            -webkit-transform: rotateY(180deg);\n                    transform: rotateY(180deg); }\n        .main-wrap-massege .massege-wrapper .content .left-content .img {\n          width: 100%;\n          padding-bottom: 85%;\n          position: relative;\n          margin: 0 9px; }\n          .main-wrap-massege .massege-wrapper .content .left-content .img img {\n            height: 100%;\n            position: absolute;\n            top: 0;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            max-width: 100%; }\n      .main-wrap-massege .massege-wrapper .content .right-content {\n        width: calc(100% - 37.24%);\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n        -webkit-box-pack: justify;\n            -ms-flex-pack: justify;\n                justify-content: space-between;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n          display: -webkit-box;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-orient: vertical;\n          -webkit-box-direction: normal;\n              -ms-flex-direction: column;\n                  flex-direction: column;\n          -webkit-box-align: center;\n              -ms-flex-align: center;\n                  align-items: center;\n          margin-top: 46px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info p {\n            font: 400 10px \"NunitoSans\";\n            color: #000;\n            text-transform: uppercase;\n            margin-bottom: 21px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info p:nth-child(2) {\n              width: 64%;\n              text-align: center;\n              font-size: 8px;\n              margin-bottom: 13px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .money {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center;\n            margin-bottom: 25px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .money .old {\n              font: 200 10px \"NunitoSans\";\n              text-decoration: line-through;\n              margin-right: 5px;\n              color: #6b6060;\n              opacity: 0.34; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .money .new {\n              font: 400 14px \"NunitoSans\";\n              color: #000; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-orient: vertical;\n            -webkit-box-direction: normal;\n                -ms-flex-direction: column;\n                    flex-direction: column;\n            -webkit-box-pack: center;\n                -ms-flex-pack: center;\n                    justify-content: center;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali button {\n              border: none;\n              width: 208px;\n              height: 32px;\n              text-align: center;\n              background: #4a90e2;\n              border-radius: 8px;\n              font: 400 15px/32px \"NunitoSans\";\n              color: #000000;\n              margin-bottom: 15px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-align: center;\n                -ms-flex-align: center;\n                    align-items: center; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars i {\n              cursor: pointer;\n              margin-right: 5px; }\n            .main-wrap-massege .massege-wrapper .content .right-content .item_info .but-stars p {\n              margin: 0;\n              font: 200 8px \"NunitoSans\"; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .item_info_bottom p {\n            font-size: 10px; }\n\n@media (min-width: 1440px) {\n  .main-wrap-massege .massege-wrapper {\n    width: 43.4%; }\n    .main-wrap-massege .massege-wrapper .content .left-content {\n      width: 50%; }\n      .main-wrap-massege .massege-wrapper .content .left-content .img {\n        width: 76%; }\n    .main-wrap-massege .massege-wrapper .content .right-content {\n      width: 50%; }\n  .main-wrap-massege .massege-wrapper .content .left-content {\n    overflow: hidden;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    margin-left: 0; }\n    .main-wrap-massege .massege-wrapper .content .left-content .img {\n      max-width: 317px;\n      max-height: 317px;\n      width: 71%;\n      height: 80%;\n      padding-bottom: 71%;\n      position: relative;\n      margin: 0 9px; } }\n\n@media (max-width: 850px) {\n  .main-wrap-massege .massege-wrapper {\n    height: auto; }\n    .main-wrap-massege .massege-wrapper .content {\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      .main-wrap-massege .massege-wrapper .content .left-content {\n        width: 80%;\n        margin: 20px 20px 0; }\n        .main-wrap-massege .massege-wrapper .content .left-content .img {\n          padding-bottom: 89%; }\n      .main-wrap-massege .massege-wrapper .content .right-content {\n        width: auto; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n          margin-top: 20px;\n          margin-bottom: 20px; } }\n\n@media (max-width: 480px) {\n  .main-wrap-massege .massege-wrapper {\n    width: 90%;\n    border: 1px solid #979797;\n    border-radius: 8px; }\n    .main-wrap-massege .massege-wrapper .content .fa-times-circle {\n      display: block;\n      font-size: 40px;\n      height: 36px;\n      right: -11px;\n      top: -17px;\n      background-color: #fff;\n      opacity: 0.7;\n      cursor: pointer; }\n    .main-wrap-massege .massege-wrapper .content .left-content {\n      width: 88%;\n      margin-left: 33px;\n      margin-right: 33px; }\n      .main-wrap-massege .massege-wrapper .content .left-content svg {\n        display: none; }\n      .main-wrap-massege .massege-wrapper .content .left-content .img {\n        padding-bottom: 100%;\n        margin: 0; }\n    .main-wrap-massege .massege-wrapper .content .right-content {\n      margin-top: 5px; }\n      .main-wrap-massege .massege-wrapper .content .right-content .item_info {\n        margin-top: 0; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info p:nth-child(2) {\n          width: auto;\n          margin-left: 33px;\n          margin-right: 33px;\n          margin-bottom: 19px; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info p:first-of-type {\n          text-align: center;\n          margin: 0 33px 12px;\n          font: 400 14px \"NunitoSans\"; }\n        .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali {\n          display: -webkit-box;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-align: center;\n              -ms-flex-align: center;\n                  align-items: center;\n          -webkit-box-orient: horizontal;\n          -webkit-box-direction: normal;\n              -ms-flex-direction: row;\n                  flex-direction: row;\n          margin-bottom: 18px; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali button {\n            font-size: 12px;\n            width: 160px;\n            margin-right: 16px;\n            margin-bottom: 0; }\n          .main-wrap-massege .massege-wrapper .content .right-content .item_info .ali .money {\n            -webkit-box-ordinal-group: 3;\n                -ms-flex-order: 2;\n                    order: 2;\n            margin-bottom: 0; } }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemModalComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ItemModalComponent = (function () {
-    function ItemModalComponent(_eref) {
-        this._eref = _eref;
-        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
-    }
-    ItemModalComponent.prototype.ngOnInit = function () { };
-    ItemModalComponent.prototype.ngOnChanges = function () {
-        console.log(this.show);
-    };
-    ItemModalComponent.prototype.onClick = function () {
-        this.close.emit("");
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], ItemModalComponent.prototype, "show", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], ItemModalComponent.prototype, "item", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),
-        __metadata("design:type", Object)
-    ], ItemModalComponent.prototype, "close", void 0);
-    ItemModalComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-item-modal",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item-modal/item-modal.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */]])
-    ], ItemModalComponent);
-    return ItemModalComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"custom_col col-lg-4 col-md-4 col-xs-6\">\r\n  <div class=\"item\">\r\n    <p (click)=\"showEvent()\">{{item.name}}</p>\r\n    <div class=\"img\">\r\n      <img (click)=\"showEvent()\" src={{item.imagePath}} alt=\" \">\r\n    </div>\r\n    <div class=\"bottom_text \">\r\n      <div class=\"bottom_text_left \">\r\n        <a href=\" \">+</a>\r\n        <a href=\" \">buy</a>\r\n      </div>\r\n      <div class=\"bottom_text_right \">\r\n        <p>${{item.oldPrice}}</p>\r\n        <p>${{item.discountedPrice}}</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n<app-item-modal [show]=\"show\" (close)=\"closeEvent()\" [item]=\"item\"></app-item-modal>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".custom_col {\n  padding-left: 5px;\n  padding-right: 5px;\n  margin-bottom: 10px; }\n\n.item {\n  position: relative;\n  text-align: center;\n  text-transform: uppercase;\n  border: 1px solid rgba(242, 242, 242, 0.47);\n  border-radius: 8px;\n  -webkit-transform: translateZ(0);\n          transform: translateZ(0);\n  box-sizing: border-box; }\n  .item > p {\n    width: 80%;\n    margin: 14px auto;\n    height: 36px;\n    margin-top: 10px;\n    font: 400 10px \"NunitoSans\";\n    color: #000;\n    margin-bottom: 6px; }\n  .item .img {\n    width: 180px;\n    height: 180px;\n    margin-bottom: 12px;\n    margin: 0 auto 12px; }\n    .item .img img {\n      width: 100%;\n      height: 100%; }\n  .item .bottom_text {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .item .bottom_text .bottom_text_left {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      margin-left: 6px;\n      position: absolute;\n      bottom: 6px;\n      left: 0;\n      color: #ffffff;\n      font-weight: 700;\n      text-transform: uppercase;\n      font-size: 0.9em;\n      opacity: 0;\n      background-color: #409ad5;\n      -webkit-transform: rotateX(-90deg);\n      transform: rotateX(-90deg);\n      -webkit-transform-origin: 100% 0;\n      transform-origin: 100% 0; }\n      .item .bottom_text .bottom_text_left a {\n        color: #fff;\n        height: 21px; }\n        .item .bottom_text .bottom_text_left a:first-child {\n          width: 18px;\n          background-color: #2980b9; }\n        .item .bottom_text .bottom_text_left a:last-child {\n          font-size: 10px;\n          line-height: 21px;\n          width: 30px;\n          background-color: #409ad5; }\n    .item .bottom_text .bottom_text_right {\n      margin-right: 6px;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: baseline;\n          -ms-flex-align: baseline;\n              align-items: baseline; }\n      .item .bottom_text .bottom_text_right p {\n        display: inline-block; }\n        .item .bottom_text .bottom_text_right p:first-child {\n          font: 200 11px \"NunitoSans\";\n          color: #6b6060;\n          opacity: 0.34;\n          text-decoration: line-through; }\n        .item .bottom_text .bottom_text_right p:last-child {\n          margin-left: 4px;\n          font: 400 14px \"NunitoSans\";\n          color: #000; }\n  .item:hover .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0deg);\n    transform: rotateX(0deg); }\n\n.item * {\n  transition: all 0.3s ease-out; }\n\n@media (max-width: 768px) {\n  .item .bottom_text .bottom_text_left {\n    opacity: 1;\n    -webkit-transform: rotateX(0);\n            transform: rotateX(0); } }\n\n@media (max-width: 480px) {\n  .item .img {\n    width: calc(100% - 10px);\n    padding-bottom: 94%;\n    position: relative;\n    height: auto;\n    margin: 0 5px 12px; }\n    .item .img img {\n      height: 100%;\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      left: 0;\n      width: 100%; }\n  .item .bottom_text .bottom_text_right p:last-child {\n    margin-left: 2px;\n    font-size: 12px; } }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ItemComponent = (function () {
-    function ItemComponent() {
-    }
-    ItemComponent.prototype.ngOnInit = function () { };
-    ItemComponent.prototype.showEvent = function () {
-        this.show = false;
-        this.show = true;
-    };
-    ItemComponent.prototype.closeEvent = function () {
-        this.show = false;
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], ItemComponent.prototype, "item", void 0);
-    ItemComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-item",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/item/item.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], ItemComponent);
-    return ItemComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/items.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <app-item *ngFor=\"let item of filterData\" [item]=item></app-item>\r\n  </div>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/items.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".container-fluid {\n  padding: 0; }\n  .container-fluid .row {\n    margin: 0; }\n\n.main-wrap-massege {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 147%;\n  background: rgba(255, 255, 255, 0.548); }\n\n.massege-wrapper {\n  position: absolute;\n  top: 11%;\n  left: 22%;\n  background: white;\n  width: 810px;\n  height: 395px;\n  border-radius: 11px;\n  z-index: 1;\n  border: 1px solid #989898; }\n\n.content {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 45px;\n  width: 94%;\n  margin-left: 3%; }\n\n.left-content {\n  position: relative;\n  background: white;\n  width: 44%;\n  height: 302px; }\n\n.right-content {\n  background: white;\n  width: 52%;\n  height: 336px;\n  text-align: center; }\n\nh6 {\n  font-size: 12px;\n  color: #3c3c3c; }\n\n.text-right {\n  font-size: 11px;\n  color: #828282; }\n\n.old {\n  font-size: 13px;\n  position: relative;\n  bottom: 5px;\n  color: #cccccc;\n  text-decoration: line-through; }\n\n.new {\n  color: #262626;\n  font-size: 19px;\n  font-weight: 600; }\n\n.but-ali {\n  width: 70%;\n  margin-left: 15%;\n  height: 39px;\n  border: none;\n  border-radius: 9px;\n  background: #4990df;\n  color: #a4c1e3;\n  font-size: 18px;\n  text-align: initial;\n  padding-left: 34px;\n  outline: none; }\n\n.but-star {\n  padding-left: 42px; }\n\n.but-star > span {\n  color: #e0e0e0;\n  font-size: 12px;\n  margin-left: 15px; }\n\n.but-added-wrap > button {\n  background: white;\n  color: #6e6e6e;\n  position: relative;\n  top: 31px;\n  font-size: 11px;\n  font-weight: bold;\n  border: none; }\n\n.button-left-caret {\n  position: absolute;\n  left: -18px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.caret-left {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-right: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-left-sec {\n  width: 0;\n  height: 0;\n  position: absolute;\n  border-top: 10px solid transparent;\n  border-right: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 3px;\n  top: 3px; }\n\n.button-right-caret {\n  position: absolute;\n  right: -6px;\n  top: 45%;\n  width: 24px;\n  height: 28px;\n  background: no-repeat;\n  border: none;\n  outline: none; }\n\n.right-caret {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-top: 13px solid transparent;\n  border-left: 18px solid silver;\n  border-bottom: 13px solid transparent; }\n\n.caret-right-sec {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-left: 13px solid #d8d8d8;\n  border-bottom: 10px solid transparent;\n  left: 2px;\n  top: 3px; }\n\n.left-content > img {\n  width: 90%;\n  margin-left: 8px; }\n\n.but-star > button {\n  font-size: 20px;\n  border: none;\n  background: none;\n  color: #6e6e6e;\n  margin-right: 5px;\n  outline: none; }\n\n.but-star > button:focus {\n  color: #e0cf33; }\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/items/items.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__ = __webpack_require__("../../../../../src/app/components/shared/filter.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ItemsComponent = (function () {
-    function ItemsComponent(route, router, filterService) {
-        var _this = this;
-        this.route = route;
-        this.router = router;
-        this.filterService = filterService;
-        this.arr = [
-            {
-                name: "Mother Earth Hosts Our Travels",
-                description: "",
-                oldPrice: "10.5",
-                discountedPrice: "50.23",
-                imagePath: "../../../../../assets/img/camping1.jpg",
-                url: "",
-                plattform: "",
-                category: "camping",
-                tag: ""
-                // тут 12 разных обьектов
-            },
-            {
-                name: "Take A Romantic Break In A Boutique Hotel",
-                description: "",
-                oldPrice: "30.8",
-                discountedPrice: "44.59",
-                imagePath: "../../../../../assets/img/camping2.jpg",
-                url: "",
-                plattform: "",
-                category: "camping",
-                tag: ""
-            },
-            {
-                name: "The Luxury Of Traveling With Yacht Charter Companies",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/photo1.jpg",
-                url: "",
-                plattform: "",
-                category: "photo",
-                tag: ""
-            },
-            {
-                name: "It S Hurricane Season But We Are Visiting Hilton Head Island",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/clothing1.jpg",
-                url: "",
-                plattform: "",
-                category: "clothing",
-                tag: ""
-            },
-            {
-                name: "Get Ready Fast For Fall Leaf Viewing Trips",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "60.5",
-                imagePath: "../../../../../assets/img/clothing2.jpg",
-                url: "",
-                plattform: "",
-                category: "clothing",
-                tag: ""
-            },
-            {
-                name: "Tremblant In Canada",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "58.5",
-                imagePath: "../../../../../assets/img/outdoor1.jpg",
-                url: "",
-                plattform: "",
-                category: "outdoor",
-                tag: ""
-            },
-            {
-                name: "Big Savings On Gas While You Travel",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/outdoor2.jpg",
-                url: "",
-                plattform: "",
-                category: "outdoor",
-                tag: ""
-            },
-            {
-                name: "Les Houches The Hidden Gem Of The Chamonix Valley",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/photo1.jpg",
-                url: "",
-                plattform: "",
-                category: "photo",
-                tag: ""
-            },
-            {
-                name: "How To Fly A Private Jet On Your Next Trip",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/photo2.jpg",
-                url: "",
-                plattform: "",
-                category: "photo",
-                tag: ""
-            },
-            {
-                name: "How To Fly A Private Jet On Your Next Trip",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/camping1.jpg",
-                url: "",
-                plattform: "",
-                category: "camping",
-                tag: ""
-            },
-            {
-                name: "How To Fly A Private Jet On Your Next Trip",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/clothing2.jpg",
-                url: "",
-                plattform: "",
-                category: "clothing",
-                tag: ""
-            },
-            {
-                name: "How To Fly A Private Jet On Your Next Trip",
-                description: "",
-                oldPrice: "5.55",
-                discountedPrice: "68.5",
-                imagePath: "../../../../../assets/img/outdoor2.jpg",
-                url: "",
-                plattform: "",
-                category: "outdoor",
-                tag: ""
-            }
-        ];
-        this.filterData = [];
-        this.filterService.changePrice.subscribe(function (data) {
-            _this.priceSort(data);
-        });
-    }
-    ItemsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.filterData = Object.assign([], this.arr);
-        this.route.params.subscribe(function (param) {
-            if (param['sort'] === 'price' || !param['sort']) {
-                _this.priceSort(true, _this.arr);
-            }
-            if (param['type'] === 'everything' || !param['type']) {
-                _this.filterData = Object.assign([], _this.arr);
-                return;
-            }
-            _this.filterData = Object.assign([], _this.arr).filter(function (item) {
-                return item["category"] === param['type'];
-            });
-        });
-    };
-    ItemsComponent.prototype.priceSort = function (b, sortA) {
-        var sortArr;
-        if (sortA) {
-            sortArr = sortA;
-        }
-        else {
-            sortArr = this.filterData;
-        }
-        if (b) {
-            sortArr = sortArr.sort(function (t1, t2) {
-                if (+t1.discountedPrice > +t2.discountedPrice) {
-                    return 1;
-                }
-                if (+t1.discountedPrice < +t2.discountedPrice) {
-                    return -1;
-                }
-                return 0;
-            });
-        }
-        else {
-            sortArr = sortArr.sort(function (t1, t2) {
-                if (+t1.discountedPrice < +t2.discountedPrice) {
-                    return 1;
-                }
-                if (+t1.discountedPrice > +t2.discountedPrice) {
-                    return -1;
-                }
-                return 0;
-            });
-        }
-    };
-    ItemsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "app-items",
-            template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/items.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/items/items.component.scss")]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__shared_filter_service__["a" /* FilterService */]])
-    ], ItemsComponent);
-    return ItemsComponent;
-}());
-
-var Item = (function () {
-    function Item() {
-    }
-    return Item;
-}());
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<app-items></app-items>\r\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.scss":
+/***/ "../../../../../src/app/proposals/proposals.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -1058,12 +181,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.ts":
+/***/ "../../../../../src/app/proposals/proposals.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main id=\"main\" class=\"container-fluid\" tabindex=\"-1\">\n  <!-- section 1 -->\n  <section class=\"row\">\n    <div class=\"results\">\n      <div class=\"resultsHead clearfix noPadding\">\n        <h2>השוואת הצעות לביטוח חיים</h2>\n        <p>\n          יוסי, תודה על מילוי הפרטים!\n        </p>\n        <p>\n          המערכת ניתחה את הנתונים שמילאת עבור   <span class=\"blue\">כיסוי ביטוחי של {{amount}} <span class=\"nis\">₪</span>   <a href=\"#\" role=\"button\" data-toggle=\"modal\" data-target=\"#modal-explanation\" class=\"exclamation\"><span class=\"icon icon-exclamation-mark\"></span></a></span>\n        </p>\n        <p>\n          ומצאה את הצעות ביטוח חיים/אבדן כושר עבודה/הבריאות האופטימליות עבורך.                        <br />\n          <a (click)=\"showCalcut = true\" class=\"btn\" role=\"button\" data-toggle=\"modal\" data-target=\"#results-modal\"><img src=\"images/results/icon-pencil.png\" alt=\"edit\" /> לחצו לעריכת גובה הכיסוי </a>\n\n        </p>\n      </div>\n\n      <!---->\n      <div class=\"resultsWrapper\" *ngFor=\"let item of data;let i = index\" dir=\"ltr\">\n        <div class=\"results_box clearfix\" [ngClass]=\"{'active': i === 0}\">\n          <div class=\"results_content\">\n            <div class=\"imageBox col-md-3 col-xs-12 pull-right\">\n              <div class=\"imageBorder\"><img [src]=\"item.companyLogoUrl\" alt=\"wakeapp logo\" /></div>\n            </div>\n            <div class=\"col-lg-2 col-md-3 col-xs-6 pull-right\">\n              <div class=\"currencyBox col-md-10 col-xs-12\">\n                <span class=\"currency\">{{item.pricesPerAges[0].price}}<span class=\"nis\">₪</span></span>\n                <span class=\"monthly\"><span class=\"hidden-xs\">תשלום</span> חודשי</span>\n              </div>\n            </div>\n            <div class=\"description col-md-4 col-xs-6 pull-right \">\n              <div class=\"text col-xs-12\">\n                בהצעה זו תשלם <span class=\"nis\">₪</span>27,000  יותר מאשר<br />\n                ההצעה של <span>WakeApp</span>  (עבור אותו הכיסוי) <span class=\"icon icon-information\"></span>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"results_toggle col-xs-12\" id=\"div2\">\n            <div class=\"col-md-7 col-xs-12 pull-right\">\n              <h3> לורם איפסום</h3>\n              <p>\n                לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטילורם איפסום לורם איפסום דולור סיט אמט, קונסקטוררטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי. לורם איפסוםלורם איפסום דולור סיט אמט טורר אדיפיסינג לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג *לקוח יקר החבילת לא כוללת אדיפיסינג\n              </p>\n\n              <div class=\"notes\">\n                <h3 class=\"hidden-md hidden-lg\">ההצעה לא כוללת</h3>\n                <p>\n                  *לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קונדימנטום בליקרה\n                </p>\n              </div>\n            </div>\n\n            <div class=\"col-md-5 col-xs-12 pull-right\">\n              <div class=\"hidden-xs hidden-sm\"><h3>כל היתרונות בשבילך</h3></div>\n              <div class=\"hidden-md hidden-lg toggleListButton\" role=\"button\">\n                <h3>\n                  כל היתרונות בשבילך <span class=\"plus_toggleList\"></span><span class=\"minus_toggleList\"></span>\n                </h3>\n              </div>\n              <div class=\"toggleList col-xs-12 pull-right\">\n                <ul class=\"col-md-6 col-xs-12 pull-right check\">\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                </ul>\n                <ul class=\"col-md-6 col-xs-12 pull-right cancel\">\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                  <li>כיסוי מורחב בשינוי מצב משפחתי</li>\n                </ul>\n              </div>\n            </div>\n          </div>\n          <div class=\"resultsControlls hidden-xs hidden-sm\">\n            <a  (click)=\"showChose = true\" class=\"btn getOffer\">\n              <span>קבל/י הצעה</span>\n            </a>\n            <!--<a *ngIf=\"i === 0\" class=\"btn toBuy\" data-target=\"#cal-results-modal\" data-toggle=\"modal\" href=\"#\">-->\n              <!--<span _ngcontent-c2=\"\">לרכישה</span>-->\n            <!--</a>-->\n          </div>\n\n          <div class=\"bottomBTN\">\n            <div class=\"toggleButton pull-right col-lg-2 col-sm-5 col-md-4 col-xs-7\" role=\"button\" data-target=\"#div2\">\n              <div class=\"whyMe\"> למה זה מתאים לי<span class=\"hidden-xs plus\"></span></div>\n              <div class=\"closeToggle\">סגור<span class=\"hidden-xs minus\"></span></div>\n            </div>\n\n            <div class=\"resultsControlls pull-right col-xs-5 hidden-md hidden-lg\">\n              <a  (click)=\"showChose = true\" class=\"btn getOffer\">\n                <span>קבל/י הצעה</span>\n              </a>\n            </div>\n          </div>\n          <div _ngcontent-c2=\"\" class=\"angle\" *ngIf=\"i === 0\"><span _ngcontent-c2=\"\">הכי משתלמת!</span></div>\n        </div>\n\n      </div>\n\n    </div>\n  </section>\n  <!-- End section 1 -->\n</main>\n\n<!-- modal -->\n<div id=\"modal-explanation\" class=\"modal fade general-modal light\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"resultModalHeader\">\n  <div class=\"modal-dialog light\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"סגור\" tabindex=\"-1\" aria-hidden=\"true\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 id=\"resultModalHeader\">הסבר על חישוב הסכום</h4>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"general-content \">\n          <p class=\"description\">\n            הצעת Wakeapp מחושבת ביחס לסכום הכולל<br />\n            של התשלומים של Wakeapp ביחס לממוצע התשלומים של ההצעות האחרות. עבור כל חברה,\n            מבוצע חישוב של סכום ההצעה הכולל ביחס להצעת Wakeapp\n\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- end modal -->\n<app-modal-calcut *ngIf=\"showCalcut\" (closeEvent)=\"showCalcut = false\" (saveEvent)=\"amount = $event;showCalcut = false\" [amount]=\"amount\"></app-modal-calcut>\n\n<app-modal-chose *ngIf=\"showChose\" (closeEvent)=\"showChose = false\"></app-modal-chose>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/proposals/proposals.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListWrapComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProposalsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1074,34 +204,105 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var ListWrapComponent = (function () {
-    function ListWrapComponent() {
+var ProposalsComponent = (function () {
+    function ProposalsComponent() {
+        this.data = [
+            {
+                "companyId": 1,
+                "companyName": "Migdal",
+                "companyLogoUrl": "images/results/logo-migdal.png",
+                "priceForAllLife": 1500000,
+                "pricesPerAges": [
+                    {
+                        "age": 40,
+                        "price": 34.22
+                    },
+                    {
+                        "age": 41,
+                        "price": 56.22
+                    },
+                    {
+                        "age": 42,
+                        "price": 70.22
+                    },
+                    {
+                        "age": 43,
+                        "price": 85.22
+                    }
+                ]
+            },
+            {
+                "companyId": 2,
+                "companyName": "Menora",
+                "companyLogoUrl": "images/results/logo-menora.png",
+                "priceForAllLife": 43543543,
+                "pricesPerAges": [
+                    {
+                        "age": 40,
+                        "price": 34.43
+                    },
+                    {
+                        "age": 41,
+                        "price": 55.45
+                    },
+                    {
+                        "age": 42,
+                        "price": 76.56
+                    },
+                    {
+                        "age": 43,
+                        "price": 87.67
+                    }
+                ]
+            },
+            {
+                "companyId": 3,
+                "companyName": "Klal",
+                "companyLogoUrl": "images/results/logo-klal.png",
+                "priceForAllLife": 12323423,
+                "pricesPerAges": [
+                    {
+                        "age": 40,
+                        "price": 23.22
+                    },
+                    {
+                        "age": 41,
+                        "price": 34.22
+                    },
+                    {
+                        "age": 42,
+                        "price": 54.22
+                    },
+                    {
+                        "age": 43,
+                        "price": 56.22
+                    }
+                ]
+            }
+        ];
     }
-    ListWrapComponent.prototype.ngOnInit = function () {
+    ProposalsComponent.prototype.ngOnInit = function () {
     };
-    ListWrapComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-list-wrap',
-            template: __webpack_require__("../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/list-wrap/list-wrap.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], ListWrapComponent);
-    return ListWrapComponent;
+    return ProposalsComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], ProposalsComponent.prototype, "amount", void 0);
+ProposalsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-proposals',
+        template: __webpack_require__("../../../../../src/app/proposals/proposals.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/proposals/proposals.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProposalsComponent);
 
-
+//# sourceMappingURL=proposals.component.js.map
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/wrapper/wrapper.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<app-filter-buttons></app-filter-buttons>\r\n\r\n<div class=\"inner_wrapper\">\r\n\r\n  <div class=\"left_item\">\r\n    <app-left-menu></app-left-menu>\r\n  </div>\r\n  <div class=\"central_item\">\r\n    <app-list-wrap></app-list-wrap>\r\n  </div>\r\n  <div class=\"right_item\">\r\n    <app-add-your-product></app-add-your-product>\r\n  </div>\r\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/wrapper/wrapper.component.scss":
+/***/ "../../../../../src/app/shared/autocomplit/autocomplit.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -1109,7 +310,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".inner_wrapper {\n  display: -webkit-box;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .inner_wrapper .left_item,\n  .inner_wrapper .right_item {\n    width: 19%; }\n  .inner_wrapper .central_item {\n    width: 62%; }\n  .inner_wrapper .right_item {\n    margin-left: 5px; }\n\n@media (max-width: 768px) {\n  .inner_wrapper .right_item,\n  .inner_wrapper .left_item {\n    display: none; }\n  .inner_wrapper .central_item {\n    width: 100%; } }\n", ""]);
+exports.push([module.i, ".button-wrap{\r\n    font-family: \"RaananSuper\";\r\n    color: #626262;\r\n    position: relative;\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n}\r\n.button-wrap > button{\r\n    height: 100%;\r\n    border-color: #117ef5;\r\n    padding-right: 0.375rem;\r\n    border: 2px solid #117ef5;\r\n    background-color: transparent;\r\n    border-radius: 10px;\r\n    padding: 0.125rem 0.625rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    width: 100%;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    padding-right: 16px;\r\n}\r\n.dropdawn{\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    width: 100% !important;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    list-style: none;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    background: white !important;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0,0,0,0.15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\r\n    background-clip: padding-box;\r\n   \r\n}\r\ndiv > div{\r\n    background: white !important;\r\n}\r\n.dropdawn > input{\r\n    border: 2px solid #707070;\r\n    width: 100% !important;\r\n    font-size: 1.51429em;\r\n}\r\n.dropdawn > ul{\r\n    list-style: none;\r\n    padding: 5px 0;\r\n    text-align: center;\r\n    font-size: 22px;\r\n    background: white;\r\n    height: 150px;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    width: 100%;\r\n    padding-top: 0;\r\n}\r\n.dropdawn > ul > li > a{\r\n    color: #333;\r\n}\r\n.dropdawn > ul > li:hover{\r\n    color: #333;\r\n    text-decoration: none;\r\n    border: 2px solid #707070;\r\n    outline: 0;\r\n    background-color: #F5F5F5;\r\n}\r\n.button-wrap > button > i{\r\n    color: #117ef5;\r\n}\r\n.button-wrap > button > span{\r\n    font-size: 1.64286em;\r\n}\r\n.button-wrap > button:active{\r\n    background-color: #4299f7;\r\n}\r\n.button-wrap > button:focus{\r\n    outline: 2px solid #707070 !important;\r\n}\r\n.button-wrap > button:hover{\r\n    color: #fff;\r\n    background-color: #0965ca;\r\n}\r\n\r\n\r\n.dropdawn > ul::-webkit-scrollbar-thumb{\r\n    height: 10px !important;\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar\r\n  {\r\n    width: 10px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(239, 239, 239);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  @media (max-width: 992px){\r\n    .button-wrap > button{\r\n        border: 1px solid #117ef5;        \r\n    }\r\n  }", ""]);
 
 // exports
 
@@ -1119,12 +320,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/components/wrapper/wrapper.component.ts":
+/***/ "../../../../../src/app/shared/autocomplit/autocomplit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"button-wrap\">\n  <button (click)=\"show = !show\">\n    <i class=\"fa fa-caret-down\" aria-hidden=\"true\"></i>\n    <span>\n      {{label}}\n    </span>\n  </button>\n  <div *ngIf=\"show\" class=\"dropdawn\" style=\"BACKGROUND: WHITE !IMPORTANT;\">\n    <input type=\"text\" [(ngModel)]=\"searchModel\" (ngModelChange)=\"onSearchChange($event)\">\n    <ul>\n      <li *ngFor=\"let item of filteringData\">\n        <a (click)=\"select(item)\">{{item.label}}</a>\n      </li>\n    </ul>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/autocomplit/autocomplit.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WrapperComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AutocomplitComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1135,23 +343,1223 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var WrapperComponent = (function () {
-    function WrapperComponent() {
+var AutocomplitComponent = (function () {
+    function AutocomplitComponent(_eref) {
+        this._eref = _eref;
+        this.label = "";
+        this.searchModel = "";
+        this.filteringData = [];
+        this.phoneChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
     }
-    WrapperComponent.prototype.ngOnInit = function () {
+    AutocomplitComponent.prototype.ngOnInit = function () {
+        if (this.data[0])
+            this.label = this.data[0].label;
+        this.filteringData = Object.assign([], this.data);
     };
-    WrapperComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-wrapper',
-            template: __webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/components/wrapper/wrapper.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], WrapperComponent);
-    return WrapperComponent;
+    AutocomplitComponent.prototype.select = function (item) {
+        this.label = item.label;
+        this.show = false;
+        this.phoneChange.emit(item.value);
+    };
+    AutocomplitComponent.prototype.onSearchChange = function (value) {
+        this.filteringData = Object.assign([], this.data);
+        if (!value) {
+            return;
+        }
+        var filtering = [];
+        for (var _i = 0, _a = this.filteringData; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (item.label.indexOf(value) !== -1) {
+                filtering.push(item);
+            }
+        }
+        this.filteringData = Object.assign([], filtering);
+    };
+    AutocomplitComponent.prototype.onClick = function (event) {
+        if (!this._eref.nativeElement.contains(event.target))
+            this.show = false;
+    };
+    return AutocomplitComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], AutocomplitComponent.prototype, "data", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], AutocomplitComponent.prototype, "phoneChange", void 0);
+AutocomplitComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-autocomplit',
+        template: __webpack_require__("../../../../../src/app/shared/autocomplit/autocomplit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/autocomplit/autocomplit.component.css")],
+        host: {
+            '(document:click)': 'onClick($event)',
+        },
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object])
+], AutocomplitComponent);
+
+var _a;
+//# sourceMappingURL=autocomplit.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n  .checked{\r\n    content: \"\\F046\";\r\n  }\r\n  input[type=\"checkbox\"]{\r\n    display: none;\r\n}\r\ninput[type=\"checkbox\"]:checked + label::before {\r\n    content: \"\\F046\";\r\n}\r\n\r\n@media screen and (min-width: 1200px) {\r\n    .contactUs {\r\n        width: 178px !important;\r\n        margin-left: 7% !important;\r\n    }\r\n    .wrapper-main{\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;-ms-flex-wrap: wrap;flex-wrap: wrap;\r\n    }\r\n}\r\n@media (min-width: 1200px) and (min-width: 992px){\r\n    .row > div{\r\n        margin-left: 6%;\r\n    }\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- footer -->\n<!-- <footer class=\"container-fluid\">\n  <div class=\"col-md-12\">\n      <div class=\"row\" style=\"display: flex;justify-content: space-between;flex-direction: row-reverse;flex-wrap: wrap;\">\n          <div class=\"contactUs \">\n            <span class=\"limiter\"></span>\n            <h3>צור קשר</h3>\n            <ul class=\"noPadding\">\n              <li><a href=\"#\">צ'אט עם נציג</a></li>\n              <li><a href=\"#\">טופס פנייה</a></li>\n              <li><a href=\"#\">*4500</a></li>\n              <li>\n                <div class=\"col-xs-8 col-xs-push-2 col-md-12 col-md-push-1\">\n                  <a href=\"#\" class=\"social\">\n                    <img src=\"sample-images/youtube.png\" alt=\"youtube\" />\n                  </a>\n                  <a href=\"#\" class=\"social\">\n                    <img src=\"sample-images/facebook.png\" alt=\"facebook\" />\n                  </a>\n                </div>\n              </li>\n            </ul>\n          </div>\n          <div class=\"footerCheckUp \">\n            <span class=\"limiter\"></span>\n            <h3 class=\"noPadding col-xs-10 col-xs-push-1 col-md-push-2\">\n              אבוד בעולם הביטוחי פיננסי\n              יש יותר מדי אפשרויות?\n            </h3>\n            <a class=\"btn col-xs-8 col-xs-push-2 col-md-10\">\n              <span>צ'קאפ - התחל בדיקה</span>\n            </a>\n          </div>\n          <div class=\"compareProduct \">\n            <span class=\"limiter\"></span>\n            <h3>השוואת מוצרים</h3>\n            <div class=\"row text-right\">\n              <ul class=\"col-xs-5 col-xs-push-1\">\n                <li class=\"compareTitle\"><a href=\"#\">חיים</a></li>\n                <li><a href=\"#\">ביטוח חיים</a></li>\n              </ul>\n              <ul class=\"col-xs-5 col-xs-push-1\">\n                <li class=\"compareTitle\"><a href=\"#\">חיים</a></li>\n                <li><a href=\"#\">ביטוח חיים</a></li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"newsLetter \">\n            <span class=\"limiter\"></span>\n            <h3>הניוזלטר שיחסוך לכם כסף</h3>\n            <form action=\"/\" method=\"post\" class=\"col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0\">\n              <div class=\"form-group\"> -->\n                <!--<input class=\"form-control text-right\" type=\"type\" name=\"name\" value=\"\" placeholder=\"שם פרטי ומשפחה\" />-->\n                <!-- <input class=\"form-control text-right\" type=\"email\" name=\"name\" value=\"\" placeholder='דוא\"ל' />\n      \n                \n                <div class=\"checkbox\">\n                    <input type=\"checkbox\" value=\"checkboxvalue\" id=\"footerCheckBox\" />\n                    <label class=\"checkbox-label  text-right col-xs-11\" for=\"footerCheckBox\">\n                      אישור קבלת חומר שיווקי\n                    </label>\n                </div>\n                <button class=\"btn\">\n                                  <span>\n                                      הרשמה\n                                  </span>\n                </button>\n              </div>\n            </form>\n          </div>\n        </div>\n  </div>\n</footer> -->\n<footer class=\"container-fluid\">\n    <div class=\"row wrapper-main\" >\n        <div class=\"contactUs col-xs-12 col-md-3 col-lg-2\">\n            <span class=\"limiter\"></span>\n            <h3>צור קשר</h3>\n            <ul class=\"noPadding\">\n                <li><a href=\"#\">צ'אט עם נציג</a></li>\n                <li><a href=\"#\">טופס פנייה</a></li>\n                <li><a href=\"#\">*4500</a></li>\n                <li>\n                    <div class=\"col-xs-8 col-xs-push-2 col-md-12 col-md-push-1\">\n                        <a href=\"#\" class=\"social\">\n                            <img src=\"sample-images/youtube.png\" alt=\"youtube\" />\n                        </a>\n                        <a href=\"#\" class=\"social\">\n                            <img src=\"sample-images/facebook.png\" alt=\"facebook\" />\n                        </a>\n                    </div>\n                </li>\n            </ul>\n        </div>\n        <div class=\"footerCheckUp col-xs-12 col-md-3 col-lg-2\">\n            <span class=\"limiter\"></span>\n            <h3 class=\"noPadding col-xs-10 col-xs-push-1 col-md-push-2\">\n                אבוד בעולם הביטוחי פיננסי\n                יש יותר מדי אפשרויות?\n            </h3>\n            <a class=\"btn col-xs-8 col-xs-push-2 col-md-10\">\n                <span>צ'קאפ - התחל בדיקה</span>\n            </a>\n        </div>\n        <div class=\"compareProduct col-xs-12 col-md-3 col-lg-2\">\n            <span class=\"limiter\"></span>\n            <h3>השוואת מוצרים</h3>\n            <div class=\"row text-right\">\n                <ul class=\"col-xs-5 col-xs-push-1\">\n                    <li class=\"compareTitle\"><a href=\"#\">חיים</a></li>\n                    <li><a href=\"#\">ביטוח חיים</a></li>\n                </ul>\n                <ul class=\"col-xs-5 col-xs-push-1\">\n                    <li class=\"compareTitle\"><a href=\"#\">חיים</a></li>\n                    <li><a href=\"#\">ביטוח חיים</a></li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"newsLetter col-xs-12 col-md-3 col-lg-2\">\n            <span class=\"limiter\"></span>\n            <h3>הניוזלטר שיחסוך לכם כסף</h3>\n            <form action=\"/\" method=\"post\" class=\"col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0\">\n                <div class=\"form-group\">\n                    <!--<input class=\"form-control text-right\" type=\"type\" name=\"name\" value=\"\" placeholder=\"שם פרטי ומשפחה\" />-->\n                    <input class=\"form-control text-right\" type=\"email\" name=\"name\" value=\"\" placeholder='דוא\"ל' />\n\n                    \n                    <div class=\"checkbox\">\n                      <input type=\"checkbox\" value=\"checkboxvalue\" id=\"footerCheckBox\" />\n                      <label class=\"checkbox-label  text-right col-xs-11\" for=\"footerCheckBox\">\n                          אשר/ת שליחת מיסרונים על מבצעים חדשים\n                          לורם איפסום דולור סיט אמט\n                      </label>\n                    </div>\n                    <button class=\"btn col-xs-8 col-xs-push-2 col-md-4 col-md-push-8\">\n                        <span>\n                            הרשמה\n                        </span>\n                    </button>\n                </div>\n            </form>\n        </div>\n    </div>\n</footer>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    return FooterComponent;
+}());
+FooterComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-footer',
+        template: __webpack_require__("../../../../../src/app/shared/footer/footer.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/footer/footer.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FooterComponent);
+
+//# sourceMappingURL=footer.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/header/header.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/header/header.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h1 class=\"sr-only\">page title</h1>\n<a href=\"#main\" class=\"sr-only quick-link sr-only-focusable\">דלג אל תוכן האתר</a>\n<div class=\"menu-overlay\" style=\"display:none;\"></div>\n<!-- header -->\n<header>\n  <!-- Nav bar -->\n  <nav class=\"navbar navbar-default\">\n    <h2 class=\"sr-only\">ניווט ראשי</h2>\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle\" aria-controls=\"navbar\" data-toggle=\"collapse\" data-target=\"#navbar\"\n                aria-expanded=\"false\">\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"sr-only\">Toggle navigation</span>\n        </button>\n        <a class=\"navbar-brand\" href=\"#\">\n          <img src=\"images/logo.png\" alt=\"Wakeapp logo\" />\n        </a>\n      </div>\n      <div id=\"navbar\" class=\"navbar-offcanvas\">\n        <div class=\"offcanvas-wrapper\">\n          <ul class=\"nav navbar-nav\">\n            <li class=\"active hidden-lg\"><a href=\"javascript:login();\">כניסה לחשבונך</a></li>\n            <li><a href=\"#\">צ'קאפ</a></li>\n            <li><a href=\"#\">ביטוח חיים</a></li>\n            <li><a href=\"#\">ביטוח בריאות</a></li>\n            <li><a href=\"#\">ביטוח רכוש</a></li>\n            <li><a href=\"#\">ביטוח פיננסי</a></li>\n            <li><a href=\"#\">ביטוח פיננסי</a></li>\n            <li><a href=\"#\">אודות</a></li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"navControls\">\n        <div class=\"navLogin hidden-xs hidden-sm ax-btn\">\n          <a href=\"javascript:login();\">התחברות</a>\n        </div>\n        <div class=\"talk ax-btn\">\n          <a href=\"#\">\n            <span>דברו איתנו</span>\n          </a>\n        </div>\n        <div class=\"textSize\">\n          <a href=\"javascript:void(0);\" class=\"toggle-font-size\">\n                            <span class=\"sr-only\">\n                                שנה גודל פונט\n                            </span>\n          </a>\n        </div>\n        <div class=\"textContrast\">\n          <a href=\"javascript:void(0);\" class=\"toggle-contrast\">\n                            <span class=\"sr-only\">\n                                שנה ניגודיות צבעים\n                            </span>\n          </a>\n        </div>\n      </div>\n    </div>\n  </nav>\n  <!-- End Nav bar -->\n  <!-- Login Form -->\n  <section>\n    <h3 class=\"sr-only\">טופס התחברות לאיזור האישי</h3>\n    <div id=\"login-form\">\n      <div class=\"login-head\">\n        <a href=\"javascript:void(0)\" class=\"login-btn-close\"><span class=\"sr-only\">סגור</span></a>\n        <h4 class=\"form-title\">התחברות</h4>\n      </div>\n      <form role=\"form\" action=\"#\" class=\"form-container login-step1\">\n        <fieldset>\n          <legend class=\"form-title\">\n            כניסה מהירה באמצעות SMS\n          </legend>\n          <div class=\"form-group\">\n                            <span class=\"validation-label field-validation-error\">\n                                אנא הזן מספר נייד\n                            </span>\n            <input id=\"login-phonenumber\" type=\"hidden\" value=\"050777777\" />\n            <label class=\"sr-only\" for=\"login-areacode\"></label>\n            <label class=\"sr-only\" for=\"login-phonenumber\"></label>\n            <div class=\"phone-control\" id=\"login-areacode\">\n              <select class=\"selectpicker\">\n                <option>050</option>\n                <option>2</option>\n                <option>3</option>\n                <option>4</option>\n                <option>5</option>\n              </select>\n              <input class=\"form-control\" id=\"login-phonenumber\" type=\"text\" name=\"phone\" dir=\"ltr\">\n            </div>\n          </div>\n          <div class=\"form-group seperator\">\n                            <span>\n                                או\n                            </span>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"login-mail\">\n                                <span class=\"invalid-text\">\n                                    אנא\n                                </span>\n              הזן כתובת מייל\n            </label>\n            <input id=\"login-mail\" class=\"form-control\" type=\"email\" value=\"\" />\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-default btn-login center-block\">התחבר</button>\n          </div>\n          <!--<div class=\"form-group text-center\">\n              <a class=\"login-register\" href=\"#\">לא רשום?</a>\n          </div>-->\n        </fieldset>\n      </form>\n      <form role=\"form\" action=\"#\" class=\"form-container login-step2\" style=\"display:none\">\n        <fieldset>\n          <legend class=\"form-title\">\n            כניסה מהירה באמצעות SMS\n          </legend>\n          <div class=\"form-group text-center\">\n            <label for=\"login-code\">\n              אנא הזן את הקוד שקיבלת\n            </label>\n            <div>\n              <a href=\"#\" class=\"login-btn-resend\">שלח שוב</a>\n            </div>\n            <div class=\"login-code-control text-right\">\n                                <span class=\"field-validation-error\">\n                                    אנא הזן קוד תקין\n                                </span>\n              <input id=\"login-code\" class=\"form-control\" type=\"text\" value=\"\" />\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <button type=\"submit\" class=\"btn btn-default btn-login center-block\">התחבר</button>\n          </div>\n          <!--<div class=\"form-group text-center\">\n              <a class=\"login-register\" href=\"#\">לא רשום?</a>\n          </div>-->\n        </fieldset>\n      </form>\n    </div>\n  </section>\n  <!-- /Login Form -->\n</header>\n<!-- End header -->\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/header/header.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HeaderComponent = (function () {
+    function HeaderComponent() {
+    }
+    HeaderComponent.prototype.ngOnInit = function () {
+    };
+    return HeaderComponent;
+}());
+HeaderComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-header',
+        template: __webpack_require__("../../../../../src/app/shared/header/header.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/header/header.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], HeaderComponent);
+
+//# sourceMappingURL=header.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/models/risk.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Risk; });
+var Risk = (function () {
+    function Risk() {
+    }
+    return Risk;
 }());
 
+//# sourceMappingURL=risk.js.map
 
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/birthdate/birthdate.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/birthdate/birthdate.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>השוואת הצעות לביטוח אובדן כושר עבודה</h2>\n  <p>\n    מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n  </p>\n  <span>יקח לך 2 דקות</span>\n</div>\n<div class=\"step_birthDate col-xs-12 noPadding\">\n  <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError && (!day || !month || !year)\">הודעת שגיאה</span>\n  <div class=\"birthDate center-block\">\n    <fieldset>\n      <legend class=\"sr-only\">###</legend>\n      <div class=\"noPadding\">\n        <span class=\"question-title\">תאריך לידה</span>\n        <div class=\"wrapper center-block\">\n          <div class=\"selectWrapper\"  style=\"width: 27%;height: 100%;\">\n            <div style=\"width: 100%;height: 100%;\">\n              <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n            </div>\n          </div>\n          <div class=\"selectWrapper\" style=\"width: 37%; margin-right:11px;height: 100%;\">\n            <div style=\"width: 100%;height: 100%;\">\n              <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n            </div>\n          </div>\n          <div class=\"selectWrapper\" style=\"width: 27%; margin-right:11px;height: 100%;\">\n            <div style=\"width: 100%;height: 100%;\">\n              <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n            </div>\n          </div>\n        </div>\n      </div>\n    </fieldset>\n  </div>\n</div>\n<div class=\"calculatorControllsWrapper col-xs-12\">\n  <div class=\"calculatorControlls center-block\">\n    <a  class=\"btn backBtn center-block\">\n      <span>&#60;חזור</span>\n    </a>\n    <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n      <span>המשך</span>\n    </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/birthdate/birthdate.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BirthdateComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BirthdateComponent = (function () {
+    function BirthdateComponent() {
+        this.yearsData = [];
+        this.monthData = [
+            {
+                label: "1",
+                value: "1"
+            },
+            {
+                label: "2",
+                value: "2"
+            },
+            {
+                label: "3",
+                value: "3"
+            },
+        ];
+        this.daysData = [];
+        this.day = "1";
+        this.month = "1";
+        this.year = "1925";
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.setYear();
+        this.setDays();
+    }
+    BirthdateComponent.prototype.ngOnInit = function () {
+    };
+    BirthdateComponent.prototype.setDays = function () {
+        for (var i = 1; i <= 31; i++) {
+            this.daysData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    BirthdateComponent.prototype.setYear = function () {
+        for (var i = 1925; i <= 2018; i++) {
+            this.yearsData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    BirthdateComponent.prototype.daysChange = function (e) {
+        this.day = e;
+    };
+    BirthdateComponent.prototype.monthChange = function (e) {
+        this.month = e;
+    };
+    BirthdateComponent.prototype.yearsChange = function (e) {
+        this.year = e;
+    };
+    BirthdateComponent.prototype.save = function () {
+        if (!this.year ||
+            !this.month ||
+            !this.year) {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                naxtPage: 'smoking',
+                model: this.year + '-' + this.month + '-' + this.day,
+                type: "birthdate"
+            }));
+        }
+    };
+    return BirthdateComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], BirthdateComponent.prototype, "next", void 0);
+BirthdateComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-birthdate',
+        template: __webpack_require__("../../../../../src/app/wizard/birthdate/birthdate.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/birthdate/birthdate.component.css")],
+    }),
+    __metadata("design:paramtypes", [])
+], BirthdateComponent);
+
+//# sourceMappingURL=birthdate.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorSidePanel\">\n  <ul>\n    <li class=\"personalDetails\" *ngIf=\"options && options.lastName\">\n      <span>{{options.lastName}} {{options.privateName}}</span>\n      <img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />\n    </li>\n    <li class=\"gender\" *ngIf=\"options && options.gender\">\n      <span>גבר</span>\n      <img *ngIf=\"options.gender === 'male'\" src=\"sample-images/calculator/cal_man.png\" alt=\"###\" />\n      <img *ngIf=\"options.gender === 'female'\" src=\"sample-images/calculator/cal_woman.png\" alt=\"###\" />\n    </li>\n    <li class=\"bDate\" *ngIf=\"options && options.birthDate\">\n      <span>{{options.birthDate}}</span>\n      <img src=\"sample-images/calculator/cal_b_day.png\" alt=\"###\" />\n    </li>\n    <li class=\"smoking\" *ngIf=\"options && (options.doesSmoke || options.doesSmoke === false)\">\n      <span>לא מעשן</span>\n      <img *ngIf=\"options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_yes.png\" alt=\"###\" />\n      <img *ngIf=\"!options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_no.png\" alt=\"###\" />\n    </li>\n\n    <!--<li class=\"personalDetails\" *ngIf=\"options && options.lastName\">-->\n      <!--<span>{{options.lastName}} {{options.privateName}}</span>-->\n      <!--<img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"currency\">-->\n      <!--<span>1,000,000</span>-->\n      <!--<img src=\"sample-images/calculator/cal_nis.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"insurance\">-->\n      <!--<span>יש לי ביטוח חיים</span>-->\n      <!--<img src=\"sample-images/calculator/cal_insurance_yes.png\" alt=\"###\" />-->\n    <!--</li>-->\n  </ul>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalculatorSidePanelComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CalculatorSidePanelComponent = (function () {
+    function CalculatorSidePanelComponent() {
+    }
+    CalculatorSidePanelComponent.prototype.ngOnInit = function () {
+    };
+    return CalculatorSidePanelComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], CalculatorSidePanelComponent.prototype, "options", void 0);
+CalculatorSidePanelComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-calculator-side-panel',
+        template: __webpack_require__("../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CalculatorSidePanelComponent);
+
+//# sourceMappingURL=calculator-side-panel.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.modal{\r\n    overflow: visible;\r\n    position: absolute;\r\n    top: -100px;\r\n}\r\n.fade{\r\n    display: block;\r\n    opacity: 1;\r\n    position: absolute;\r\n    left: 50%;\r\n    margin-left: -350px;\r\n    top: 30px;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n}\r\n.out-wrap{\r\n    width: 100%;\r\n    height: 100%;\r\n    background: #0000007a;\r\n    position: fixed;\r\n    right: 0;\r\n    overflow: hidden;\r\n    z-index: 22222222222222;\r\n    top: 0;\r\n    overflow-y: auto;\r\n}\r\n.out-wrap::-webkit-scrollbar-thumb{\r\n    height: 0 !important;\r\n  }\r\n  .out-wrap::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .out-wrap::-webkit-scrollbar\r\n  {\r\n    width: 4px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .out-wrap::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(175, 150, 150);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  .modal-dialog{\r\n    margin-top: 0;\r\n  }\r\n.modal-header{\r\n    height: 90px;\r\n    width: 100%;\r\n    position: relative;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 100;\r\n    padding: 0;\r\n    background-color: transparent !important;\r\n    background-color: #e3f1f4;\r\n    \r\n}\r\n.close{\r\n    color: #5f5f5f;\r\n    opacity: 1;\r\n    width: 21px;\r\n    height: 21px;\r\n    position: absolute;\r\n    left: 38px;\r\n    top: 38px\r\n}\r\n.close > span{\r\n    font-size: 37px;\r\n    line-height: 1;\r\n    top: -5px;\r\n    position: relative;\r\n\r\n}\r\n.title{\r\n    background-color: #e3f1f4;\r\n    height: 90px;\r\n}\r\n.title > img{\r\n    width: 31px;\r\n    max-width: 31px;\r\n    height: 43px;\r\n    max-height: 43px;\r\n    margin: 1.25rem 2.5rem 0 1.25rem;\r\n    float: right;\r\n}\r\n.title > h3{\r\n    font-size: 2.85714em;\r\n    line-height: 40px;\r\n    text-align: right;\r\n    padding: 1.5625rem 0;\r\n    white-space: nowrap;\r\n}\r\n.hasSmoked-input{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n\r\n.modalStatus{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\ninput[type=\"radio\"] {\r\n    display:none;\r\n}\r\n\r\ninput[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n    width: 20%;\r\n    border: 1px solid #117ef5;\r\n    padding: 0 2rem;\r\n    font-size: 1.57143em;\r\n    line-height: 22px;\r\n    background:white;\r\n    cursor:pointer;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\ninput[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n   \r\n    \r\n    vertical-align:middle;\r\n    \r\n   \r\n    \r\n    text-align: center;\r\n    color: #626262;\r\n    padding-top: 8px;\r\n    height: 43px;\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n    border: 2px solid #707070 !important;\r\n}\r\n.wrapper-birthd {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    width: 74%;\r\n    margin-right: 0;\r\n}\r\ndiv.wrapper-birthd > div > div > app-autocomplit > div > button{\r\n    height: 40px !important;\r\n    border-radius: 5px !important;\r\n}\r\n.lable-top{\r\n    font-size: 1.71429em;\r\n    text-align: right;\r\n    padding: 0.75rem 0;\r\n    color: #333;\r\n    position: absolute;\r\n    top: -44px;\r\n}\r\n.lable-bot{\r\n    color: #f53011;\r\n    padding: 2px !important;\r\n    font-size: 1.42857em;\r\n    text-align: right;\r\n}\r\n.childGender {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n}\r\n/* div.childGender.col-md-4.col-xs-12.noPadding.pull-right > div.hasSmoked-input > label > span{\r\n    width: 64px;\r\n    height: 40px;\r\n} */\r\n.numberOfKids{\r\n    width: 69px;\r\n    height: 43px;\r\n    font-size: 1.71429em;\r\n    border: 1px solid #117ef5 !important;\r\n    border-radius: 5px;\r\n}\r\n.input-wrapper{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n}\r\n.input-wrapper > input{\r\n    padding-right: 5px;\r\n}\r\n.calculatorControlls{\r\n    position: relative;\r\n}\r\n div.modal-footer > div > div > a{\r\n    position: absolute;\r\n    left: 50%;\r\n    top: -35px;\r\n    margin-left: -51px;\r\n    color: white;\r\n }\r\n div.modal-footer > div > div > a > span{\r\n    color: white;\r\n    font-size: 2.14286em;\r\n    text-decoration: none;\r\n    font-weight: 300;\r\n    padding-top: 7px;\r\n    display: block;\r\n }\r\n .modal-footer{\r\n     border: none;\r\n }\r\n /* div.childGender.col-md-4.col-xs-12.noPadding.pull-right > div.hasSmoked-input > label:nth-child(4) > span{\r\n    position: relative;\r\n    left: -30px;\r\n } */\r\n .selectWrapper > div{\r\n    height: 40px;\r\n }\r\n@media (min-width: 992px){\r\n    .modal-dialog{\r\n        width: 700px;\r\n    }\r\n    .child {\r\n        margin-bottom: 24px;\r\n    }\r\n    .input-wrapper{\r\n        margin-bottom: 37px;\r\n    }\r\n    .form-group{\r\n        margin-bottom: 49px;\r\n    }\r\n    .modalSectionTitle{\r\n        font-size: 1.71429em;\r\n        float: right;\r\n        text-align: center;\r\n        margin-left: 38px;\r\n        padding: 0.75rem 0;\r\n        display: block;\r\n        line-height: 17px;\r\n    }\r\n    div.modalKids.noPadding.clearfix > span{\r\n        margin-left: 111px;\r\n    }\r\n    .numberOfKids{\r\n        position: relative;\r\n        left: 13px;\r\n    }\r\n \r\n    \r\n}\r\n@media (max-width: 992px){\r\n\r\n    .modal-dialog{\r\n        width: 100%;\r\n    }\r\n    .fade{\r\n        width: 100%;\r\n        left: unset;\r\n    }\r\n    .close{\r\n        right: 24px;\r\n        top: -53px;    \r\n    }\r\n    .modalStatus{\r\n        -webkit-box-orient: vertical;\r\n        -webkit-box-direction: normal;\r\n            -ms-flex-flow: column;\r\n                flex-flow: column;\r\n        text-align: center;\r\n    }\r\n    .wrapper{\r\n        width: 100%;\r\n    } \r\n     input[type=\"radio\"] + label{\r\n        width: 20%;\r\n    }\r\n    input[type=\"radio\"] + label span {\r\n        width: 100%;\r\n        height: 60px;\r\n        padding-top: 17px;\r\n    }\r\n    .modalSectionTitle{\r\n        font-size: 2.42857em;\r\n        line-height: 34px;\r\n        margin-top: 0.5rem;\r\n        margin-bottom: 0.625rem;\r\n    }\r\n    .modalStatus{\r\n        text-align: center;\r\n    }\r\n    .modalKids {\r\n        text-align: center;\r\n    }\r\n    .input-wrapper{\r\n        position: relative;\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n    }\r\n    .childGender {\r\n        position: relative;\r\n        left: -10%;\r\n    }\r\n    .childBDate {\r\n        position: relative;\r\n        left: -10%;\r\n    }\r\n    .childGender {\r\n        position: relative;\r\n        left: -10%;\r\n    }\r\n    .childBDate {\r\n        position: relative;\r\n        left: -10%;\r\n    }\r\n    div.modal-footer > div > div > a{\r\n        position: absolute;\r\n        left: 50%;\r\n        top: -35px;\r\n        margin-left: -113px;\r\n        color: white;\r\n        height: 60px;\r\n    }\r\n    .lable-top{\r\n        position: absolute;\r\n        top: -52px;\r\n }\r\n \r\n .wrapper-birthd{\r\n    width: 50%;\r\n }\r\n div.childGender.col-md-4.col-xs-12.noPadding.pull-right > div.hasSmoked-input > label{\r\n    width: 30%;\r\n }\r\n}\r\n@media (max-width: 991px) and (min-width: 768px){\r\n    div.childrenListWrapper.noPadding.col-md-12 > div> div.childGender.col-md-4.col-xs-12.noPadding.pull-right{\r\n        margin-top: 30px;\r\n        margin-bottom: 30px;\r\n     }\r\n    .modal-header{\r\n        margin-top: 90px;\r\n    }\r\n    .Close{\r\n        right: 20px;\r\n        top: -50px;\r\n    }\r\n    .title > h3{\r\n        text-align: center;\r\n        position: relative;\r\n        left: 40px;\r\n    }\r\n    div.childGender.col-md-4.col-xs-12.noPadding.pull-right > div.hasSmoked-input > label{\r\n        width: 165px;\r\n    }\r\n    .selectWrapper > div{\r\n        height: 62px;\r\n     }\r\n     .numberOfKids{\r\n        height: 62px;\r\n        margin-bottom: 10px;\r\n     }\r\n     .lable-top{\r\n        margin-top: 10px;\r\n     }\r\n     userBox{\r\n        text-align: right;\r\n     }\r\n     div.input-wrapper > span{\r\n        left: 197px;\r\n     }\r\n     \r\n}\r\n@media (max-width: 768px){\r\n    input[type=\"radio\"] + label{\r\n        height: 40px;\r\n    }\r\n    .modal{\r\n        position: absolute;\r\n        top: 26px;\r\n    }\r\n    .title{\r\n        background-color: #e3f1f4;\r\n        height: 90px;\r\n    }\r\n    .title > img{\r\n        width: 31px;\r\n        max-width: 31px;\r\n        height: 43px;\r\n        max-height: 43px;\r\n        margin: 1.25rem 2.5rem 0 1.25rem;\r\n        float: right;\r\n    }\r\n    .title > h3{\r\n        font-size: 2.85714em;\r\n        line-height: 40px;\r\n        text-align: right;\r\n        padding: 1.5625rem 0;\r\n        white-space: nowrap;\r\n    }\r\n    .modal-header{\r\n        margin-top: 46px;\r\n    }\r\n    .close{\r\n        top: -30px;\r\n    }\r\n    .modalSectionTitle{\r\n        font-size: 1.21429em;\r\n        display: block;\r\n        text-align: center;\r\n        line-height: 17px;\r\n        margin-top: 0.5rem;\r\n        margin-bottom: 0.3125rem;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        font-size: 1.14286em;\r\n    }\r\n    .numberOfKids{\r\n        width: 45px;\r\n        height: 39px;\r\n        font-size: 1.5em;\r\n        text-align: center;\r\n        background-color: transparent;\r\n        border: 1px solid #8bbef6;\r\n        border-radius: 5px;\r\n        display: block;\r\n    }\r\n    .lable-top{\r\n        font-size: 1.21429em;\r\n        display: block;\r\n        line-height: 17px;\r\n        margin-top: 0.5rem;\r\n        margin-bottom: 0.3125rem;\r\n        position: unset;\r\n        padding: 0;\r\n        text-align: center\r\n    }\r\n    .lable-bot{\r\n        font-size: 1.21429em;\r\n        display: block;\r\n        line-height: 17px;\r\n        margin-top: 0.5rem;\r\n        margin-bottom: 0.3125rem;\r\n    }\r\n    .childGender {\r\n        position: relative;\r\n        left: -30%;\r\n    }\r\n    div.modalStatus.noPadding.clearfix > div > fieldset > div > span{\r\n        text-align: center;\r\n    }\r\n   \r\n    .form-group{\r\n        margin-bottom: 0;\r\n    }\r\n    div > div.lable-bot{\r\n        position: unset;\r\n        text-align: center;\r\n    }\r\n    div.childGender.col-md-4.col-xs-12.noPadding.pull-right > div.lable-bot{\r\n        position: unset;\r\n        text-align: center;\r\n    }\r\n    div.childBDate.col-md-8.col-xs-12.noPadding > div.lable-top{\r\n        position: unset;\r\n        text-align: center;\r\n    }\r\n    div.modal-footer > div > div > a{\r\n        margin-left: -46px;\r\n    }\r\n    div.modal-footer > div > div > a > span{\r\n         padding-top: 0px;\r\n    }\r\n    div.modal-footer > div > div > a {\r\n        height: 40px;\r\n        position: absolute;\r\n        left: 50%;\r\n        margin-left: -67px;\r\n    }\r\n    div.input-wrapper > span{\r\n        position: unset;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        padding: 0 0rem;\r\n    }\r\n    .title > h3{\r\n        font-size: calc(6px + 4vw);\r\n        line-height: 40px;\r\n        text-align: right; \r\n        padding: 1.5625rem 0; \r\n        white-space: wrap;\r\n        text-align: center;\r\n        position: relative;\r\n        left: 33px\r\n    }\r\n    .input-wrapper{\r\n        position: unset;\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n    }\r\n    div.input-wrapper > span{\r\n        position: relative;\r\n        top: 2px !important;\r\n        left: 0 !important;\r\n        text-align: center;\r\n    }\r\n    .childGender{\r\n        position: unset;\r\n    }\r\n    .hasSmoked-input{\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n    }\r\n    .wrapper-birthd{\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n        margin-right: 0;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n        width: 100%;\r\n    }\r\n    div.wrapper-birthd.center-block > div{\r\n       width: 70px !important;\r\n    }\r\n    .modalControllsWrapper{\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n    }\r\n    .childBDate{\r\n        position: unset;\r\n    }\r\n    .modal-dialog{\r\n        margin: 0;\r\n    }\r\n    div.childrenListWrapper.noPadding.col-md-12 > div> div.childGender.col-md-4.col-xs-12.noPadding.pull-right{\r\n        margin-bottom: 25px;\r\n     }\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- modal -->\n<div class=\"out-wrap\">\n    <div class=\"fade\" style=\"display:block;opacity: 1;\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <!-- modal head -->\n            <div class=\"modal-header\">\n                <div class=\"title\">\n                    <img src=\"sample-images/calculator/calculator.png\" alt=\"calc\" />\n                    <h3>חישוב סכום כיסוי לביטוח</h3>\n                </div>\n              <button type=\"button\" class=\"close\" (click)=\"closeClick()\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n\n              <!--<h4 class=\"modal-title\" id=\"myModalLabel\">Modal title</h4>-->\n            </div>\n            <!-- modal body -->\n            <div class=\"modal-body\">\n\n\n              <div class=\"modalForm\">\n                <form class=\"\" action=\"/\" method=\"post\">\n                  <div class=\"modalStatus noPadding clearfix\">\n                    <span class=\"modalSectionTitle\">מצב משפחתי:</span>\n                    <div class=\"wrapper\">\n                      <fieldset>\n                        <legend class=\"sr-only\"></legend>\n                        <div class=\"form-group userBox col-xs-12 noPadding\">\n                          <div class=\"statusForm\">\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio1\" name=\"status1\" value=\"1\" [(ngModel)]=\"raiodVa\"/>\n                                  <label for=\"radio1\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >רווק</span></label>\n                                  <input type=\"radio\" id=\"radio2\" name=\"status1\" value=\"2\" [(ngModel)]=\"raiodVa\"/>\n                                  <label for=\"radio2\" style=\"border-right:0px;\"><span >נשוי</span></label>\n                                  <input type=\"radio\" id=\"radio3\" name=\"status1\" value=\"3\" [(ngModel)]=\"raiodVa\"/>\n                                  <label for=\"radio3\" style=\"border-right:0px;\"><span >גרוש</span></label>\n                                  <input type=\"radio\" id=\"radio4\" name=\"status1\" value=\"4\" [(ngModel)]=\"raiodVa\"/>\n                                  <label for=\"radio4\" style=\"border-right:0px;\"><span >אלמן</span></label>\n                                  <input type=\"radio\" id=\"radio5\" name=\"status1\" value=\"5\" [(ngModel)]=\"raiodVa\"/>\n                                  <label for=\"radio5\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >אחר</span></label>\n                              </div>\n                            <!-- <label>\n                              רווק\n                              <input type=\"radio\" name=\"status1\" value=\"1\" />\n                            </label>\n                            <label>\n                              נשוי\n                              <input type=\"radio\" name=\"status1\" value=\"2\" />\n                            </label>\n                            <label>\n                              גרוש\n                              <input type=\"radio\" name=\"status1\" value=\"3\" />\n                            </label>\n                            <label>\n                              אלמן\n                              <input type=\"radio\" name=\"status1\" value=\"4\" />\n                            </label>\n                            <label>\n                              אחר\n                              <input type=\"radio\" name=\"status1\" value=\"5\" />\n                            </label> -->\n                          </div>\n                          <span class=\"field-validation-error lable-bot\" *ngIf=\"showError && !raiodVa\">אנא בחר ערך</span>\n                        </div>\n                      </fieldset>\n                    </div>\n                  </div>\n                  <div class=\"modalKids noPadding clearfix\">\n                    <span class=\"modalSectionTitle\">ילדים:</span>\n                    <fieldset class=\"userBox\">\n                      <legend class=\"sr-only\"></legend>\n                      <div class=\"input-wrapper\">\n                          <input class=\"numberOfKids\" type=\"number\" name=\"name\" [(ngModel)]=\"childrenCount\" (ngModelChange)=\"doChangeChildren($event)\" />\n                          <span class=\"field-validation-error lable-bot \" style=\"position: relative;top: 50px;left: 13px\" *ngIf=\"showError && !childrenCount && childrenCount !== 0\">אנא בחר ערך</span>\n                      </div>\n                      <div class=\"col-xs-12 no-padding\"></div>\n                      <div class=\"childrenListWrapper noPadding col-md-12\">\n                        <div *ngFor=\"let item of childrens;let i = index\" class=\"child row\" disabled>\n                          <div class=\"childGender col-md-4  col-xs-12 noPadding pull-right\">\n                              <div class=\"lable-top\">\n\n                                  ילד $\n                              </div>\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio6{{i}}\" name=\"status{{i}}\" value=\"6\" [(ngModel)]=\"item.stat\"/>\n                                  <label for=\"radio6{{i}}\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >רווק</span></label>\n                                  <input type=\"radio\" id=\"radio7{{i}}\" name=\"status{{i}}\" value=\"7\" [(ngModel)]=\"item.stat\"/>\n                                  <label for=\"radio7{{i}}\" style=\"border-bottom-left-radius: 4px;border-right:0px;border-top-left-radius: 4px;\"><span >אחר</span></label>\n                              </div>\n                              <div class=\"lable-bot\" *ngIf=\"showError && !item.stat\">\n                                  אנא בחר ערך\n                              </div>\n                          </div>\n                          <div class=\"childBDate col-md-8 col-xs-12 noPadding\">\n                              <div class=\"lable-top\" *ngIf=\"showError\">\n\n                                  תאריך לידה\n                              </div>\n                              <div class=\"wrapper-birthd center-block\">\n                                  <div class=\"selectWrapper\"  style=\"width: 25%;\">\n                                    <div style=\"width: 100%;\">\n                                      <app-autocomplit [data]=\"daysData\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                  <div class=\"selectWrapper\" style=\"width: 35%; margin-right:11px\">\n                                    <div style=\"width: 100%;\">\n                                      <app-autocomplit [data]=\"monthData\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                  <div class=\"selectWrapper\" style=\"width: 35%; margin-right:11px;\">\n                                    <div style=\"width: 100%;\">\n                                      <app-autocomplit [data]=\"yearsData\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                </div>\n                                <!--<div class=\"lable-bot\" *ngIf=\"showError\">-->\n                                    <!--אנא בחר ערך-->\n                                <!--</div>-->\n                          </div>\n                        </div>\n\n                      </div>\n                      <!--<div class=\"kidsAge\">\n                          <div class=\"childBox\">\n                              <label>גיל:</label>\n                              <input type=\"text\" name=\"name\" value=\"\" />\n                          </div>\n                          <div class=\"childBox\">\n                              <label>גיל:</label>\n                              <input type=\"text\" name=\"name\" value=\"\" />\n                          </div>\n                          <div class=\"childBox\">\n                              <label>גיל:</label>\n                              <input type=\"text\" name=\"name\" value=\"\" />\n                          </div>\n                      </div>-->\n                    </fieldset>\n                  </div>\n                  <!--<div class=\"modalSalary noPadding clearfix\">\n                      <span class=\"modalSectionTitle\">שכר:</span>\n                      <div class=\"wrapper\">\n                          <fieldset>\n                              <legend class=\"sr-only\"></legend>\n                              <div class=\"selectWrapper userBox noPadding col-xs-12\">\n                                  <select class=\"selectpicker\">\n                                      <option>בחר שכר</option>\n                                      <option>2</option>\n                                      <option>3</option>\n                                      <option>4</option>\n                                      <option>5</option>\n                                  </select>\n                              </div>\n                          </fieldset>\n                      </div>\n                      <div class=\"col-xs-12 no-padding\"><span class=\"field-validation-error \">אנא בחר ערך</span></div>\n\n                  </div>-->\n                  <!--<div class=\"modalClinic noPadding clearfix\">\n                      <span class=\"modalSectionTitle\">קופת חולים:</span>\n                      <div class=\"wrapper\">\n                          <fieldset>\n                              <legend class=\"sr-only\"></legend>\n                              <div class=\"form-group userBox col-xs-12 noPadding\">\n                                  <div class=\"clinicForm\">\n                                      <label>\n                                          מאוחדת\n                                          <input type=\"radio\" name=\"status1\" value=\"1\" />\n                                      </label>\n                                      <label>\n                                          כללית\n                                          <input type=\"radio\" name=\"status1\" value=\"2\" />\n                                      </label>\n                                      <label>\n                                          מכבי\n                                          <input type=\"radio\" name=\"status1\" value=\"3\" />\n                                      </label>\n                                      <label>\n                                          לאומית\n                                          <input type=\"radio\" name=\"status1\" value=\"4\" />\n                                      </label>\n                                      <label>\n                                          אחר\n                                          <input type=\"radio\" name=\"status1\" value=\"5\" />\n                                      </label>\n                                  </div>\n                              </div>\n                          </fieldset>\n                      </div>\n                      <div class=\"col-xs-12 no-padding\"><span class=\"field-validation-error \">אנא בחר ערך</span></div>\n                  </div>-->\n                </form>\n              </div>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"modalControllsWrapper col-xs-12\">\n                <div class=\"calculatorControlls center-block\">\n                  <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n                    <span>המשך</span>\n                  </a>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <!-- modal end -->\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalculatorsummaryModalComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CalculatorsummaryModalComponent = (function () {
+    function CalculatorsummaryModalComponent() {
+        this.yearsData = [];
+        this.monthData = [
+            {
+                label: 1,
+                value: 1
+            },
+            {
+                label: 2,
+                value: 2
+            },
+            {
+                label: 3,
+                value: 3
+            },
+        ];
+        this.daysData = [];
+        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.childrens = [];
+        this.childrenCount = 0;
+        this.setYear();
+        this.setDays();
+    }
+    CalculatorsummaryModalComponent.prototype.ngOnInit = function () {
+    };
+    CalculatorsummaryModalComponent.prototype.setDays = function () {
+        for (var i = 1; i <= 31; i++) {
+            this.daysData.push({
+                label: i,
+                value: i
+            });
+        }
+    };
+    CalculatorsummaryModalComponent.prototype.setYear = function () {
+        for (var i = 1925; i <= 2018; i++) {
+            this.yearsData.push({
+                label: i,
+                value: i
+            });
+        }
+    };
+    CalculatorsummaryModalComponent.prototype.doChangeChildren = function () {
+        this.childrens = [];
+        for (var i = 0; i < this.childrenCount; i++) {
+            this.childrens.push({ stat: "" });
+        }
+    };
+    CalculatorsummaryModalComponent.prototype.closeClick = function () {
+        this.close.emit("");
+    };
+    CalculatorsummaryModalComponent.prototype.save = function () {
+        if (!this.raiodVa) {
+            this.showError = true;
+        }
+        else {
+            this.close.emit("");
+        }
+    };
+    return CalculatorsummaryModalComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CalculatorsummaryModalComponent.prototype, "close", void 0);
+CalculatorsummaryModalComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-calculatorsummary-modal',
+        template: __webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary-modal/calculatorsummary-modal.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CalculatorsummaryModalComponent);
+
+//# sourceMappingURL=calculatorsummary-modal.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>השאוות הצעות לביטוח חיים</h2>\n  <p>\n    מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n  </p>\n  <span>יקח לך 2 דקות</span>\n</div>\n<div class=\"step_calculatorSummary col-xs-12 noPadding\">\n  <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError && !amount\">הודעת שגיאה</span>\n  <div class=\"calculatorSummary col-xs-10 col-xs-push-1 noPadding\">\n    <p class=\"summaryTitle text-center\">סכום הביטוח שיספק לך לחיים מאושרים</p>\n    <div class=\"calculate\">\n      <fieldset class=\"calculateWrapper center-block\">\n        <legend class=\"sr-only\">###</legend>\n        <a (click)=\"showCalculator = true\" class=\"\" type=\"button\" data-toggle=\"modal\" data-target=\"#needs-modal\">\n          <img src=\"sample-images/calculator/calculator.png\" alt=\"calc\" />\n          <span>חשב מחדש</span>\n        </a>\n       \n        <div class=\"inputWrapper\">\n          <input [(ngModel)]=\"amount\" id=\"aaa\" class=\"form-control\" type=\"number\" name=\"calculate\" placeholder=\"\" />\n          <span class=\"nisIcon\"></span>\n        </div>\n      </fieldset>\n    </div>\n  </div>\n  \n</div>\n<div class=\"calculatorControllsWrapper col-xs-12\">\n  <div class=\"calculatorControlls center-block\">\n    <a href=\"#\" class=\"btn backBtn center-block\">\n      <span>&#60;חזור</span>\n    </a>\n    <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n      <span>הבא</span>\n    </a>\n  </div>\n</div>\n<div class=\"modalka\">\n  <app-calculatorsummary-modal *ngIf=\"showCalculator\" (close)=\"showCalculator = false\" style=\"transition: 3s;\"></app-calculatorsummary-modal>        \n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalculatorsummaryComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CalculatorsummaryComponent = (function () {
+    function CalculatorsummaryComponent() {
+        this.amount = 0;
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CalculatorsummaryComponent.prototype.ngOnInit = function () {
+    };
+    CalculatorsummaryComponent.prototype.save = function () {
+        this.next.emit(({
+            finish: true,
+            amount: this.amount
+        }));
+    };
+    return CalculatorsummaryComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CalculatorsummaryComponent.prototype, "next", void 0);
+CalculatorsummaryComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-calculatorsummary',
+        template: __webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/calculatorsummary/calculatorsummary.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CalculatorsummaryComponent);
+
+//# sourceMappingURL=calculatorsummary.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/genderselect/genderselect.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/genderselect/genderselect.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "    <div class=\"calculatorHead col-xs-12 noPadding\">\n      <h2>השוואת הצעות לביטוח חיים</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>יקח לך 2 דקות</span>\n    </div>\n    <div class=\"step_genderSelect col-xs-12 noPadding\">\n      <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError && !gender\">אנא בחר מין</span>\n      <div class=\"genderSelect\">\n        <fieldset>\n          <legend class=\"sr-only\">###</legend>\n          <input type=\"hidden\" name=\"gender\" id=\"hdnGender\" value=\"\" />\n          <div class=\"male\" (click)=\"gender= 'male'\" [ngClass]=\"{'active-male': gender === 'male'}\" role=\"button\" data-value=\"0\" tabindex=\"0\">\n            <span>גבר</span>\n          </div>\n          <div class=\"female\" (click)=\"gender= 'female'\" [ngClass]=\"{'active-female': gender === 'female'}\" role=\"button\" data-value=\"1\" tabindex=\"0\">\n            <span>אישה</span>\n          </div>\n        </fieldset>\n      </div>\n    </div>\n    <div class=\"calculatorControllsWrapper col-xs-12\">\n      <div class=\"calculatorControlls center-block\">\n        <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n          <span>המשך</span>\n        </a>\n      </div>\n    </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/genderselect/genderselect.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GenderselectComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var GenderselectComponent = (function () {
+    function GenderselectComponent() {
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    GenderselectComponent.prototype.ngOnInit = function () {
+    };
+    GenderselectComponent.prototype.save = function () {
+        if (!this.gender) {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                naxtPage: 'birthdate',
+                model: this.gender,
+                type: 'genderselect'
+            }));
+        }
+    };
+    return GenderselectComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], GenderselectComponent.prototype, "next", void 0);
+GenderselectComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-genderselect',
+        template: __webpack_require__("../../../../../src/app/wizard/genderselect/genderselect.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/genderselect/genderselect.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], GenderselectComponent);
+
+//# sourceMappingURL=genderselect.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/info/info.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n  .contactPhone{\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n  }\r\n  .calculator .step_personalInfo .personalInfo .confirmBox label.checked::before, .calculator .step_personalInfo .getResults .confirmBox label.checked::before, .calculator .step_getResults .personalInfo .confirmBox label.checked::before, .calculator .step_getResults .getResults .confirmBox label.checked::before{\r\n    content: \"\\F046\";\r\n  }\r\n  \r\n  /* .checked{\r\n    content: \"\\f046\";\r\n  }\r\n  input[type=\"checkbox\"] {\r\n    display:none;\r\n}\r\n\r\ninput[type=\"hidden\"] + label {\r\n    color:#f2f2f2;\r\n}\r\n\r\ninput[type=\"checkbox\"] + label span {\r\n    display:inline-block;\r\n    width:19px;\r\n    height:19px;\r\n    margin:-2px 10px 0 0;\r\n    vertical-align:middle;\r\n    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;\r\n    cursor:pointer;\r\n} */\r\ninput[type=\"checkbox\"]{\r\n    display: none;\r\n}\r\ninput[type=\"checkbox\"]:checked + label::before {\r\n    content: \"\\F046\";\r\n}\r\n@media screen and (max-width: 992px) {\r\n    div.noPadding.clearfix > div > div > div{\r\n        width: 27% !important;\r\n    }\r\n    .contactPhone {\r\n        height: 33px;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/info/info.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>השאוות הצעות לביטוח חיים</h2>\n  <p>\n    מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n  </p>\n  <span>יקח לך 2 דקות</span>\n</div>\n<div class=\"step_personalInfo col-xs-12 noPadding\">\n  <!--<span class=\"field-validation-error center-block text-center\">הודעת שגיאה</span>-->\n  <div class=\"personalInfo col-xs-10 col-xs-push-1\">\n    <fieldset>\n      <legend class=\"sr-only\">###</legend>\n      <div class=\"wrapper\">\n        <div class=\"noPadding\">\n          <label for=\"firstName\" class=\"\">שם פרטי</label>\n          <input id=\"firstName\" [(ngModel)]=\"model.firstName\" class=\"form-control\" type=\"text\" name=\"firstName\" placeholder=\"שם פרטי\" data-placeholder=\"שם פרטי\">\n          <span class=\"field-validation-error\" *ngIf=\"showError && !model.firstName\">שדה שם פרטי הוא שדה חובה</span>\n        </div>\n        <div class=\"noPadding\">\n          <label for=\"lastName\">שם משפחה</label>\n          <input id=\"lastName\" [(ngModel)]=\"model.lastName\" class=\"form-control\" type=\"text\" name=\"lastName\" placeholder=\"שם משפחה\" data-placeholder=\"שם משפחה\">\n          <span class=\"field-validation-error\" *ngIf=\"showError && !model.lastName\" data-valmsg-for=\"LastName\" data-valmsg-replace=\"true\"><span id=\"LastName-error\" class=\"\">שדה שם משפחה הוא שדה חובה</span></span>\n        </div>\n        <div class=\"noPadding clearfix\">\n          <label for=\"phone\">הטלפון שלי</label>\n          <input id=\"phone\" type=\"hidden\" value=\"\" />\n          <div class=\"clearfix\">\n            <div class=\"contactPhone noPadding col-xs-12\">\n              <div style=\"width: 90px;\">\n                <app-autocomplit [data]=\"phoneData\" (change)=\"phoneChange($event)\"></app-autocomplit>\n              </div>\n\n              <input [(ngModel)]=\"model.phone\" class=\"form-control\" type=\"text\" name=\"phone\" placeholder=\"הטלפון שלי\" data-placeholder=\"הטלפון שלי\">\n            </div>\n          </div>\n          <span class=\"field-validation-error\" *ngIf=\"showError && !model.phone\">שדה טלפון הוא שדה חובה</span>\n        </div>\n        <div class=\"noPadding\">\n          <label for=\"email\" class=\"\">כתובת אימייל</label>\n          <div class=\"clearfix\">\n            <input [(ngModel)]=\"model.email\" id=\"email\" class=\"form-control col-md-4\" type=\"text\" name=\"email\" placeholder=\"המייל שלי\" data-placeholder=\"המייל שלי\">\n          </div>\n          <span class=\"field-validation-error\" *ngIf=\"showError && !model.email\">יש להזין כתובת אימייל חוקית</span>\n        </div>\n\n        <div class=\"confirmBox noPadding\">\n          <!-- <input type=\"checkbox\" name=\"confirm\" value=\"1\" id=\"confirmBoxInput\" /> -->\n          <input [ngModel]=\"model.link\" type=\"checkbox\" value=\"checkboxvalue\" id=\"confirmBoxInput\"/>\n          <label class=\"checkbox-label \" for=\"confirmBoxInput\">\n            אישור קבלת חומר שיווקי\n          </label>\n          <div class=\"clearfix visible-xs visible-sm hidden-md\"></div>\n          <div>\n            <span class=\"field-validation-error\" *ngIf=\"showError && !model.link\">יש לאשר קבלת חומר שיווקי</span>\n          </div>\n        </div>\n      </div>\n    </fieldset>\n  </div>\n\n</div>\n<div class=\"calculatorControllsWrapper col-xs-12\">\n  <div class=\"calculatorControlls center-block\">\n    <a href=\"#\" class=\"btn backBtn center-block\">\n      <span>&#60;חזור</span>\n    </a>\n    <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n      <span>הבא</span>\n    </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/info/info.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var InfoComponent = (function () {
+    function InfoComponent() {
+        this.model = {
+            firstName: "",
+            lastName: "",
+            phone: "",
+            email: "",
+            prefix: "050",
+            link: true
+        };
+        this.phoneData = [
+            {
+                label: "050",
+                value: "050"
+            },
+            {
+                label: "040",
+                value: "040"
+            },
+            {
+                label: "060",
+                value: "060"
+            },
+            {
+                label: "070",
+                value: "070"
+            },
+        ];
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    InfoComponent.prototype.ngOnInit = function () {
+    };
+    InfoComponent.prototype.phoneChange = function (e) {
+        this.model.prefix = e;
+    };
+    InfoComponent.prototype.save = function () {
+        console.log(this.model);
+        if (this.model.phone === "" ||
+            this.model.email === "" ||
+            this.model.lastName === "" ||
+            this.model.firstName === "") {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                naxtPage: 'genderselect',
+                type: "info",
+                model: this.model
+            }));
+        }
+    };
+    return InfoComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], InfoComponent.prototype, "next", void 0);
+InfoComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-info',
+        template: __webpack_require__("../../../../../src/app/wizard/info/info.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/info/info.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], InfoComponent);
+
+//# sourceMappingURL=info.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/profession/profession.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/profession/profession.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>השוואת הצעות לביטוח חיים</h2>\n  <p>\n    מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n  </p>\n  <span>יקח לך 2 דקות</span>\n</div>\n<div class=\"step_profession col-xs-12 noPadding\">\n  <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError && (!job || !rate)\">הודעת שגיאה</span>\n  <div class=\"profession center-block\">\n    <fieldset>\n      <legend class=\"sr-only\">###</legend>\n      <div class=\"professionWrapper noPadding\">\n        <span class=\"question-title\">אני עוסק/ת ב:</span>\n        <div class=\"wrapper center-block\">\n          <div class=\"selectWrapper\" style=\"height: 100%;\">\n            <div style=\"height: 100%;\">\n              <app-autocomplit [data]=\"jobsData\" (change)=\"jobsChange($event)\"></app-autocomplit>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"professionWrapper noPadding\">\n        <span class=\"question-title\">שכר:</span>\n        <div class=\"wrapper center-block\">\n          <div class=\"selectWrapper\" style=\"height: 100%;\">\n            <div style=\"height: 100%;\">\n              <app-autocomplit [data]=\"rateData\" (change)=\"rateChange($event)\"></app-autocomplit>\n            </div>\n          </div>\n        </div>\n      </div>\n    </fieldset>\n  </div>\n</div>\n<div class=\"calculatorControllsWrapper col-xs-12\">\n  <div class=\"calculatorControlls center-block\">\n    <a href=\"#\" class=\"btn backBtn center-block\">\n      <span>&#60;חזור</span>\n    </a>\n    <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n      <span>המשך</span>\n    </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/profession/profession.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessionComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProfessionComponent = (function () {
+    function ProfessionComponent() {
+        this.job = "בחר מקצוע";
+        this.rate = "1000 - 10000";
+        this.jobsData = [
+            {
+                label: "בחר מקצוע",
+                value: "בחר מקצוע"
+            },
+            {
+                label: "דייל/דיילת מכירו",
+                value: "דייל/דיילת מכירו"
+            },
+        ];
+        this.rateData = [
+            {
+                label: "1000 - 10000",
+                value: "1000 - 10000"
+            },
+            {
+                label: "10000 - 20000",
+                value: "10000 - 20000"
+            },
+        ];
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ProfessionComponent.prototype.ngOnInit = function () {
+    };
+    ProfessionComponent.prototype.jobsChange = function (e) {
+        this.job = e;
+    };
+    ProfessionComponent.prototype.rateChange = function (e) {
+        this.rate = e;
+    };
+    ProfessionComponent.prototype.save = function () {
+        if (!this.job || !this.rate) {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                naxtPage: 'calculatorsummary',
+                type: 'profession',
+                modal: {},
+            }));
+        }
+    };
+    return ProfessionComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], ProfessionComponent.prototype, "next", void 0);
+ProfessionComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-profession',
+        template: __webpack_require__("../../../../../src/app/wizard/profession/profession.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/profession/profession.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ProfessionComponent);
+
+//# sourceMappingURL=profession.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modal-dialog{\r\n    margin: 13% !important;\r\n    left: 50%;\r\n    margin-left: -385px !important;\r\n}\r\n.modal{\r\n    background: #00000094;\r\n}\r\n.general-modal{\r\n    overflow-y: auto;\r\n}\r\n#results-modal > div > div > div.modal-body > div > p{\r\n    text-align: center;\r\n}\r\n@media screen and (max-width: 960px) {\r\n    .modal-dialog {\r\n        margin: 0;\r\n        left: 50%;\r\n        margin-left: -385px !important;\r\n        top: 81px;\r\n    }\r\n}\r\n@media screen and (max-width: 768px){\r\n    div.modal-body > div > p{\r\n        text-align: center !important;\r\n    }\r\n    .modal-dialog {\r\n        top: 112px;\r\n        left: 0;\r\n        margin-left: 0 !important;\r\n        margin-top: 0 !important;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- modal -->\n<div id=\"results-modal\" class=\"modal fade general-modal light\" style=\"display: block;\n    opacity: 1;\">\n  <div class=\"modal-dialog light\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" (click)=\"close()\" class=\"close\" data-dismiss=\"modal\" aria-label=\"סגור\" tabindex=\"-1\" aria-hidden=\"true\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 id=\"resultModalHeader\">עריכת סכום הכיסוי</h4>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"general-content\">\n          <p>\n            תנו ל- <span>Wakeapp</span>\n            להכיר אתכם ולמצוא את הצעות הביטוח המתאימות ביותר עבורכם\n          </p>\n          <a href=\"#\">\n            לעזרה בחישוב הסכום\n            <img src=\"/images/calculator/calculator.png\" alt=\"calc\">\n          </a>\n\n          <div class=\"generalForm\">\n            <div><span class=\"nisIcon\"></span><input type=\"text\" name=\"calculate\" placeholder=\"\" [(ngModel)]=\"amount\" /></div>\n            <!--<div class=\"validation-block\">-->\n              <!--<span class=\"center-block text-center field-validation-error\" data-valmsg-for=\"Amount\" data-valmsg-replace=\"true\"><span id=\"Amount-error\" class=\"\">יש להזין סכום בין 50,000 ל-50,000,000</span></span>-->\n            <!--</div>-->\n            <div><input (click)=\"save()\" type=\"button\" value=\"עדכן סכום וסגור\" /></div>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- end modal -->\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalCalcutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ModalCalcutComponent = (function () {
+    function ModalCalcutComponent() {
+        this.closeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.saveEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ModalCalcutComponent.prototype.ngOnInit = function () {
+    };
+    ModalCalcutComponent.prototype.close = function () {
+        this.closeEvent.emit("");
+    };
+    ModalCalcutComponent.prototype.save = function () {
+        this.saveEvent.emit(this.amount);
+    };
+    return ModalCalcutComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", Object)
+], ModalCalcutComponent.prototype, "amount", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], ModalCalcutComponent.prototype, "closeEvent", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], ModalCalcutComponent.prototype, "saveEvent", void 0);
+ModalCalcutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-modal-calcut',
+        template: __webpack_require__("../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ModalCalcutComponent);
+
+//# sourceMappingURL=modal-calcut.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modal{\r\n    position: fixed;\r\n    overflow: visible;\r\n    overflow-y: auto;\r\n    background: #00000061;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.results_modal_succesful{\r\n    text-align: center;\r\n}\r\ndiv.results_modal_succesful.clearfix > div.title > h3{\r\n    text-align: center;\r\n    margin-bottom: 0.625rem;\r\n    white-space: nowrap;\r\n}\r\n    div.title > p{\r\n    color: #5f5f5f;\r\n}\r\ndiv.results_modal_succesful.clearfix > div.results_modal_preferred_time > h5{\r\n    color: #117ef5;\r\n}\r\ndiv.success{\r\n    text-align: center;\r\n    color: #117ef5;\r\n    font-size: 2em;\r\n    margin-top: -9px;\r\n    padding-bottom: 20px;\r\n    font-family: \"RaananSuper\";\r\n    direction: rtl;\r\n    margin-top: 10px;\r\n}\r\n\r\ninput[type=\"radio\"] {\r\n    display:none;\r\n}\r\n\r\ninput[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n\r\n    line-height: 22px;\r\n    padding: 1rem;\r\n    border: 2px solid #117ef5 !important;\r\n    margin-bottom: auto;\r\n    color: #626262;\r\n    border-radius:20px;\r\n    width: 137px;\r\n    height: 60px;\r\n    margin-right: 15px;\r\n}\r\n\r\ninput[type=\"radio\"] + label span {\r\n\r\n    font-size: 2.57143em;\r\n    line-height: 22px;\r\n    padding: 1rem;\r\n    margin-bottom: auto;\r\n    color: #626262;\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n    outline: 2px solid #707070 !important;\r\n}\r\n\r\n@media (min-width: 992px){\r\n    .close > span{\r\n        font-size: 37px;\r\n        line-height: 59px;\r\n        top: -5px;\r\n        position: relative\r\n    }\r\n    .close{\r\n        background-color: #ffffff;\r\n        border-radius: 50%;\r\n        width: 41px;\r\n        height: 41px;\r\n        min-height: 41px;\r\n        line-height: 41px;\r\n        color: #5f5f5f;\r\n        opacity: 1;\r\n    }\r\n    .modal-header{\r\n        background-color: transparent;\r\n        position: absolute;\r\n        z-index: 100;\r\n        right: 0;\r\n    }\r\n    a.btn.yes > span{\r\n        font-family: \"RaananSuper\";\r\n        font-weight: bold;\r\n        font-size: 1.57143em;\r\n        position: relative;\r\n        top: -17px;\r\n    }\r\n    a.btn.yes > p{\r\n        color: #fff;\r\n        text-align: center;\r\n        font-size: 2.71429em;\r\n        position: relative;\r\n        top: -5px;\r\n    }\r\n    div > a.btn.yes{\r\n        color: #fff;\r\n        background-color: #117ef5;\r\n        width: auto;\r\n        min-width: 305px;\r\n        float: right;\r\n        height: 71px;\r\n        margin-top: 15px;\r\n    }\r\n    div > a.btn.yes:active{\r\n        background-color: #4299f7;\r\n    }\r\n     div > a.btn.no{\r\n        color: #898989;\r\n        font-size: 2em;\r\n        background-color: rgba(255, 255, 255, 0);\r\n        width: auto;\r\n        min-width: 175px;\r\n        float: right;\r\n        text-decoration: underline;\r\n        margin-right: 1.25rem;\r\n     }\r\n    div.results_modal_banner.hidden-xs.hidden-sm > div > span{\r\n        color: #117ef5;\r\n        font-family: \"RaananSuper\";\r\n        font-weight: bold;\r\n        font-size: 2em;\r\n        line-height: .8;\r\n        float: right;\r\n        margin: 1.25rem 0 0 0;\r\n    }\r\n    div.results_modal_banner.hidden-xs.hidden-sm > div > p > span{\r\n        float: right;\r\n        clear: both;\r\n    }\r\n    div.results_modal_banner.hidden-xs.hidden-sm > div > p{\r\n        color: #626262;\r\n        font-size: 1.71429em;\r\n        line-height: 26px;\r\n    }\r\n    div.results_modal_banner.hidden-xs.hidden-sm > div > h2{\r\n        color: #626262;\r\n        font-size: 3.14286em;\r\n        line-height: 35px;\r\n        padding: 0 0 0 3.125rem;\r\n        margin: 2.9375rem 0 1.25rem 0\r\n    }\r\n    div.results_modal_banner.hidden-xs.hidden-sm > div{\r\n        width: 50%;\r\n        float: right;\r\n        text-align: right;\r\n    }\r\n    div.results_modal_banner.hidden-xs.hidden-sm{\r\n        height: 484px;\r\n        background-size: 76%;\r\n        background-repeat: no-repeat;\r\n        background-position: 0 0;\r\n        padding: 0 5.625rem 0 0;\r\n    }\r\n    .modal-dialog{\r\n        width: 98%;\r\n        top: 207px;\r\n    }\r\n    .results_modal_succesful{\r\n        background-color: #e7f2fe;\r\n        border-bottom: 1px solid #e1e1e1;\r\n        margin-top: 1.875rem;\r\n    }\r\n   div.results_modal_succesful.clearfix > div.results_modal_preferred_time > h5{\r\n        padding-left: 178px;\r\n        font-size: 2.14286em;\r\n        line-height: 30px;\r\n        margin-top: 3rem;\r\n        margin-bottom: 0.875rem;\r\n    }\r\n     div.results_modal_succesful.clearfix > div.title > h3{\r\n        font-size: 4.57143em;\r\n        line-height: 64px;\r\n     }\r\n     div.title > p{\r\n        font-size: 2.42857em;\r\n        line-height: 34px;\r\n    }\r\n}\r\n@media (max-width: 992px){\r\n    div.results_modal_succesful.clearfix > div.results_modal_preferred_time > h5{\r\n        margin-top: 0.75rem;\r\n        margin-bottom: 1rem;\r\n    }\r\n    div.results_modal_succesful.clearfix > div.title > h3{\r\n        font-size: 2.28571em;\r\n        line-height: 15px;\r\n        text-align: center;\r\n        margin-bottom: 0.625rem;\r\n        white-space: nowrap;\r\n        color: #5f5f5f;\r\n    }\r\n    .modal-dialog{\r\n        width: 100%;\r\n        margin-top: 102px;\r\n        margin-left: 0;\r\n    }\r\n    .hasSmoked-input{\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n        -webkit-box-orient: vertical;\r\n        -webkit-box-direction: reverse;\r\n            -ms-flex-flow: column-reverse;\r\n                flex-flow: column-reverse;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        MARGIN-BOTTOM: 10PX;\r\n    }\r\n    .close > span{\r\n        font-size: 37px;\r\n        line-height: 59px;\r\n        top: -5px;\r\n        position: relative\r\n    }\r\n    .close{\r\n        background-color: #ffffff;\r\n        border-radius: 50%;\r\n        width: 41px;\r\n        height: 41px;\r\n        min-height: 41px;\r\n        line-height: 41px;\r\n        color: #5f5f5f;\r\n        opacity: 1;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        width: 150px;\r\n        height: 40px;\r\n        font-size: 0.7em;\r\n        white-space: normal;\r\n        line-height: 26px;\r\n        padding: 0.375rem;\r\n        color: #626262;\r\n        font-weight: normal;\r\n        background: transparent;\r\n        border: 1px solid #117ef5 !important;\r\n        border-radius: 10px;\r\n        float: right;\r\n        margin-bottom: 1.0625rem;\r\n    }\r\n}\r\n\r\n\r\n\r\n@media screen and (min-width: 762px) and (max-width: 992px) { \r\n    div.results_modal_succesful.clearfix > div.results_modal_preferred_time > h5{\r\n        font-size: 2.42857em;\r\n        line-height: 34px;\r\n    }\r\n    div.results_modal_succesful.clearfix > div.title > h3{\r\n        font-size: 4.28571em;\r\n        line-height: 15px;\r\n        text-align: center;\r\n        margin-bottom: 1.625rem;\r\n        white-space: nowrap;\r\n        color: #5f5f5f;\r\n    }\r\n    .modal-dialog{\r\n        width: 100%;\r\n        margin-top: 102px;\r\n        margin-left: 0;\r\n    }\r\n    .hasSmoked-input{\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n        -webkit-box-align: center;\r\n            -ms-flex-align: center;\r\n                align-items: center;\r\n        -webkit-box-orient: vertical;\r\n        -webkit-box-direction: reverse;\r\n            -ms-flex-flow: column-reverse;\r\n                flex-flow: column-reverse;\r\n        display: -webkit-box;\r\n        display: -ms-flexbox;\r\n        display: flex;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        MARGIN-BOTTOM: 10PX;\r\n    }\r\n    .close > span{\r\n        font-size: 37px;\r\n        line-height: 59px;\r\n        top: -5px;\r\n        position: relative\r\n    }\r\n    .close{\r\n        background-color: #ffffff;\r\n        border-radius: 50%;\r\n        width: 41px;\r\n        height: 41px;\r\n        min-height: 41px;\r\n        line-height: 41px;\r\n        color: #5f5f5f;\r\n        opacity: 1;\r\n    }\r\n    input[type=\"radio\"] + label{\r\n        width: 300px;\r\n        height: 80px;\r\n        font-size: 1.4em;\r\n        line-height: 64px;\r\n        border-radius: 15px;\r\n        padding-top: 13px;\r\n    }\r\n    div.title > p{\r\n        font-size: 2.42857em;\r\n        line-height: 34px;\r\n    }\r\n}\r\n    @media (max-width: 768px){\r\n       \r\n        div.results_modal_succesful.clearfix> div.title > h3{\r\n            text-align: center;\r\n            margin-bottom: 0.625rem;\r\n            white-space: nowrap;\r\n            font-size: 2.57143em;\r\n            line-height: 64px;\r\n            margin-bottom: 0;\r\n        }\r\n        div.title > p{\r\n            font-size: 1.42857em;\r\n            line-height: 34px;\r\n            color: #5f5f5f;\r\n        }\r\n        div.results_modal_succesful.clearfix > div.results_modal_preferred_time> h5{\r\n            padding-left: 0;\r\n            font-size: 1.21429em;\r\n            line-height: 30px;\r\n            margin: 0rem;\r\n            \r\n        } \r\n        input[type=\"radio\"] + label{\r\n            font-size: 1.4em;\r\n        }\r\n        input[type=\"radio\"] + label span {\r\n            \r\n            font-size: 1.143em;\r\n            }\r\n            .modal-dialog{\r\n                width: 100%;\r\n                margin-top: 122px;\r\n            }\r\n            \r\n    }\r\n\r\n    \r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- modal -->\n<div class=\"modal fade\" style=\"display: block;\n     opacity: 1;\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <!-- modal header -->\n      <div class=\"modal-header\">\n        <button (click)=\"close()\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <!-- modal body -->\n      <div class=\"modal-body\">\n        <form>\n          <div class=\"results_modal_succesful clearfix\">\n            <div class=\"title\">\n              <h3>פנייתך התקבלה בהצלחה!</h3>\n              <p>נציגינו יצרו איתך קשר להמשך התהליך</p>\n            </div>\n\n            <div class=\"results_modal_preferred_time\">\n              <h5>אני מעדיף בזמנים הבאים:</h5>\n              <fieldset>\n                <legend class=\"sr-only\"></legend>\n                <div class=\"form-group userBox col-xs-12 noPadding\">\n                  <div class=\"preferred_time_form\" data-btoggle>\n                      <div class=\"hasSmoked-input\">\n                          <input type=\"radio\" id=\"smoke1\" name=\"status1\" value=\"1\"/>\n                          <label for=\"smoke1\"><span style=\"\">ערב</span></label>\n                          <input type=\"radio\" id=\"smoke\" name=\"status1\" value=\"2\"/>\n                          <label for=\"smoke\"><span style=\"\">צהריים</span></label>\n                          <input type=\"radio\" id=\"nsmoke\" name=\"status1\" value=\"3\"/>\n                          <label for=\"nsmoke\" style=\"border-right:none;\"><span style=\"\">בוקר</span></label>\n                      </div>\n                    <!-- <label>\n                      בוקר\n                      <input type=\"radio\" name=\"status1\" value=\"1\" />\n                    </label>\n                    <label>\n                      צהריים\n                      <input type=\"radio\" name=\"status1\" value=\"2\" />\n                    </label>\n                    <label>\n                      ערב\n                      <input type=\"radio\" name=\"status1\" value=\"3\" />\n                    </label> -->\n                  </div>\n                </div>\n              </fieldset>\n            </div>\n            <!--<div class=\"results_modal_congrats_box\">\n                <h4 class=\"v-title\">\n                    השאלון מולא בהצלחה\n                </h4>\n                <p class=\"subtitle\">\n                    ברוכים הבאים ובהצלחה\n                </p>\n            </div>-->\n            <div class=\"success\"><span class=\"icon icon-success\"></span> פרטייך התקבלו בהצלחה! </div>\n          </div>\n\n          <div class=\"results_modal_banner hidden-xs hidden-sm\" style=\"background-image:url(../sample-images/section1_bg1.png);background-size: 50% 100%;\">\n            \n\n            <div class=\"results_modal_banner_content\">\n              <h2>\n                פותחים את המכתבים מהבנק וחברות הביטוח ולא מבינים על מה אתם משלמים?\n              </h2>\n              <p class=\"clearfix\">\n                <span>יתכן שיש לכם ביטוחים מיותרים?</span>\n                <span>יכול להיות שיש לכם כפל ביטוחי?</span>\n                <span>סומכים על קופת החולים עם הבריאות שלכם?</span>\n              </p>\n              <span class=\"weRecommend clearfix\">\n                                    Wize:App ותוכל לקבל תמונה מלאה של כל החסכונות והביטוחים במקום אחד\n                                </span>\n              <div class=\"controls clearfix\">\n                <a (click)=\"yes()\" class=\"btn yes\">\n                  <p>צ'קאפ - התחל בדיקה</p>\n                  <span>זה יקח לך 3 דקות...</span>\n                </a>\n                <a (click)=\"no()\" class=\"btn no\">\n                  תודה אבל אני לא צריך\n                </a>\n              </div>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- modal end -->\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalChoseComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ModalChoseComponent = (function () {
+    function ModalChoseComponent() {
+        this.closeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    ModalChoseComponent.prototype.ngOnInit = function () {
+    };
+    ModalChoseComponent.prototype.close = function () {
+        this.closeEvent.emit("");
+    };
+    ModalChoseComponent.prototype.no = function () {
+        this.closeEvent.emit("");
+    };
+    ModalChoseComponent.prototype.yes = function () {
+        this.closeEvent.emit("");
+    };
+    return ModalChoseComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], ModalChoseComponent.prototype, "closeEvent", void 0);
+ModalChoseComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-modal-chose',
+        template: __webpack_require__("../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ModalChoseComponent);
+
+//# sourceMappingURL=modal-chose.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/smoking/smoking.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\ninput[type=\"radio\"] {\r\n    display:none;\r\n}\r\n\r\ninput[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n}\r\n\r\ninput[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n    width:60px;\r\n    height:45px;\r\n    vertical-align:middle;\r\n    background:white;\r\n    cursor:pointer;\r\n    border: 1px solid #117ef5;\r\n    text-align: center;\r\n    font-size: 1.57143em;\r\n    color: #626262;\r\n    padding-top: 8px;\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label span {\r\n    background: #117ef5;\r\n    color: white;\r\n    outline: 2px solid #707070 !important;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/smoking/smoking.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>השאוות הצעות לביטוח חיים</h2>\n  <p>\n    מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n  </p>\n  <span>יקח לך 2 דקות</span>\n</div>\n<div class=\"step_smoking col-xs-12 noPadding\">\n  <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError && !smoking && smoking !== false\">הודעת שגיאה</span>\n  <div class=\"smoking\">\n    <div class=\"isSmoking\">\n      <fieldset>\n        <legend class=\"sr-only\">###</legend>\n        <input type=\"hidden\" name=\"smoking\" id=\"hdnSmoking\" value=\"\" />\n        <div class=\"yes \" (click)=\"smoking = true\" [ngClass]=\"{'yes-active': smoking === true}\" role=\"button\" data-value=\"1\" tabindex=\"0\">\n          <span>מעשן</span>\n        </div>\n        <div class=\"no\" (click)=\"smoking = false\" [ngClass]=\"{'no-active': smoking === false}\" role=\"button\" data-value=\"0\" tabindex=\"0\">\n          <span>לא מעשן</span>\n        </div>\n      </fieldset>\n\n    </div>\n    <div class=\"lastSmoked hasSmoked\" *ngIf=\"smoking === false\">\n      <fieldset>\n        <legend>האם עישנת ב-3 השנים האחרונות</legend>\n        <div class=\"hasSmoked-input\">\n            <input type=\"radio\" id=\"smoke\" name=\"status1\" value=\"כן\" [(ngModel)]=\"yearSmokin\"/>\n            <label for=\"smoke\"><span style=\"border-radius:0px 5px 5px 0px;\">כן</span></label>\n            <input type=\"radio\" id=\"nsmoke\" name=\"status1\" value=\"לא\" [(ngModel)]=\"yearSmokin\"/>\n            <label for=\"nsmoke\" style=\"position: relative;left: 3px;border-right:none;\"><span style=\"border-radius:5px 0px 0px 5px;\">לא</span></label>\n        </div>\n        <span class=\"field-validation-error small\" *ngIf=\"showError && smoking === false && !yearSmokin\">אנא בחר ערך</span>\n      </fieldset>\n    </div>\n  </div>\n</div>\n<div class=\"calculatorControllsWrapper col-xs-12\">\n  <div class=\"calculatorControlls center-block\">\n    <a href=\"#\" class=\"btn backBtn center-block\">\n      <span>&#60;חזור</span>\n    </a>\n    <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n      <span>המשך</span>\n    </a>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/smoking/smoking.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SmokingComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SmokingComponent = (function () {
+    function SmokingComponent() {
+        this.yearSmokin = "";
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    SmokingComponent.prototype.ngOnInit = function () {
+    };
+    SmokingComponent.prototype.save = function () {
+        if (!this.smoking && !(this.smoking === false)) {
+            this.showError = true;
+        }
+        else {
+            if (this.smoking === false && !this.yearSmokin) {
+                this.showError = true;
+                return;
+            }
+            this.next.emit(({
+                naxtPage: 'profession',
+                type: "smoking",
+                model: this.smoking
+            }));
+        }
+    };
+    return SmokingComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], SmokingComponent.prototype, "next", void 0);
+SmokingComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-smoking',
+        template: __webpack_require__("../../../../../src/app/wizard/smoking/smoking.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/smoking/smoking.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SmokingComponent);
+
+//# sourceMappingURL=smoking.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/wizard.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/wizard.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main id=\"main\" class=\"container-fluid\" tabindex=\"-1\">\n  <!-- section 1 -->\n  <section class=\"row\">\n    <div class=\"calculator clearfix\">\n\n      <app-info *ngIf=\"activeTab === 'info'\" (next)=\"nextCheck($event)\"></app-info>\n      <app-genderselect *ngIf=\"activeTab === 'genderselect'\" (next)=\"nextCheck($event)\"></app-genderselect>\n      <app-birthdate *ngIf=\"activeTab === 'birthdate'\" (next)=\"nextCheck($event)\"></app-birthdate>\n      <app-smoking *ngIf=\"activeTab === 'smoking'\" (next)=\"nextCheck($event)\"></app-smoking>\n      <app-profession *ngIf=\"activeTab === 'profession'\" (next)=\"nextCheck($event)\"></app-profession>\n      <app-calculatorsummary *ngIf=\"activeTab === 'calculatorsummary'\" (next)=\"nextCheck($event)\"></app-calculatorsummary>\n      <app-calculator-side-panel [options]=\"risk\"></app-calculator-side-panel>\n    </div>\n  </section>\n  <!-- End section 1 -->\n  <!--<section class=\"row\">-->\n    <!--<div class=\"companiesShowcase\">-->\n      <!--<h2 class=\"text-center col-xs-10 col-xs-push-1 col-md-12 col-md-push-0\">אנחנו משווים בין החברות המובילות במשק</h2>-->\n      <!--<div class=\"col-xs-12\">-->\n        <!--<div class=\"companiesCarousel\" dir=\"rtl\">-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/klal.png\" alt=\"s2\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/slick2.png\" alt=\"s1\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/slick1.png\" alt=\"s3\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/menora.png\" alt=\"s1\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/harel.png\" alt=\"s3\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/ayalon.png\" alt=\"s1\"></a></div>-->\n          <!--<div><a href=\"#\"><img class=\"img-responsive\" src=\"sample-images/hachshara.png\" alt=\"s2\"></a></div>-->\n        <!--</div>-->\n      <!--</div>-->\n    <!--</div>-->\n  <!--</section>-->\n</main>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/wizard.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WizardComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models_risk__ = __webpack_require__("../../../../../src/app/shared/models/risk.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WizardComponent = (function () {
+    function WizardComponent() {
+        this.risk = new __WEBPACK_IMPORTED_MODULE_1__shared_models_risk__["a" /* Risk */]();
+        this.activeTab = 'info';
+        this.finish = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    WizardComponent.prototype.ngOnInit = function () {
+    };
+    WizardComponent.prototype.nextCheck = function (e) {
+        console.log(e);
+        if (e.finish) {
+            this.finish.emit(e.amount);
+        }
+        if (e.back) {
+            this.activeTab = e.back;
+            return;
+        }
+        switch (e.type) {
+            case "info":
+                this.risk.lastName = e.model.lastName;
+                this.risk.privateName = e.model.firstName;
+                this.risk.number = e.model.phone;
+                this.risk.prefix = e.model.prefix;
+                this.risk.email = e.model.email;
+                break;
+            case "genderselect":
+                this.risk.gender = e.model;
+                break;
+            case "birthdate":
+                this.risk.birthDate = e.model;
+                break;
+            case "smoking":
+                this.risk.doesSmoke = e.model;
+                break;
+            case "profession":
+                break;
+            case "calculatorsummary":
+                break;
+        }
+        this.activeTab = e.naxtPage;
+    };
+    return WizardComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], WizardComponent.prototype, "finish", void 0);
+WizardComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-wizard',
+        template: __webpack_require__("../../../../../src/app/wizard/wizard.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/wizard.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], WizardComponent);
+
+//# sourceMappingURL=wizard.component.js.map
 
 /***/ }),
 
@@ -1164,10 +1572,11 @@ var WrapperComponent = (function () {
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false
 };
-
+//# sourceMappingURL=environment.js.map
 
 /***/ }),
 
@@ -1176,8 +1585,8 @@ var environment = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
@@ -1185,11 +1594,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_12" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
-
+//# sourceMappingURL=main.js.map
 
 /***/ }),
 
