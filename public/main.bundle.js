@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<!--<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>-->\n\n<!--<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>-->\n<app-proposals [amount]=\"amount\"></app-proposals>\n\n<app-footer></app-footer>\n"
+module.exports = "<app-header></app-header>\n\n<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>\n\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!--<app-proposals [amount]=\"amount\"></app-proposals>-->\n\n<app-footer></app-footer>\n"
 
 /***/ }),
 
