@@ -10072,6 +10072,7 @@ footer .newsLetter .success {
 }
 
 #results-modal .general-content input[type="text"],
+#results-modal .general-content input[type="number"],
 #results-modal .general-content input[type="button"] {
   width: 306px;
   margin-bottom: 18px;
@@ -10084,12 +10085,14 @@ footer .newsLetter .success {
 
 @media (max-width: 768px) {
   #results-modal .general-content input[type="text"],
+  #results-modal .general-content input[type="number"],
   #results-modal .general-content input[type="button"] {
     width: 100%;
   }
 }
 
-#results-modal .general-content input[type="text"] {
+#results-modal .general-content input[type="text"],
+#results-modal .general-content input[type="number"]{
   margin-top: 2.5rem;
   color: #000;
   text-align: center;
@@ -10099,7 +10102,8 @@ footer .newsLetter .success {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #results-modal .general-content input[type="text"] {
+  #results-modal .general-content input[type="text"],
+  #results-modal .general-content input[type="number"]{
     height: 80px;
     width: 396px;
     font-size: 4.42857em;
