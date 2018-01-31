@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>\n\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!--<app-proposals [amount]=\"amount\"></app-proposals>-->\n\n<app-footer></app-footer>\n"
+module.exports = "<app-header></app-header>\n\n<!--<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>-->\n\n<app-health *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-health>\n\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!--<app-proposals [amount]=\"amount\"></app-proposals>-->\n\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -98,12 +98,22 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__wizard_proposals_modal_calcut_modal_calcut_component__ = __webpack_require__("../../../../../src/app/wizard/proposals/modal-calcut/modal-calcut.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__wizard_proposals_modal_chose_modal_chose_component__ = __webpack_require__("../../../../../src/app/wizard/proposals/modal-chose/modal-chose.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__health_health_component__ = __webpack_require__("../../../../../src/app/health/health.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__wizard_private_health_personalinfo_private_health_personalinfo_component__ = __webpack_require__("../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__wizard_kupot_holim_kupot_holim_component__ = __webpack_require__("../../../../../src/app/wizard/kupot-holim/kupot-holim.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__wizard_health_insurance_health_insurance_component__ = __webpack_require__("../../../../../src/app/wizard/health-insurance/health-insurance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
 
 
 
@@ -147,19 +157,126 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__shared_autocomplit_autocomplit_component__["a" /* AutocomplitComponent */],
             __WEBPACK_IMPORTED_MODULE_16__wizard_calculatorsummary_calculatorsummary_modal_calculatorsummary_modal_component__["a" /* CalculatorsummaryModalComponent */],
             __WEBPACK_IMPORTED_MODULE_17__wizard_proposals_modal_calcut_modal_calcut_component__["a" /* ModalCalcutComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__wizard_proposals_modal_chose_modal_chose_component__["a" /* ModalChoseComponent */]
+            __WEBPACK_IMPORTED_MODULE_18__wizard_proposals_modal_chose_modal_chose_component__["a" /* ModalChoseComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__health_health_component__["a" /* HealthComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__wizard_private_health_personalinfo_private_health_personalinfo_component__["a" /* PrivateHealthPersonalinfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__wizard_kupot_holim_kupot_holim_component__["a" /* KupotHolimComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__wizard_health_insurance_health_insurance_component__["a" /* HealthInsuranceComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_19__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
         ],
-        providers: [],
+        providers: [__WEBPACK_IMPORTED_MODULE_24__shared_service_store_service__["a" /* StoreService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/health/health.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".calculator{\r\n    padding-bottom: 100px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/health/health.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main id=\"main\" class=\"container-fluid\" tabindex=\"-1\">\n  <!-- section 1 -->\n  <section class=\"row\">\n    <div class=\"calculator clearfix\">\n\n      <app-info *ngIf=\"activeTab === 'info'\" (next)=\"nextCheck($event)\"></app-info>\n      <app-genderselect *ngIf=\"activeTab === 'genderselect'\" (next)=\"nextCheck($event)\"></app-genderselect>\n      <app-private-health-personalinfo *ngIf=\"activeTab === 'private-health-personalinfo'\" (next)=\"nextCheck($event)\"></app-private-health-personalinfo>\n      <!--<app-private-health-personalinfo  (next)=\"nextCheck($event)\"></app-private-health-personalinfo>-->\n      <app-kupot-holim  *ngIf=\"activeTab === 'kupot-holim'\" (next)=\"nextCheck($event)\"></app-kupot-holim>\n      <app-health-insurance *ngIf=\"activeTab === 'health-insurance'\" (next)=\"nextCheck($event)\"></app-health-insurance>\n      <!--<app-health-insurance (next)=\"nextCheck($event)\"></app-health-insurance>-->\n      <app-calculator-side-panel [options]=\"health\"></app-calculator-side-panel>\n    </div>\n  </section>\n</main>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/health/health.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HealthComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models_health__ = __webpack_require__("../../../../../src/app/shared/models/health.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HealthComponent = (function () {
+    function HealthComponent() {
+        this.health = new __WEBPACK_IMPORTED_MODULE_1__shared_models_health__["a" /* Health */]();
+        this.activeTab = 'info';
+        // activeTab = 'private-health-personalinfo';
+        this.finish = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    HealthComponent.prototype.ngOnInit = function () {
+    };
+    HealthComponent.prototype.nextCheck = function (e) {
+        console.log(e);
+        if (e.finish) {
+            this.finish.emit(e.amount);
+        }
+        if (e.back) {
+            this.activeTab = e.back;
+            return;
+        }
+        switch (e.type) {
+            case "info":
+                this.health.lastName = e.model.lastName;
+                this.health.privateName = e.model.firstName;
+                this.health.number = e.model.phone;
+                this.health.prefix = e.model.prefix;
+                this.health.email = e.model.email;
+                break;
+            case "genderselect":
+                this.health.gender = e.model;
+                break;
+            case "private-health-personalinfo":
+                this.health.birthDate = e.date;
+                this.health.doesSmoke = e.smoking;
+                break;
+            case "kupot-holim":
+                // this.risk.doesSmoke = e.model;
+                break;
+            case "health-insurance":
+                break;
+        }
+        this.activeTab = e.naxtPage;
+    };
+    return HealthComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], HealthComponent.prototype, "finish", void 0);
+HealthComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-health',
+        template: __webpack_require__("../../../../../src/app/health/health.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/health/health.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], HealthComponent);
+
+//# sourceMappingURL=health.component.js.map
 
 /***/ }),
 
@@ -320,7 +437,8 @@ ProposalsComponent = __decorate([
                     'height': '*'
                 })),
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* state */])('close', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({
-                    'height': '0px'
+                    'height': '0px',
+                    'opacity': '0'
                 })),
                 Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* transition */])('open <=> close', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])(100))
             ])
@@ -341,7 +459,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".button-wrap{\r\n    font-family: \"RaananSuper\";\r\n    color: #626262;\r\n    position: relative;\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n}\r\n.button-wrap > button{\r\n    height: 100%;\r\n    border-color: #117ef5;\r\n    padding-right: 0.375rem;\r\n    border: 2px solid #117ef5;\r\n    background-color: transparent;\r\n    border-radius: 10px;\r\n    padding: 0.125rem 0.625rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    width: 100%;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    padding-right: 16px;\r\n}\r\n.dropdawn{\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    width: 100% !important;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    list-style: none;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    background: white !important;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0,0,0,0.15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\r\n    background-clip: padding-box;\r\n\r\n}\r\ndiv > div{\r\n    background: white !important;\r\n}\r\n.dropdawn > input{\r\n    border: 2px solid #707070;\r\n    width: 100% !important;\r\n    font-size: 1.51429em;\r\n}\r\n.dropdawn > ul{\r\n    list-style: none;\r\n    padding: 5px 0;\r\n    text-align: center;\r\n    font-size: 22px;\r\n    background: white;\r\n    height: 150px;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    width: 100%;\r\n    padding-top: 0;\r\n}\r\n.dropdawn > ul > li > a{\r\n    color: #333;\r\n}\r\n.dropdawn > ul > li:hover{\r\n    color: #333;\r\n    text-decoration: none;\r\n    border: 2px solid #707070;\r\n    outline: 0;\r\n    background-color: #F5F5F5;\r\n}\r\n.button-wrap > button > i{\r\n    color: #117ef5;\r\n}\r\n.button-wrap > button > span{\r\n    font-size: 1.64286em;\r\n}\r\n.button-wrap > button:active{\r\n    /*background-color: #4299f7;*/\r\n}\r\n.button-wrap > button:focus{\r\n    outline: 2px solid #707070 !important;\r\n}\r\n.button-wrap > button:hover{\r\n    /*color: #fff;*/\r\n    /*background-color: #0965ca;*/\r\n}\r\n\r\n\r\n.dropdawn > ul::-webkit-scrollbar-thumb{\r\n    height: 10px !important;\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar\r\n  {\r\n    width: 10px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(239, 239, 239);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  @media (max-width: 992px){\r\n    .button-wrap > button{\r\n        border: 1px solid #117ef5;\r\n    }\r\n  }\r\n", ""]);
+exports.push([module.i, ".button-wrap{\r\n    font-family: \"RaananSuper\";\r\n    color: #626262;\r\n    position: relative;\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n}\r\n.button-wrap > button{\r\n    height: 100%;\r\n    border-color: #117ef5;\r\n    padding-right: 0.375rem;\r\n    border: 2px solid #117ef5;\r\n    background-color: transparent;\r\n    border-radius: 10px;\r\n    padding: 0.125rem 0.625rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    width: 100%;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    padding-right: 16px;\r\n}\r\n.dropdawn{\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    width: 100% !important;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    list-style: none;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    background: white !important;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0,0,0,0.15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\r\n    background-clip: padding-box;\r\n\r\n}\r\ndiv > div{\r\n    background: white !important;\r\n}\r\n.dropdawn > input{\r\n    border: 2px solid #707070;\r\n    width: 100% !important;\r\n    font-size: 1.51429em;\r\n}\r\n.dropdawn > ul{\r\n    list-style: none;\r\n    padding: 5px 0;\r\n    text-align: center;\r\n    font-size: 22px;\r\n    background: white;\r\n    height: 150px;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    width: 100%;\r\n    padding-top: 0;\r\n}\r\n.dropdawn > ul > li > a{\r\n    color: #333;\r\n    color: #333;\r\n    width: 100%;\r\n    margin: 0 !important;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n.dropdawn > ul > li{\r\n    cursor: pointer;\r\n}\r\n.dropdawn > ul > li:hover{\r\n    color: #333;\r\n    text-decoration: none;\r\n    border: 2px solid #707070;\r\n    outline: 0;\r\n    background-color: #F5F5F5;\r\n}\r\n.button-wrap > button > i{\r\n    color: #117ef5;\r\n}\r\n.button-wrap > button > span{\r\n    font-size: 1.64286em;\r\n}\r\n.button-wrap > button:active{\r\n    /*background-color: #4299f7;*/\r\n}\r\n.button-wrap > button:focus{\r\n    outline: 2px solid #707070 !important;\r\n}\r\n.button-wrap > button:hover{\r\n    /*color: #fff;*/\r\n    /*background-color: #0965ca;*/\r\n}\r\n\r\n\r\n.dropdawn > ul::-webkit-scrollbar-thumb{\r\n    height: 10px !important;\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar\r\n  {\r\n    width: 10px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(239, 239, 239);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  @media (max-width: 992px){\r\n    .button-wrap > button{\r\n        border: 1px solid #117ef5;\r\n    }\r\n  }\r\n", ""]);
 
 // exports
 
@@ -456,7 +574,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\n  .checked{\r\n    content: \"\\F046\";\r\n  }\r\n  input[type=\"checkbox\"]{\r\n    display: none;\r\n}\r\ninput[type=\"checkbox\"]:checked + label::before {\r\n    content: \"\\F046\";\r\n}\r\n\r\n@media screen and (min-width: 1200px) {\r\n    .contactUs {\r\n        width: 178px !important;\r\n        margin-left: 7% !important;\r\n    }\r\n    .wrapper-main{\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;-ms-flex-wrap: wrap;flex-wrap: wrap;\r\n    }\r\n}\r\n@media (min-width: 1200px) and (min-width: 992px){\r\n    .row > div{\r\n        margin-left: 6%;\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, "\r\n  .checked{\r\n    content: \"\\F046\";\r\n  }\r\n  input[type=\"checkbox\"]{\r\n    display: none;\r\n}\r\ninput[type=\"checkbox\"]:checked + label::before {\r\n    content: \"\\F046\";\r\n}\r\n\r\n@media screen and (min-width: 1200px) {\r\n    .contactUs {\r\n        width: 178px !important;\r\n        margin-left: 5% !important;\r\n    }\r\n    .wrapper-main{\r\n      display: -webkit-box;\r\n      display: -ms-flexbox;\r\n      display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;-ms-flex-wrap: wrap;flex-wrap: wrap;\r\n    }\r\n}\r\n@media (min-width: 1200px) and (min-width: 992px){\r\n    .row > div{\r\n        margin-left: 6%;\r\n    }\r\n}\r\n", ""]);
 
 // exports
 
@@ -570,6 +688,21 @@ HeaderComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/shared/models/health.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Health; });
+var Health = (function () {
+    function Health() {
+    }
+    return Health;
+}());
+
+//# sourceMappingURL=health.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/shared/models/risk.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -582,6 +715,43 @@ var Risk = (function () {
 }());
 
 //# sourceMappingURL=risk.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/service/store.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StoreService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var StoreService = (function () {
+    function StoreService() {
+        this.store = {};
+    }
+    StoreService.prototype.getByKey = function (key) {
+        return this.store[key];
+    };
+    StoreService.prototype.setByKey = function (key, value) {
+        this.store[key] = value;
+    };
+    return StoreService;
+}());
+StoreService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], StoreService);
+
+//# sourceMappingURL=store.service.js.map
 
 /***/ }),
 
@@ -738,7 +908,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/wizard/calculator-side-panel/calculator-side-panel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"calculatorSidePanel\">\n  <ul>\n    <li class=\"personalDetails\" *ngIf=\"options && options.lastName\">\n      <span>{{options.lastName}} {{options.privateName}}</span>\n      <img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />\n    </li>\n    <li class=\"gender\" *ngIf=\"options && options.gender\">\n      <span>גבר</span>\n      <img *ngIf=\"options.gender === 'male'\" src=\"sample-images/calculator/cal_man.png\" alt=\"###\" />\n      <img *ngIf=\"options.gender === 'female'\" src=\"sample-images/calculator/cal_woman.png\" alt=\"###\" />\n    </li>\n    <li class=\"bDate\" *ngIf=\"options && options.birthDate\">\n      <span>{{options.birthDate}}</span>\n      <img src=\"sample-images/calculator/cal_b_day.png\" alt=\"###\" />\n    </li>\n    <li class=\"smoking\" *ngIf=\"options && (options.doesSmoke || options.doesSmoke === false)\">\n      <span>לא מעשן</span>\n      <img *ngIf=\"options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_yes.png\" alt=\"###\" />\n      <img *ngIf=\"!options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_no.png\" alt=\"###\" />\n    </li>\n\n    <!--<li class=\"personalDetails\" *ngIf=\"options && options.lastName\">-->\n      <!--<span>{{options.lastName}} {{options.privateName}}</span>-->\n      <!--<img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"currency\">-->\n      <!--<span>1,000,000</span>-->\n      <!--<img src=\"sample-images/calculator/cal_nis.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"insurance\">-->\n      <!--<span>יש לי ביטוח חיים</span>-->\n      <!--<img src=\"sample-images/calculator/cal_insurance_yes.png\" alt=\"###\" />-->\n    <!--</li>-->\n  </ul>\n</div>\n"
+module.exports = "<div class=\"calculatorSidePanel\" style=\"height: unset !important;top: 0;\">\n  <ul>\n    <li class=\"personalDetails\" *ngIf=\"options && options.lastName\">\n      <span>{{options.lastName}} {{options.privateName}}</span>\n      <img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />\n    </li>\n    <li class=\"gender\" *ngIf=\"options && options.gender\">\n      <span>גבר</span>\n      <img *ngIf=\"options.gender === 'male'\" src=\"sample-images/calculator/cal_man.png\" alt=\"###\" />\n      <img *ngIf=\"options.gender === 'female'\" src=\"sample-images/calculator/cal_woman.png\" alt=\"###\" />\n    </li>\n    <li class=\"bDate\" *ngIf=\"options && options.birthDate\">\n      <span>{{options.birthDate}}</span>\n      <img src=\"sample-images/calculator/cal_b_day.png\" alt=\"###\" />\n    </li>\n    <li class=\"smoking\" *ngIf=\"options && (options.doesSmoke || options.doesSmoke === false)\">\n      <span>לא מעשן</span>\n      <img *ngIf=\"options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_yes.png\" alt=\"###\" />\n      <img *ngIf=\"!options.doesSmoke\" src=\"sample-images/calculator/cal_smoke_no.png\" alt=\"###\" />\n    </li>\n\n    <!--<li class=\"personalDetails\" *ngIf=\"options && options.lastName\">-->\n      <!--<span>{{options.lastName}} {{options.privateName}}</span>-->\n      <!--<img src=\"sample-images/calculator/cal_person_details.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"currency\">-->\n      <!--<span>1,000,000</span>-->\n      <!--<img src=\"sample-images/calculator/cal_nis.png\" alt=\"###\" />-->\n    <!--</li>-->\n\n    <!--<li class=\"insurance\">-->\n      <!--<span>יש לי ביטוח חיים</span>-->\n      <!--<img src=\"sample-images/calculator/cal_insurance_yes.png\" alt=\"###\" />-->\n    <!--</li>-->\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -1010,6 +1180,7 @@ module.exports = "    <div class=\"calculatorHead col-xs-12 noPadding\">\n      
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GenderselectComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1020,9 +1191,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var GenderselectComponent = (function () {
-    function GenderselectComponent() {
+    function GenderselectComponent(storeService) {
+        this.storeService = storeService;
         this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        var store = this.storeService.getByKey("genderselect");
+        if (store) {
+            this.gender = store;
+        }
     }
     GenderselectComponent.prototype.ngOnInit = function () {
     };
@@ -1032,10 +1209,12 @@ var GenderselectComponent = (function () {
         }
         else {
             this.next.emit(({
-                naxtPage: 'birthdate',
+                // naxtPage: 'birthdate',
+                naxtPage: 'private-health-personalinfo',
                 model: this.gender,
                 type: 'genderselect'
             }));
+            this.storeService.setByKey("genderselect", this.gender);
         }
     };
     return GenderselectComponent;
@@ -1050,10 +1229,112 @@ GenderselectComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/wizard/genderselect/genderselect.component.html"),
         styles: [__webpack_require__("../../../../../src/app/wizard/genderselect/genderselect.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
 ], GenderselectComponent);
 
+var _a;
 //# sourceMappingURL=genderselect.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/health-insurance/health-insurance.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* active radio */\r\n/* div > div> div > div > div > div > div > fieldset > div > div > label:focus{ \r\n    background: #117ef5;\r\n    color: #626262;\r\n    border: none;\r\n    outline: none !important;\r\n}\r\ndiv.step_calculatorSummary.col-xs-12.noPadding > div > div > div > div > div> fieldset > div > label:focus{\r\n    background: #117ef5;\r\n    color: #626262;\r\n    border: none;\r\n    outline: none !important;\r\n} */\r\n.hasSmoked-input{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: start;\r\n        -ms-flex-pack: start;\r\n            justify-content: flex-start;\r\n}\r\n.modalStatus{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] {\r\n    display:none;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n    width: 20%;\r\n    border: 2px solid #117ef5;\r\n    padding: 0 2rem;\r\n    font-size: 1.57143em;\r\n    line-height: 22px;\r\n    background:white;\r\n    cursor:pointer;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n    vertical-align:middle;\r\n    text-align: center;\r\n    color: #626262;\r\n    padding-top: 8px;\r\n    height: 43px;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n    /* border: 2px solid #707070 !important; */\r\n}\r\n.radio-buttons-top{\r\n    margin-bottom: 20px;\r\n}\r\n.bottom-input > input[type=\"radio\"] + label {\r\n    border: 1px solid #117ef5;\r\n    white-space: nowrap;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label > span{\r\n    color: white;\r\n    /* border: 2px solid #707070 !important; */\r\n}\r\n.left-input > input[type=\"radio\"] + label {\r\n    width: 32%;\r\n}\r\n.wrapper{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    height: 64px;\r\n}\r\n.clearfix{\r\n    \r\n}\r\n.form-wrapper{\r\n    position: relative;\r\n}\r\n.val-container{\r\n    position: absolute;\r\n    bottom: 0;\r\n}\r\n@media screen and (min-width: 992px) {\r\n    .error-right{\r\n        padding-right: 103px !important;\r\n    }\r\n    .error-left{\r\n        padding-right: 97px !important;\r\n    }\r\n    \r\n}\r\n\r\n@media screen and (max-width: 992px) {\r\n    .wrapper{\r\n        display: block;\r\n        height: 107px;\r\n    }\r\n    .hasSmoked-input > input[type=\"radio\"] + label {\r\n        width: 33%;\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .hasSmoked-input > input[type=\"radio\"] + label {\r\n        width: 91px;\r\n    }\r\n    .left-input > input[type=\"radio\"] + label {\r\n        width: 91px;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/health-insurance/health-insurance.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"calculator clearfix\">\n  <div class=\"calculatorHead col-xs-12 noPadding\">\n    <h2>השאוות הצעות לביטוח בריאות</h2>\n    <p>\n      מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n    </p>\n    <span>יקח לך 2 דקות</span>\n  </div>\n  <div class=\"step_calculatorSummary col-xs-12 noPadding\">\n    <span class=\"field-validation-error center-block text-center\" *ngIf=\"showError\">הודעת שגיאה</span>\n    <div class=\"calculatorSummary col-xs-12\">\n\n      <div class=\"calculate\">\n        <!--private-health-->\n        <div class=\"private-health\">\n          <h3>תוכנית בריאות פרטית</h3>\n          <div class=\"generalForm\">\n            <!--form-group-->\n            <div class=\"form-group col-md-5 col-xs-12 right\">\n              <!--1-->\n              <fieldset class=\"form-wrapper\">\n                <legend class=\"sr-only\">###</legend>\n                <p>האם קיימת תוכנית בריאות פרטית?</p>\n                <div class=\"clearfix\">\n                  <div class=\"wrapper\">\n                      <div class=\"subject col-md-4 col-xs-12 right noPadding\">\n                          <div>\n                            דוד דוד דוד דוד\n                          </div>\n                        </div>\n                        <div class=\"private1 btn-group btoggle btoggle-single col-md-7  col-xs-12 noPadding right\" dir=\"rtl\">\n                        <div class=\"hasSmoked-input bottom-input\">\n                            <input type=\"radio\" id=\"radio1\" name=\"private-health11\" value=\"1\" [(ngModel)]=\"manExist\"/>\n                            <label for=\"radio1\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >כן</span></label>\n                            <input type=\"radio\" id=\"radio2\" name=\"private-health11\" value=\"2\" [(ngModel)]=\"manExist\"/>\n                            <label for=\"radio2\" style=\"border-right:0px;\"><span >לא</span></label>\n                            <input type=\"radio\" id=\"radio3\" name=\"private-health11\" value=\"3\" [(ngModel)]=\"manExist\"/>\n                            <label for=\"radio3\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                        </div>\n\n                        </div>\n                  </div>\n\n                </div>\n                <div *ngIf=\"showError && !manExist\" class=\"val-container\">\n                  <span class=\"small field-validation-error error-right\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                </div>\n              </fieldset>\n              <!--2-->\n              <fieldset *ngIf=\"info.wifeName\" class=\"form-wrapper\">\n                <div class=\"clearfix\">\n                    <div class=\"wrapper\">\n                        <div class=\"subject col-md-4 col-xs-12 right noPadding\"><div>בן/ בת זוג:</div></div>\n                        <div class=\"private2 btn-group btoggle btoggle-single col-md-7  col-xs-12 noPadding right\" dir=\"rtl\">\n                            <div class=\"hasSmoked-input bottom-input\">\n                                <input type=\"radio\" id=\"radio4\" name=\"private-health12\" value=\"1\"  [(ngModel)]=\"wifeExist\"/>\n                                <label for=\"radio4\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >כן</span></label>\n                                <input type=\"radio\" id=\"radio5\" name=\"private-health12\" value=\"2\"  [(ngModel)]=\"wifeExist\"/>\n                                <label for=\"radio5\" style=\"border-right:0px;\"><span >לא</span></label>\n                                <input type=\"radio\" id=\"radio6\" name=\"private-health12\" value=\"3\" [(ngModel)]=\"wifeExist\" />\n                                <label for=\"radio6\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                            </div>\n\n                        </div>\n                    </div>\n\n                </div>\n                <div *ngIf=\"showError && !wifeExist\" class=\"val-container\">\n                  <span class=\"small field-validation-error error-right\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                </div>\n              </fieldset>\n              <!--3-->\n              <fieldset *ngIf=\"info.childAmount\" class=\"form-wrapper\">\n                  <div class=\"wrapper\">\n                      <div class=\"subject col-md-4 col-xs-12 right noPadding\"><div>ילדים:</div></div>\n                      <div class=\"private3 btn-group btoggle btoggle-single col-md-7  col-xs-12 right noPadding\" dir=\"rtl\">\n                        <div class=\"hasSmoked-input bottom-input\">\n                                <input type=\"radio\" id=\"radio7\" name=\"private-health13\" value=\"1\"  [(ngModel)]=\"childExist\"/>\n                                <label for=\"radio7\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >כן</span></label>\n                                <input type=\"radio\" id=\"radio8\" name=\"private-health13\" value=\"2\" [(ngModel)]=\"childExist\"/>\n                                <label for=\"radio8\" style=\"border-right:0px;\"><span >לא</span></label>\n                                <input type=\"radio\" id=\"radio9\" name=\"private-health13\" value=\"3\" [(ngModel)]=\"childExist\"/>\n                                <label for=\"radio9\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                            </div>\n\n                      </div>\n                  </div>\n                  <div *ngIf=\"showError && !childExist\" class=\"val-container\">\n                    <span class=\"small field-validation-error error-right\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                  </div>\n              </fieldset>\n              <!--span class=\"field-validation-error\">error<!--/span-->\n            </div>\n            <!--end form-group-->\n            <!--form-group-->\n            <div class=\"form-group col-md-7 col-xs-12 right\">\n              <!--1-->\n              <fieldset class=\"form-wrapper\">\n                <p>סוג התוכנית</p>\n                <div class=\"clearfix\">\n                    <div class=\"wrapper\" [ngClass]=\"{'inactive-block': manExist === '2'}\">\n                        <div class=\"subject col-md-2 col-xs-12 noPadding right\">\n                            <div>\n                              דוד\n                            </div>\n                          </div>\n                          <div class=\"type1 btn-group btoggle btoggle-single col-md-9  col-xs-12 noPadding right\" dir=\"rtl\">\n                              <div class=\"hasSmoked-input bottom-input left-input\">\n                                  <input type=\"radio\" id=\"radio13\" name=\"private-health1\" value=\"1\" [(ngModel)]=\"manType\"/>\n                                  <label for=\"radio13\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >פרטית</span></label>\n                                  <input type=\"radio\" id=\"radio14\" name=\"private-health1\" value=\"2\" [(ngModel)]=\"manType\"/>\n                                  <label for=\"radio14\" style=\"border-right:0px;\"><span >קולקטיב</span></label>\n                                  <input type=\"radio\" id=\"radio15\" name=\"private-health1\" value=\"3\" [(ngModel)]=\"manType\"/>\n                                  <label for=\"radio15\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                              </div>\n\n                          </div>\n                    </div>\n\n                </div>\n                <div *ngIf=\"showError && !manType && manExist !== '2'\" class=\"val-container\">\n                  <span class=\"small field-validation-error error-left\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                </div>\n              </fieldset>\n              <!--2-->\n              <fieldset *ngIf=\"info.wifeName\"  class=\"form-wrapper\">\n                <div class=\"wrapper\" [ngClass]=\"{'inactive-block': wifeExist === '2'}\">\n                    <div class=\"subject col-md-3 noPadding right col-xs-12\" style=\"white-space:nowrap;margin-left: 7px;\"><div>בן/ בת זוג:</div></div>\n                    <div class=\"clearfix\" style=\"width: 100%;\">\n                      <div class=\"type2 btn-group btoggle btoggle-single col-xs-12 noPadding right\" dir=\"rtl\">\n                          <div class=\"hasSmoked-input bottom-input left-input\">\n                              <input type=\"radio\" id=\"radio16\" name=\"private-health2\" value=\"1\" [(ngModel)]=\"wifeType\"/>\n                              <label for=\"radio16\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >פרטית</span></label>\n                              <input type=\"radio\" id=\"radio17\" name=\"private-health2\" value=\"2\" [(ngModel)]=\"wifeType\"/>\n                              <label for=\"radio17\" style=\"border-right:0px;\"><span >קולקטיב</span></label>\n                              <input type=\"radio\" id=\"radio18\" name=\"private-health2\" value=\"3\" [(ngModel)]=\"wifeType\"/>\n                              <label for=\"radio18\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                          </div>\n\n                      </div>\n                    </div>\n                </div>\n\n                <div *ngIf=\"showError && !wifeType && wifeExist !== '2'\" class=\"val-container\">\n                  <span class=\"small field-validation-error error-left\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                </div>\n              </fieldset>\n              <!--3-->\n              <fieldset *ngIf=\"info.childAmount\" class=\"form-wrapper\">\n                <div class=\"wrapper\" [ngClass]=\"{'inactive-block': childExist === '2'}\">\n                    <div class=\"subject col-md-2 col-xs-12 noPadding right\"><div>ילדים:</div></div>\n                    <div class=\"type3 btn-group btoggle btoggle-single col-md-9  col-xs-12 noPadding right\" dir=\"rtl\">\n                        <div class=\"hasSmoked-input bottom-input left-input\">\n                            <input type=\"radio\" id=\"radio19\" name=\"private-health3\" value=\"1\" [(ngModel)]=\"childType\"/>\n                            <label for=\"radio19\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >פרטית</span></label>\n                            <input type=\"radio\" id=\"radio20\" name=\"private-health3\" value=\"2\" [(ngModel)]=\"childType\"/>\n                            <label for=\"radio20\" style=\"border-right:0px;\"><span >קולקטיב</span></label>\n                            <input type=\"radio\" id=\"radio21\" name=\"private-health3\" value=\"3\" [(ngModel)]=\"childType\"/>\n                            <label for=\"radio21\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                        </div>\n\n                    </div>\n                </div>\n                <div *ngIf=\"showError && !childType && childExist !== '2'\" class=\"val-container\">\n                  <span class=\"small field-validation-error error-left\" data-valmsg-for=\"PrivateHealthInsurance\" data-valmsg-replace=\"true\"><span id=\"PrivateHealthInsurance-error\" class=\"\">אנא בחר ערך</span></span>&nbsp;\n                </div>\n                <!--span class=\"field-validation-error\">error<!--/span-->\n              </fieldset>\n              <!--end form-group-->\n            </div>\n          </div>\n        </div>\n        <!--end private-health-->\n      </div>\n    </div>\n\n\n  </div>\n  <div class=\"calculatorControllsWrapper col-xs-12\">\n    <div class=\"calculatorControlls center-block\">\n      <a (click)=\"back()\" class=\"btn backBtn center-block\">\n        <span>&#60;חזור</span>\n      </a>\n      <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n        <span>לקבלת הצעות</span>\n      </a>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/health-insurance/health-insurance.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HealthInsuranceComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HealthInsuranceComponent = (function () {
+    function HealthInsuranceComponent(storeService) {
+        this.storeService = storeService;
+        this.manExist = "";
+        this.manType = "";
+        this.wifeExist = "";
+        this.wifeType = "";
+        this.childExist = "";
+        this.childType = "";
+        this.info = {};
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    HealthInsuranceComponent.prototype.ngOnInit = function () {
+        var info = this.storeService.getByKey("private-health-personalinfo");
+        if (info) {
+            this.info = info;
+        }
+    };
+    HealthInsuranceComponent.prototype.save = function () {
+        if (!this.manExist || (!this.manType && this.manExist !== '2') ||
+            (this.info.wifeName && (!this.wifeExist || !this.wifeType) && this.wifeExist !== '2') ||
+            (this.info.childAmount && (!this.childExist || !this.childType) && this.childExist !== '2')) {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                finish: true,
+                naxtPage: 'health-insurance',
+                type: "health-insurance",
+                model: this.manExist
+            }));
+        }
+    };
+    HealthInsuranceComponent.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 'kupot-holim'
+        }));
+    };
+    return HealthInsuranceComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], HealthInsuranceComponent.prototype, "next", void 0);
+HealthInsuranceComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-health-insurance',
+        template: __webpack_require__("../../../../../src/app/wizard/health-insurance/health-insurance.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/health-insurance/health-insurance.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
+], HealthInsuranceComponent);
+
+var _a;
+//# sourceMappingURL=health-insurance.component.js.map
 
 /***/ }),
 
@@ -1088,6 +1369,7 @@ module.exports = "<div class=\"calculatorHead col-xs-12 noPadding\">\n  <h2>הש
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1098,8 +1380,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var InfoComponent = (function () {
-    function InfoComponent() {
+    function InfoComponent(storeService) {
+        this.storeService = storeService;
         this.model = {
             firstName: "",
             lastName: "",
@@ -1127,6 +1411,10 @@ var InfoComponent = (function () {
             },
         ];
         this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        var store = this.storeService.getByKey("info");
+        if (store) {
+            this.model = store;
+        }
     }
     InfoComponent.prototype.ngOnInit = function () {
     };
@@ -1147,6 +1435,7 @@ var InfoComponent = (function () {
                 type: "info",
                 model: this.model
             }));
+            this.storeService.setByKey("info", this.model);
         }
     };
     return InfoComponent;
@@ -1161,10 +1450,298 @@ InfoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/wizard/info/info.component.html"),
         styles: [__webpack_require__("../../../../../src/app/wizard/info/info.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
 ], InfoComponent);
 
+var _a;
 //# sourceMappingURL=info.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/kupot-holim/kupot-holim.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*  active radio */\r\ndiv.step_calculatorSummary.col-xs-12.noPadding > div > div > div > div > div > fieldset > div > input[type=\"radio\"]:checked + label{\r\n    background: #117ef5 !important;\r\n    color: #626262 !important;\r\n    border: none !important;\r\n    outline: none !important;\r\n}\r\n/*  */\r\n\r\n.hasSmoked-input{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.modalStatus{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] {\r\n    display:none;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n    width: 25%;\r\n    border: 2px solid #117ef5;\r\n    padding: 0 2rem;\r\n    font-size: 1.57143em;\r\n    line-height: 22px;\r\n    background:white;\r\n    cursor:pointer;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n   \r\n    \r\n    vertical-align:middle;\r\n    \r\n   \r\n    \r\n    text-align: center;\r\n    color: #626262;\r\n    padding-top: 8px;\r\n    height: 43px;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n    /* border: 2px solid #707070 !important; */\r\n}\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label > span{\r\n    color: white;\r\n    /* border: 2px solid #707070 !important; */\r\n}\r\n.radio-buttons-top{\r\n    margin-bottom: 20px;\r\n}\r\n.bottom-input > input[type=\"radio\"] + label {\r\n    width: 25%;\r\n    border: 1px solid #117ef5;\r\n}\r\n.left-wrap-radio > input[type=\"radio\"] + label {\r\n    width: 41%;\r\n}\r\n.left-wrap-radio > input[type=\"radio\"] +  label:nth-child(4){\r\n    width: 59%;\r\n}\r\n@media screen and (max-width: 992px) {\r\n    .left-content-top {\r\n        float: right;\r\n        padding-right: 0\r\n    }\r\n}\r\n@media screen and (max-width: 500px) {\r\n    .bottom-input > input[type=\"radio\"] + label {\r\n        padding: 0 0 !important;\r\n    }\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/kupot-holim/kupot-holim.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <div class=\"calculator clearfix\">\n    <div class=\"calculatorHead col-xs-12 noPadding\">\n      <h2>השאוות הצעות לביטוח בריאות</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>יקח לך 2 דקות</span>\n    </div>\n    <div class=\"step_calculatorSummary col-xs-12 noPadding\">\n      <span class=\"field-validation-error center-block text-center\"*ngIf=\"showError\">הודעת שגיאה</span>\n      <div class=\"calculatorSummary col-xs-12\">\n\n        <div class=\"calculate\">\n          <!--private-health-->\n          <div class=\"private-health\">\n            <h3 class=\"yesPadding\">קופת חולים + משלימים</h3>\n            <div class=\"generalForm HMO\">\n              <div class=\"radio-buttons-top col-xs-12 \">\n                  <div class=\"col-md-5 col-xs-8 left-content-top\">\n                      <div class=\"col-xs-12 noPadding\">\n                          <div class=\"statusForm big\" style=\"display: flex;flex-flow: column;\">\n                              <div class=\"subject right noPadding\">דוד</div>\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio6\" name=\"status1\" value=\"true\" [(ngModel)]=\"obj.manHMOextra\"/>\n                                  <label for=\"radio6\" style=\"border-bottom-right-radius: 20px;border-top-right-radius: 20px;\"><span >רווק</span></label>\n                                  <input type=\"radio\" id=\"radio7\" name=\"status1\" value=\"false\" [(ngModel)]=\"obj.manHMOextra\"/>\n                                  <label for=\"radio7\" style=\"border-right:0px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;\"><span >אחר</span></label>\n                              </div>\n                          </div>\n                          <span class=\"field-validation-error\" *ngIf=\"showError && !obj.manHMOextra && obj.manHMOextra !== false\">אנא בחר ערך</span>\n                        </div>\n                  </div>\n                  <div class=\"col-md-7 col-xs-12\" style=\"padding-right: 0;\">\n                      <div class=\"col-xs-12 noPadding\" style=\"padding-right: 0;\">\n                          <div class=\"statusForm big\" style=\"display: flex;flex-flow: column;\">\n                              <div class=\"subject right noPadding\">דוד</div>\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio1\" name=\"status12\" value=\"16\" [(ngModel)]=\"obj.manHMO\"/>\n                                  <label for=\"radio1\" style=\"border-bottom-right-radius: 20px;border-top-right-radius: 20px;\"><span >רווק</span></label>\n                                  <input type=\"radio\" id=\"radio3\" name=\"status12\" value=\"17\" [(ngModel)]=\"obj.manHMO\"/>\n                                  <label for=\"radio3\" style=\"border-right:0px;\"><span >גרוש</span></label>\n                                  <input type=\"radio\" id=\"radio4\" name=\"status12\" value=\"18\" [(ngModel)]=\"obj.manHMO\"/>\n                                  <label for=\"radio4\" style=\"border-right:0px;\"><span >אלמן</span></label>\n                                  <input type=\"radio\" id=\"radio5\" name=\"status12\" value=\"19\" [(ngModel)]=\"obj.manHMO\"/>\n                                  <label for=\"radio5\" style=\"border-right:0px;border-bottom-left-radius: 20px;border-top-left-radius: 20px;\"><span >אחר</span></label>\n                              </div>\n                          </div>\n                          <span class=\"field-validation-error\" *ngIf=\"showError && !obj.manHMO\">אנא בחר ערך</span>\n                        </div>\n                  </div>\n              </div>\n              <!--form-group-->\n              <div *ngIf=\"info.wifeName\" class=\"form-group col-xs-12 noPadding\">\n                <!--1-->\n                <fieldset class=\"col-md-8  col-xs-12 right form-wrapper\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"subject col-xs-12 right noPadding\">דוד</div>\n                  <div class=\"HMO-name btn-group btoggle btoggle-single col-xs-12 noPadding right\" dir=\"rtl\">\n                      <div class=\"hasSmoked-input bottom-input\">\n                          <input type=\"radio\" id=\"radio8\" name=\"HMO-name\" value=\"1\" [(ngModel)]=\"obj.wifeHMO\"/>\n                          <label for=\"radio8\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >מאוחדת</span></label>\n                          <input type=\"radio\" id=\"radio9\" name=\"HMO-name\" value=\"2\" [(ngModel)]=\"obj.wifeHMO\"/>\n                          <label for=\"radio9\" style=\"border-right:0px;\"><span >מכבי</span></label>\n                          <input type=\"radio\" id=\"radio10\" name=\"HMO-name\" value=\"3\" [(ngModel)]=\"obj.wifeHMO\"/>\n                          <label for=\"radio10\" style=\"border-right:0px;\"><span >כללית</span></label>\n                          <input type=\"radio\" id=\"radio11\" name=\"HMO-name\" value=\"4\" [(ngModel)]=\"obj.wifeHMO\"/>\n                          <label for=\"radio11\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לאומית</span></label>\n                      </div>\n                    <!-- <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      מאוחדת\n                      <input type=\"radio\" name=\"HMO-name\" value=\"1\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"wifeHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      מכבי\n                      <input type=\"radio\" name=\"HMO-name\" value=\"2\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"wifeHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      כללית\n                      <input type=\"radio\" name=\"HMO-name\" value=\"3\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"wifeHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      לאומית\n                      <input type=\"radio\" name=\"HMO-name\" value=\"3\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"wifeHMO\">\n                    </label> -->\n\n                  </div>\n                  <span class=\"field-validation-error small\" *ngIf=\"showError && !obj.wifeHMO\">אנא בחר ערך</span>\n                </fieldset>\n                <!--2-->\n                <fieldset class=\"col-md-4 col-xs-8 right form-wrapper\">\n                  <div class=\"subject col-xs-12 right noPadding\">משלים</div>\n                  <div class=\"HMO-name2 btn-group btoggle btoggle-single  col-xs-12 noPadding right\" dir=\"rtl\">\n                      <div class=\"hasSmoked-input bottom-input left-wrap-radio\">\n                          <input type=\"radio\" id=\"radio12\" name=\"HMO-name1\" value=\"false\" [(ngModel)]=\"obj.wifeHMOextra\"/>\n                          <label for=\"radio12\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >קיים</span></label>\n                          <input type=\"radio\" id=\"radio13\" name=\"HMO-name1\" value=\"true\" [(ngModel)]=\"obj.wifeHMOextra\"/>\n                          <label for=\"radio13\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא קיים</span></label>\n                      </div>\n                    <!-- <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      קיים\n                      <input type=\"radio\" name=\"HMO-name1\" value=\"false\" style=\"display: none;\" [(ngModel)]=\"wifeHMOextra\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      לא קיים\n                      <input type=\"radio\" name=\"HMO-name1\" value=\"true\" style=\"display: none;\" [(ngModel)]=\"wifeHMOextra\">\n                    </label> -->\n                  </div>\n                  <span class=\"field-validation-error small\" *ngIf=\"showError && !obj.wifeHMOextra && obj.wifeHMOextra !== false\">אנא בחר ערך</span>\n                </fieldset>\n\n              </div>\n              <!--end form-group-->\n              <!--form-group-->\n              <div *ngIf=\"info.childAmount\" class=\"form-group col-xs-12 noPadding\">\n                <!--1-->\n                <fieldset class=\"col-md-8  col-xs-12 right form-wrapper\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"subject col-xs-12 right noPadding\">בן / בת</div>\n                  <div class=\"HMO-spouse btn-group btoggle btoggle-single col-xs-12 noPadding right\" dir=\"rtl\">\n                      <div class=\"hasSmoked-input bottom-input\">\n                          <input type=\"radio\" id=\"radio14\" name=\"HMO-spouse\" value=\"1\" [(ngModel)]=\"obj.childHMO\"/>\n                          <label for=\"radio14\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >מאוחדת</span></label>\n                          <input type=\"radio\" id=\"radio15\" name=\"HMO-spouse\" value=\"2\" [(ngModel)]=\"obj.childHMO\"/>\n                          <label for=\"radio15\" style=\"border-right:0px;\"><span >מכבי</span></label>\n                          <input type=\"radio\" id=\"radio16\" name=\"HMO-spouse\" value=\"3\" [(ngModel)]=\"obj.childHMO\"/>\n                          <label for=\"radio16\" style=\"border-right:0px;\"><span >כללית</span></label>\n                          <input type=\"radio\" id=\"radio17\" name=\"HMO-spouse\" value=\"4\" [(ngModel)]=\"obj.childHMO\"/>\n                          <label for=\"radio17\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לאומית</span></label>\n                      </div>\n                    <!-- <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      מאוחדת\n                      <input type=\"radio\" name=\"HMO-spouse\" value=\"1\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      מכבי\n                      <input type=\"radio\" name=\"HMO-spouse\" value=\"2\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      כללית\n                      <input type=\"radio\" name=\"HMO-spouse\" value=\"3\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMO\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      לאומית\n                      <input type=\"radio\" name=\"HMO-spouse\" value=\"3\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMO\">\n                    </label> -->\n                  </div>\n                  <span class=\"field-validation-error small\" *ngIf=\"showError && !obj.childHMO\">אנא בחר ערך</span>\n                </fieldset>\n                <!--2-->\n                <fieldset class=\"col-md-4 col-xs-8 right form-wrapper\">\n                  <div class=\"subject col-xs-12 right noPadding\">משלים</div>\n                  <div class=\"HMO-couple2 btn-group btoggle btoggle-single  col-xs-12 noPadding right\" dir=\"rtl\">\n                      <div class=\"hasSmoked-input bottom-input left-wrap-radio\">\n                          <input type=\"radio\" id=\"radio18\" name=\"HMO-couple\" value=\"1\" [(ngModel)]=\"obj.childHMOextra\"/>\n                          <label for=\"radio18\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >קיים</span></label>\n                          <input type=\"radio\" id=\"radio19\" name=\"HMO-couple\" value=\"2\" [(ngModel)]=\"obj.childHMOextra\"/>\n                          <label for=\"radio19\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא קיים</span></label>\n                      </div>\n                    <!-- <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      קיים\n                      <input type=\"radio\" name=\"HMO-couple\" value=\"1\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMOextra\">\n                    </label>\n                    <label class=\"btn btn-default btn-btgoggle\" tabindex=\"0\">\n                      לא קיים\n                      <input type=\"radio\" name=\"HMO-couple\" value=\"2\" tabindex=\"-1\" style=\"display: none;\" [(ngModel)]=\"childHMOextra\">\n                    </label> -->\n                  </div>\n                  <span class=\"field-validation-error small\" *ngIf=\"showError && !obj.childHMOextra && obj.childHMOextra !== false\">אנא בחר ערך</span>\n                </fieldset>\n              </div>\n              <!--end form-group-->\n\n\n            </div>\n          </div>\n          <!--end private-health-->\n        </div>\n      </div>\n\n\n    </div>\n    <div class=\"calculatorControllsWrapper col-xs-12\">\n      <div class=\"calculatorControlls center-block\">\n        <a (click)=\"back()\" class=\"btn backBtn center-block\">\n          <span>&#60;חזור</span>\n        </a>\n        <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n          <span>המשך</span>\n        </a>\n      </div>\n    </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/kupot-holim/kupot-holim.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KupotHolimComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KupotHolimComponent = (function () {
+    function KupotHolimComponent(storeService) {
+        this.storeService = storeService;
+        this.obj = {
+            manHMO: "",
+            manHMOextra: "",
+            wifeHMO: "",
+            wifeHMOextra: "",
+            childHMO: "",
+            childHMOextra: ""
+        };
+        this.info = {
+            wifeName: 2,
+            childAmount: 2,
+        };
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    KupotHolimComponent.prototype.ngOnInit = function () {
+        var store = this.storeService.getByKey("kupot-holim");
+        if (store) {
+            this.obj = store;
+        }
+        this.info = this.storeService.getByKey("private-health-personalinfo");
+    };
+    KupotHolimComponent.prototype.save = function () {
+        if (((!this.obj.manHMO && !(this.obj.manHMO === false)) || !this.obj.manHMOextra) ||
+            (this.info.wifeName && ((!this.obj.wifeHMO && !(this.obj.wifeHMO === false)) || !this.obj.wifeHMOextra)) ||
+            (this.info.childAmount && ((!this.obj.childHMO && !(this.obj.childHMO === false)) || !this.obj.childHMOextra))) {
+            this.showError = true;
+        }
+        else {
+            this.next.emit(({
+                naxtPage: 'health-insurance',
+                type: "kupot-holim",
+                model: this.obj
+            }));
+            this.storeService.setByKey("kupot-holim", this.obj);
+        }
+    };
+    KupotHolimComponent.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 'private-health-personalinfo'
+        }));
+    };
+    return KupotHolimComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], KupotHolimComponent.prototype, "next", void 0);
+KupotHolimComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-kupot-holim',
+        template: __webpack_require__("../../../../../src/app/wizard/kupot-holim/kupot-holim.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/kupot-holim/kupot-holim.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
+], KupotHolimComponent);
+
+var _a;
+//# sourceMappingURL=kupot-holim.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.hasSmoked-input{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.modalStatus{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] {\r\n    display:none;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n    width: 20%;\r\n    border: 1px solid #117ef5;\r\n    padding: 0 2rem;\r\n    font-size: 1.57143em;\r\n    line-height: 22px;\r\n    background:white;\r\n    cursor:pointer;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n    vertical-align:middle;\r\n    text-align: center;\r\n    color: #626262;\r\n    padding-top: 8px;\r\n    height: 43px;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label > span{\r\n    color: white;\r\n}\r\n.center-block{\r\n    height: 45px;\r\n}\r\n/* .smoke-input{\r\n    display: flex;\r\njustify-content: center;\r\n} */\r\n.smoke-input > input[type=\"radio\"] + label {\r\n    border: 2px solid #117ef5;\r\n    width: 30%;\r\n}\r\n.intut-wrapper-inside > input[type=\"radio\"] + label {\r\n    border: 2px solid #117ef5;\r\n}\r\n.smole-buttons > input[type=\"radio\"] + label {\r\n    padding: 0 24px;\r\n}\r\n@media (max-width: 992px){\r\n    .checkup-error-position {\r\n        text-align: center !important;\r\n    }\r\n}\r\n@media (max-width: 570px){\r\n    .hasSmoked-input > input[type=\"radio\"] + label {\r\n        padding: 0 1rem;  \r\n    }\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n    <div class=\"calculator clearfix\">\n      <div class=\"calculatorHead col-xs-12 noPadding\">\n        <h2>השאוות הצעות לביטוח בריאות</h2>\n        <p>\n          מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n        </p>\n        <span>יקח לך 2 דקות</span>\n      </div>\n      <div class=\"step_calculatorSummary col-xs-12 noPadding\">\n        <!--<span class=\"field-validation-error center-block text-center\">הודעת שגיאה</span>-->\n        <div class=\"calculatorSummary col-xs-12\">\n\n          <div class=\"calculate\">\n            <!--private-health-->\n            <div class=\"private-health\">\n              <div class=\"generalForm\" >\n                <!--personalDetails-->\n                <div class=\"personalDetails\">\n                  <fieldset>\n                    <legend class=\"sr-only\">###</legend>\n                    <div class=\"birthDate pull-right noPadding col-md-5 col-xs-12\">\n                      <label class=\"subject\">תאריך לידה</label>\n                      <div class=\"wrapper center-block button-helth-top\" id=\"button-helth-top\">\n                          <div class=\"selectWrapper\"  style=\"width: 19%;height: 100%;\">\n                            <div style=\"width: 100%;height: 100%;\">\n                              <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n                            </div>\n                          </div>\n                          <div class=\"selectWrapper\" style=\"width: 38%;margin-right: 2px;height: 100%;\">\n                            <div style=\"width: 100%;height: 100%;\">\n                              <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n                            </div>\n                          </div>\n                          <div class=\"selectWrapper\" style=\"width: 27%;margin-right: 3px;height: 100%;\">\n                            <div style=\"width: 100%;height: 100%;\">\n                              <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n                            </div>\n                          </div>\n                        </div>\n                      <!-- <div class=\"selectWrapper big\">\n                        <select class=\"day selectpicker\">\n                          <option>14</option>\n                          <option>2</option>\n                          <option>3</option>\n                          <option>4</option>\n                          <option>5</option>\n                        </select>\n                      </div>\n                      <div class=\"selectWrapper big\">\n                        <select class=\"month selectpicker\">\n                          <option>ספט'</option>\n                          <option>2</option>\n                          <option>3</option>\n                          <option>4</option>\n                          <option>5</option>\n                        </select>\n                      </div>\n                      <div class=\"selectWrapper big\">\n                        <select class=\"year selectpicker\">\n                          <option>1975</option>\n                          <option>2</option>\n                          <option>3</option>\n                          <option>4</option>\n                          <option>5</option>\n                        </select>\n                      </div> -->\n                      <div class=\"clearfix visible-xs visible-sm hidden-md\"></div>\n                      <!--<span class=\"field-validation-error\">אנא בחר ערך</span>-->\n                    </div>\n\n                  </fieldset>\n                </div>\n                <!--end personalDetails-->\n                <!--smoking-->\n                <div class=\"step_smoking col-xs-12 clearfix noPadding\">\n                  <div class=\"smoking\">\n                    <div class=\"col-md-7 col-xs-12 pull-right noPadding\">\n                      <div class=\"isSmoking\">\n                        <fieldset>\n                          <legend class=\"sr-only\">###</legend>\n                          <input type=\"hidden\" name=\"smoking\" id=\"hdnSmoking\" value=\"\" />\n                          <div class=\"yes \" (click)=\"obj.smoking = true\" [ngClass]=\"{'yes-active': obj.smoking === true}\" role=\"button\" data-value=\"1\" tabindex=\"0\">\n                            <span>מעשן</span>\n                          </div>\n                          <div class=\"no\" (click)=\"obj.smoking = false\" [ngClass]=\"{'no-active': obj.smoking === false}\" role=\"button\" data-value=\"0\" tabindex=\"0\">\n                            <span>לא מעשן</span>\n                          </div>\n                        </fieldset>\n                        <span class=\"small field-validation-error\" *ngIf=\"showError && !obj.smoking && obj.smoking !== false\" data-valmsg-for=\"IsSmokedPast3Years\" data-valmsg-replace=\"true\"><span id=\"IsSmokedPast3Years-error\" class=\"\">אנא בחר ערך</span></span>\n\n                      </div>\n                    </div>\n\n                    <div  class=\"col-md-5 col-xs-12 noPadding  pull-right\">\n                      <div class=\"lastSmoked hasSmoked\" *ngIf=\"obj.smoking === false\">\n                        <fieldset>\n                          <legend style=\"text-align: right;\">האם עישנת ב-3 השנים האחרונות</legend>\n                          <div class=\"hasSmoked-input smoke-input\">\n                            <input type=\"radio\" id=\"smoke\" name=\"status1\" value=\"כן\" [(ngModel)]=\"obj.yearSmokin\"/>\n                            <label for=\"smoke\" style=\"border-radius:0px 17px 17px 0px;\"><span style=\"\">כן</span></label>\n                            <input type=\"radio\" id=\"nsmoke\" name=\"status1\" value=\"לא\" [(ngModel)]=\"obj.yearSmokin\"/>\n                            <label for=\"nsmoke\" style=\"position: relative;left: 0px;border-right:none;border-radius:17px 0px 0px 17px;\"><span style=\"\">לא</span></label>\n                          </div>\n                          <span class=\"field-validation-error small\" *ngIf=\"showError && smoking === false && !obj.yearSmokin\">אנא בחר ערך</span>\n                        </fieldset>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <!--end smoking-->\n                <!--MedicalSection-->\n                <!--<div class=\"MedicalSection col-xs-12 clearfix noPadding\">-->\n                  <!--<fieldset>-->\n                    <!--<legend class=\"sr-only\">###</legend>-->\n                    <!--<div class=\"clinic formSection col-md-7 col-xs-12 pull-right noPadding\">-->\n                      <!--<label class=\"subject\">קופת חולים:</label>-->\n                      <!--<div class=\"wrapper\">-->\n                        <!--<div class=\"form-group col-xs-12 noPadding\">-->\n                            <!--<div class=\"hasSmoked-input\">-->\n                                <!--<input type=\"radio\" id=\"radio10\" name=\"status3\" value=\"10\" [(ngModel)]=\"raiodVa\"/>-->\n                                <!--<label for=\"radio10\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >מאוחדת</span></label>-->\n                                <!--<input type=\"radio\" id=\"radio11\" name=\"status3\" value=\"11\" [(ngModel)]=\"raiodVa\"/>-->\n                                <!--<label for=\"radio11\" style=\"border-right:0px;\"><span >כללית</span></label>-->\n                                <!--<input type=\"radio\" id=\"radio12\" name=\"status3\" value=\"12\" [(ngModel)]=\"raiodVa\"/>-->\n                                <!--<label for=\"radio12\" style=\"border-right:0px;\"><span >מכבי</span></label>-->\n                                <!--<input type=\"radio\" id=\"radio13\" name=\"status3\" value=\"13\" [(ngModel)]=\"raiodVa\"/>-->\n                                <!--<label for=\"radio13\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לאומית</span></label>-->\n                            <!--</div>-->\n                          <!--&lt;!&ndash; <div class=\"clinicForm big\">-->\n                            <!--<label>-->\n                              <!--מאוחדת-->\n                              <!--<input type=\"radio\" name=\"clinic1\" value=\"1\" />-->\n                            <!--</label>-->\n                            <!--<label>-->\n                              <!--כללית-->\n                              <!--<input type=\"radio\" name=\"clinic1\" value=\"2\" />-->\n                            <!--</label>-->\n                            <!--<label>-->\n                              <!--מכבי-->\n                              <!--<input type=\"radio\" name=\"clinic1\" value=\"3\" />-->\n                            <!--</label>-->\n                            <!--<label>-->\n                              <!--לאומית-->\n                              <!--<input type=\"radio\" name=\"clinic1\" value=\"4\" />-->\n                            <!--</label>-->\n                          <!--</div> &ndash;&gt;-->\n                          <!--<span class=\"field-validation-error\">אנא בחר ערך</span>-->\n                        <!--</div>-->\n                      <!--</div>-->\n                    <!--</div>-->\n                    <!--<div class=\"medigap formSection col-md-5 col-xs-12 pull-right noPadding\">-->\n                      <!--<label class=\"subject\">ביטוח משלים:</label>-->\n                      <!--<div class=\"wrapper\">-->\n                          <!--<div class=\"hasSmoked-input\">-->\n                              <!--<input type=\"radio\" id=\"radio8\" name=\"status4\" value=\"8\" [(ngModel)]=\"raiodVa\"/>-->\n                              <!--<label for=\"radio8\" style=\"border-bottom-right-radius: 4px;-->\n                              <!--border-top-right-radius: 4px;\"><span >כן</span></label>-->\n                              <!--<input type=\"radio\" id=\"radio9\" name=\"status4\" value=\"9\" [(ngModel)]=\"raiodVa\"/>-->\n                              <!--<label for=\"radio9\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא</span></label>-->\n                          <!--</div>-->\n                      <!--</div>-->\n                    <!--</div>-->\n                  <!--</fieldset>-->\n                <!--</div>-->\n\n                <!--end MedicalSection-->\n\n                <div class=\"status pull-right noPadding col-md-7 col-xs-12\">\n                  <label class=\"subject\">מצב משפחתי:</label>\n                  <div class=\"col-xs-12 noPadding\">\n                    <div class=\"statusForm big\">\n                      <div class=\"hasSmoked-input intut-wrapper-inside\">\n                        <input type=\"radio\" id=\"radio1\" name=\"status1\" value=\"9\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                        <label for=\"radio1\" style=\"border-bottom-right-radius: 17px;border-top-right-radius: 17px;\"><span >רווק</span></label>\n                        <input type=\"radio\" id=\"radio2\" name=\"status1\" value=\"10\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                        <label for=\"radio2\" style=\"border-right:0px;\"><span >נשוי</span></label>\n                        <input type=\"radio\" id=\"radio3\" name=\"status1\" value=\"11\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                        <label for=\"radio3\" style=\"border-right:0px;\"><span >גרוש</span></label>\n                        <input type=\"radio\" id=\"radio4\" name=\"status1\" value=\"12\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                        <label for=\"radio4\" style=\"border-right:0px;\"><span >אלמן</span></label>\n                        <input type=\"radio\" id=\"radio5\" name=\"status1\" value=\"13\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                        <label for=\"radio5\" style=\"border-right:0px;border-bottom-left-radius: 17px;border-top-left-radius: 17px;\"><span >אחר</span></label>\n                      </div>\n                    </div>\n                    <span class=\"field-validation-error\" *ngIf=\"!obj.raiodMaritalStatus && showError\">אנא בחר ערך</span>\n                  </div>\n                </div>\n\n              </div>\n            </div>\n            <!--end private-health-->\n          </div>\n        </div>\n\n\n      </div>\n      <!--<div class=\"calculatorControllsWrapper col-xs-12\">-->\n        <!--<div class=\"calculatorControlls center-block\">-->\n\n          <!--<a href=\"#\" class=\"btn nextBtn center-block\">-->\n            <!--<span>המשך</span>-->\n          <!--</a>-->\n        <!--</div>-->\n      <!--</div>-->\n    </div>\n\n    <div class=\"step_calculatorSummary col-xs-12 noPadding\">\n      <!--<span class=\"field-validation-error center-block text-center\">הודעת שגיאה</span>-->\n      <div class=\"calculatorSummary col-xs-12\">\n        <div class=\"calculate\">\n          <!--private-health-->\n          <div class=\"private-health\">\n            <div class=\"generalForm\">\n              <!--formSection section-->\n              <div class=\"formSection\">\n                <fieldset>\n                  <legend class=\"sr-only\">###</legend>\n\n                  <div class=\"wrapper\">\n\n                    <!--spouse-->\n                    <div *ngIf=\"obj.raiodMaritalStatus === '10'\" class=\"col-xs-12 noPadding\">\n                      <div class=\"row spouse\">\n                        <div class=\"col-md-3 col-xs-12 pull-right\">\n                          <label class=\"subject\">בן/בת זוג</label>\n                          <div class=\"form-group\">\n                            <input type=\"text\" name=\"childname1\" class=\"medium2\"  [(ngModel)]=\"obj.wifeName\"/>\n                          </div>\n                          <span class=\"field-validation-error small\" *ngIf=\"!obj.wifeName && showError\">שדה שם פרטי הוא שדה חובה</span>\n                        </div>\n                        <div class=\"col-md-2 col-xs-12 pull-right\">\n                          <label class=\"subject\">מין</label>\n                          <div class=\"form-group\">\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio16\" name=\"status5\" value=\"16\" [(ngModel)]=\"obj.wifV1\"/>\n                                  <label for=\"radio16\" style=\"border-bottom-right-radius: 4px;\n                                  border-top-right-radius: 4px;\"><span >כן</span></label>\n                                  <input type=\"radio\" id=\"radio17\" name=\"status5\" value=\"17\" [(ngModel)]=\"obj.wifV1\"/>\n                                  <label for=\"radio17\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא</span></label>\n                              </div>\n                            <span class=\"field-validation-error small\" *ngIf=\"!obj.wifV1 && showError\">אנא בחר מין</span>\n                          </div>\n                        </div>\n                        <div class=\"col-md-4 col-xs-12 pull-right\">\n                          <label class=\"subject\">תאריך לידה</label>\n                          <div>\n                              <div class=\"wrapper center-block button-helth\" id=\"button-helth\">\n                                  <div class=\"selectWrapper\"  style=\"width: 19%;height: 100%;\">\n                                    <div style=\"width: 100%;height: 100%;\">\n                                      <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                  <div class=\"selectWrapper\" style=\"width: 38%;margin-right: 2px;height: 100%;\">\n                                    <div style=\"width: 100%;height: 100%;\">\n                                      <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                  <div class=\"selectWrapper\" style=\"width: 27%;margin-right: 3px;height: 100%;\">\n                                    <div style=\"width: 100%;height: 100%;\">\n                                      <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                </div>\n\n                            <div class=\"clearfix visible-xs visible-sm hidden-md\"></div>\n                            <!--<span class=\"field-validation-error small\">שדה תאריך לידה הוא שדה חובה</span>-->\n                          </div>\n                        </div>\n\n                        <div class=\"col-md-3 col-xs-3 pull-right \" style=\"padding-right: 29px;\">\n                          <label class=\"subject\">מעשן</label>\n                          <div class=\"form-group\">\n                              <div class=\"hasSmoked-input\">\n                                  <input type=\"radio\" id=\"radio14\" name=\"status6\" value=\"yes\" [(ngModel)]=\"obj.radioWifeSmoke\"/>\n                                  <label for=\"radio14\" style=\"border-bottom-right-radius: 4px;\n                                  border-top-right-radius: 4px;\"><span >כן</span></label>\n                                  <input type=\"radio\" id=\"radio15\" name=\"status6\" value=\"no\" [(ngModel)]=\"obj.radioWifeSmoke\"/>\n                                  <label for=\"radio15\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא</span></label>\n                              </div>\n                            <span class=\"field-validation-error small\" *ngIf=\"!obj.radioWifeSmoke && showError\">אנא בחר ערך</span>\n                          </div>\n                        </div>\n                        <!--smoking-->\n                        <div class=\"smoking col-md-12 col-xs-9\" *ngIf=\"obj.radioWifeSmoke === 'no'\">\n                          <div class=\"col-md-5 pull-right noPadding\">\n                            <div class=\"col-md-7 col-xs-7 pull-right noPadding\"><label class=\"subject\">האם עישנת ב-3 שנים האחרונות?</label></div>\n                            <div class=\"form-group pull-right col-md-5 col-xs-5\">\n                                <div class=\"hasSmoked-input smole-buttons\">\n                                    <input type=\"radio\" id=\"radio25\" name=\"status7\" value=\"yes\" [(ngModel)]=\"last3year\"/>\n                                    <label for=\"radio25\" style=\"border-bottom-right-radius: 4px;\n                                    border-top-right-radius: 4px;\"><span >כן</span></label>\n                                    <input type=\"radio\" id=\"radio26\" name=\"status7\" value=\"no\" [(ngModel)]=\"last3year\"/>\n                                    <label for=\"radio26\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא</span></label>\n                                </div>\n                              <span class=\"field-validation-error small\" *ngIf=\"!last3year && showError\">אנא בחר ערך</span>\n                            </div>\n                          </div>\n\n                        </div>\n                        <!--/smoking-->\n                      </div>\n                    </div>\n                    <!--/spouse-->\n                    <!----children-->\n                    <div class=\"children clearfix\">\n                      <div class=\"noPadding pull-right col-md-3 col-xs-12\">\n                        <label for=\"childAmount\" class=\"subject\">ילדים:</label>\n                        <input type=\"number\" class=\"form-control medium childAmount\" id=\"childAmount\" name=\"childAmount\" placeholder=\"0\"  [(ngModel)]=\"obj.childAmount\" (ngModelChange)=\"doChangeChildren($event)\">\n                        <!--<span class=\"field-validation-error small\" >שדה זה הוא שדה חובה</span>-->\n                      </div>\n\n                      <div class=\"noPadding pull-right col-md-9 col-xs-12\">\n                        <!---child1-->\n                        <div class=\"row child\" *ngFor=\"let child of obj.childrens; let i = index\">\n                          <div class=\"col-md-3 col-xs-12 pull-right\">\n                            <label class=\"subject\">ילד {{i + 1}}</label>\n                            <div class=\"form-group\">\n                              <input type=\"text\" name=\"childname1\" value=\"שם\" class=\"medium\" [(ngModel)]=\"child.name\"/>\n                            </div>\n                            <span class=\"field-validation-error small\" *ngIf=\"showError && !child.name\">שדה שם פרטי הוא שדה חובה</span>\n                          </div>\n                          <div class=\"col-md-3 col-xs-12 pull-right\">\n                            <label class=\"subject\">מין</label>\n                            <div class=\"form-group\">\n                                <div class=\"hasSmoked-input\">\n                                    <input type=\"radio\" id=\"radio18{{i}}\" name=\"status{{i}}\" value=\"18\" [(ngModel)]=\"child.radio\"/>\n                                    <label for=\"radio18{{i}}\" style=\"border-bottom-right-radius: 4px;\n                                    border-top-right-radius: 4px;\"><span >זכר</span></label>\n                                    <input type=\"radio\" id=\"radio19{{i}}\" name=\"status{{i}}\" value=\"19\" [(ngModel)]=\"child.radio\"/>\n                                    <label for=\"radio19{{i}}\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >נקבה</span></label>\n                                </div>\n\n                              <span class=\"field-validation-error small\" *ngIf=\"showError && !child.radio\">אנא בחר ערך</span>\n                            </div>\n                          </div>\n                          <div class=\"col-md-6 col-xs-12\">\n                            <label class=\"subject\">תאריך לידה</label>\n                            <div>\n                                <div class=\"wrapper center-block button-helth\" id=\"button-helth\">\n                                    <div class=\"selectWrapper\"  style=\"width: 19%;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                    <div class=\"selectWrapper\" style=\"width: 38%;margin-right: 2px;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                    <div class=\"selectWrapper\" style=\"width: 27%;margin-right: 3px;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                  </div>\n                              <div class=\"clearfix visible-xs visible-sm hidden-md\"></div>\n                              <!--<span class=\"field-validation-error small\">-->\n                                                                        <!--שדה תאריך לידה הוא שדה חובה-->\n                                                                    <!--</span>-->\n                            </div>\n                          </div>\n                        </div>\n\n                      </div>\n                    </div>\n                    <!--/children-->\n                  </div>\n\n\n                </fieldset>\n              </div>\n              <!--end formSection-->\n\n            </div>\n          </div>\n          <!--end private-health-->\n        </div>\n      </div>\n\n\n    </div>\n    <div class=\"calculatorControllsWrapper col-xs-12\">\n      <div class=\"calculatorControlls center-block\">\n        <a (click)=\"back()\" class=\"btn backBtn center-block\">\n          <span>&#60;חזור</span>\n        </a>\n        <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n          <span>המשך</span>\n        </a>\n      </div>\n    </div>\n    <div *ngIf=\"showError\" class=\"col-xs-12 text-center checkup-general-error checkup-error-position\" style=\"/* display: none; */\" id=\"errorOccurredPersonalDetails\" aria-hidden=\"true\">\n                    <span class=\"field-validation-error\" aria-hidden=\"true\">\n                        אירעה שגיאה. אנא נסה שנית מאוחר יותר.\n                    </span>\n    </div>\n    <div *ngIf=\"showError\" class=\"col-xs-12 text-center checkup-general-error checkup-error-position\" style=\"\" id=\"userExistsErrorMsg\" aria-hidden=\"false\">\n                    <span class=\"field-validation-error\" aria-hidden=\"true\">\n                        משתמש קיים, אנא התחבר.\n                    </span>\n    </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrivateHealthPersonalinfoComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PrivateHealthPersonalinfoComponent = (function () {
+    function PrivateHealthPersonalinfoComponent(storeService) {
+        this.storeService = storeService;
+        this.yearsData = [];
+        this.monthData = [
+            {
+                label: "1",
+                value: "1"
+            },
+            {
+                label: "2",
+                value: "2"
+            },
+            {
+                label: "3",
+                value: "3"
+            },
+        ];
+        this.daysData = [];
+        this.obj = {
+            day: "1",
+            month: "1",
+            year: "1925",
+            yearSmokin: "",
+            raiodMaritalStatus: "",
+            radioWifeSmoke: "",
+            wifeName: "",
+            wifV1: "",
+            childAmount: 0,
+            smoking: null,
+            childrens: []
+        };
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.setYear();
+        this.setDays();
+    }
+    PrivateHealthPersonalinfoComponent.prototype.ngOnInit = function () {
+        var store = this.storeService.getByKey("private-health-personalinfo");
+        if (store) {
+            this.obj = store;
+        }
+    };
+    PrivateHealthPersonalinfoComponent.prototype.setDays = function () {
+        for (var i = 1; i <= 31; i++) {
+            this.daysData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    PrivateHealthPersonalinfoComponent.prototype.setYear = function () {
+        for (var i = 1925; i <= 2018; i++) {
+            this.yearsData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    PrivateHealthPersonalinfoComponent.prototype.daysChange = function (e) {
+        this.obj.day = e;
+    };
+    PrivateHealthPersonalinfoComponent.prototype.monthChange = function (e) {
+        this.obj.month = e;
+    };
+    PrivateHealthPersonalinfoComponent.prototype.yearsChange = function (e) {
+        this.obj.year = e;
+    };
+    PrivateHealthPersonalinfoComponent.prototype.doChangeChildren = function () {
+        this.obj.childrens = [];
+        for (var i = 0; i < this.obj.childAmount; i++) {
+            this.obj.childrens.push({ stat: "", radio: "", name: "" });
+        }
+    };
+    PrivateHealthPersonalinfoComponent.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 'genderselect'
+        }));
+    };
+    PrivateHealthPersonalinfoComponent.prototype.save = function () {
+        var childFlag;
+        if (!this.obj.year ||
+            !this.obj.month ||
+            !this.obj.year || (!this.obj.smoking && !(this.obj.smoking === false))
+            || !this.obj.raiodMaritalStatus) {
+            this.showError = true;
+            console.log(22);
+        }
+        else {
+            if (this.obj.smoking === false && !this.obj.yearSmokin) {
+                this.showError = true;
+                return;
+            }
+            for (var i = 0; i < this.obj.childAmount; i++) {
+                if (!this.obj.childrens[i].name || !this.obj.childrens[i].radio) {
+                    childFlag = true;
+                    break;
+                }
+            }
+            if (childFlag) {
+                this.showError = true;
+                return;
+            }
+            if (this.obj.raiodMaritalStatus === '10' && (!this.obj.wifeName || !this.obj.wifV1 || !this.obj.radioWifeSmoke)) {
+                this.showError = true;
+                return;
+            }
+            this.next.emit(({
+                naxtPage: 'kupot-holim',
+                date: this.obj.day + '-' + this.obj.month + '-' + this.obj.year,
+                smoking: this.obj.smoking,
+                raiodMaritalStatus: this.obj.raiodMaritalStatus,
+                childrens: this.obj.childrens,
+                type: "private-health-personalinfo"
+            }));
+            this.storeService.setByKey("private-health-personalinfo", this.obj);
+        }
+    };
+    return PrivateHealthPersonalinfoComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], PrivateHealthPersonalinfoComponent.prototype, "next", void 0);
+PrivateHealthPersonalinfoComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-private-health-personalinfo',
+        template: __webpack_require__("../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/private-health-personalinfo/private-health-personalinfo.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
+], PrivateHealthPersonalinfoComponent);
+
+var _a;
+//# sourceMappingURL=private-health-personalinfo.component.js.map
 
 /***/ }),
 
