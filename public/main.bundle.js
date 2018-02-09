@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n\n<!--<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>-->\n\n<app-health *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-health>\n\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!--<app-proposals [amount]=\"amount\"></app-proposals>-->\n\n<app-footer></app-footer>\n"
+module.exports = "<app-header></app-header>\n\n<!--<app-wizard *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-wizard>-->\n\n<!--<app-health *ngIf=\"!showproposals\" (finish)=\"amount = $event; showproposals = true;\"></app-health>-->\n<app-check-up></app-check-up>\n<app-proposals *ngIf=\"showproposals\" [amount]=\"amount\"></app-proposals>\n<!--<app-proposals [amount]=\"amount\"></app-proposals>-->\n\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -103,12 +103,24 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__wizard_kupot_holim_kupot_holim_component__ = __webpack_require__("../../../../../src/app/wizard/kupot-holim/kupot-holim.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__wizard_health_insurance_health_insurance_component__ = __webpack_require__("../../../../../src/app/wizard/health-insurance/health-insurance.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__check_up_check_up_component__ = __webpack_require__("../../../../../src/app/check-up/check-up.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__wizard_checkup_t1_s1_checkup_t1_s1_component__ = __webpack_require__("../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__wizard_checkup_t1_s2_checkup_t1_s2_component__ = __webpack_require__("../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__wizard_checkup_t2_s1_checkup_t2_s1_component__ = __webpack_require__("../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__wizard_checkup_t2_s2_checkup_t2_s2_component__ = __webpack_require__("../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__wizard_checkup_t2_s3_checkup_t2_s3_component__ = __webpack_require__("../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
 
 
 
@@ -161,7 +173,13 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_20__health_health_component__["a" /* HealthComponent */],
             __WEBPACK_IMPORTED_MODULE_21__wizard_private_health_personalinfo_private_health_personalinfo_component__["a" /* PrivateHealthPersonalinfoComponent */],
             __WEBPACK_IMPORTED_MODULE_22__wizard_kupot_holim_kupot_holim_component__["a" /* KupotHolimComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__wizard_health_insurance_health_insurance_component__["a" /* HealthInsuranceComponent */]
+            __WEBPACK_IMPORTED_MODULE_23__wizard_health_insurance_health_insurance_component__["a" /* HealthInsuranceComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__check_up_check_up_component__["a" /* CheckUpComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__wizard_checkup_t1_s1_checkup_t1_s1_component__["a" /* CheckupT1S1Component */],
+            __WEBPACK_IMPORTED_MODULE_27__wizard_checkup_t1_s2_checkup_t1_s2_component__["a" /* CheckupT1S2Component */],
+            __WEBPACK_IMPORTED_MODULE_28__wizard_checkup_t2_s1_checkup_t2_s1_component__["a" /* CheckupT2S1Component */],
+            __WEBPACK_IMPORTED_MODULE_29__wizard_checkup_t2_s2_checkup_t2_s2_component__["a" /* CheckupT2S2Component */],
+            __WEBPACK_IMPORTED_MODULE_30__wizard_checkup_t2_s3_checkup_t2_s3_component__["a" /* CheckupT2S3Component */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -174,6 +192,114 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/check-up/check-up.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".calculator{\r\n  padding-bottom: 100px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/check-up/check-up.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main id=\"main\" class=\"container-fluid\" tabindex=\"-1\">\n  <!-- section 1 -->\n  <section class=\"row\">\n    <div class=\"calculator clearfix\">\n\n       <app-checkup-t1-s1 *ngIf=\"activeTab === 't1-s1'\" (next)=\"nextCheck($event)\"></app-checkup-t1-s1>\n      <app-checkup-t1-s2 *ngIf=\"activeTab === 't1-s2'\" (next)=\"nextCheck($event)\"></app-checkup-t1-s2>\n       <app-checkup-t2-s1 *ngIf=\"activeTab === 't2-s1'\" (next)=\"nextCheck($event)\"></app-checkup-t2-s1>\n       <app-checkup-t2-s2 *ngIf=\"activeTab === 't2-s2'\" (next)=\"nextCheck($event)\"></app-checkup-t2-s2>\n       <app-checkup-t2-s3 *ngIf=\"activeTab === 't2-s3'\" (next)=\"nextCheck($event)\"></app-checkup-t2-s3>\n    </div>\n  </section>\n</main>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/check-up/check-up.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckUpComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models_health__ = __webpack_require__("../../../../../src/app/shared/models/health.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CheckUpComponent = (function () {
+    function CheckUpComponent() {
+        this.health = new __WEBPACK_IMPORTED_MODULE_1__shared_models_health__["a" /* Health */]();
+        this.activeTab = 't1-s1';
+        // activeTab = 'private-health-personalinfo';
+        this.finish = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CheckUpComponent.prototype.ngOnInit = function () {
+    };
+    CheckUpComponent.prototype.nextCheck = function (e) {
+        console.log(e);
+        if (e.finish) {
+            this.finish.emit(e.amount);
+        }
+        if (e.back) {
+            this.activeTab = e.back;
+            return;
+        }
+        switch (e.type) {
+            case "t1-s1":
+                this.health.lastName = e.model.lastName;
+                this.health.privateName = e.model.firstName;
+                this.health.number = e.model.phone;
+                this.health.prefix = e.model.prefix;
+                this.health.email = e.model.email;
+                break;
+            case "genderselect":
+                this.health.gender = e.model;
+                break;
+            case "private-health-personalinfo":
+                this.health.birthDate = e.date;
+                this.health.doesSmoke = e.smoking;
+                this.health.smokeInLast3Years = e.smokeInLast3Years;
+                this.health.childrens = e.childrens;
+                this.health.children = e.childAmount;
+                this.health.maritalStatus = e.raiodMaritalStatus;
+                this.health.children = e.childAmount;
+                break;
+            case "kupot-holim":
+                // this.risk.doesSmoke = e.model;
+                break;
+            case "health-insurance":
+                break;
+        }
+        this.activeTab = e.naxtPage;
+    };
+    return CheckUpComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckUpComponent.prototype, "finish", void 0);
+CheckUpComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-check-up',
+        template: __webpack_require__("../../../../../src/app/check-up/check-up.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/check-up/check-up.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CheckUpComponent);
+
+//# sourceMappingURL=check-up.component.js.map
 
 /***/ }),
 
@@ -252,6 +378,11 @@ var HealthComponent = (function () {
             case "private-health-personalinfo":
                 this.health.birthDate = e.date;
                 this.health.doesSmoke = e.smoking;
+                this.health.smokeInLast3Years = e.smokeInLast3Years;
+                this.health.childrens = e.childrens;
+                this.health.children = e.childAmount;
+                this.health.maritalStatus = e.raiodMaritalStatus;
+                this.health.children = e.childAmount;
                 break;
             case "kupot-holim":
                 // this.risk.doesSmoke = e.model;
@@ -459,7 +590,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".button-wrap{\r\n    font-family: \"RaananSuper\";\r\n    color: #626262;\r\n    position: relative;\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n}\r\n.button-wrap > button{\r\n    height: 100%;\r\n    border-color: #117ef5;\r\n    padding-right: 0.375rem;\r\n    border: 2px solid #117ef5;\r\n    background-color: transparent;\r\n    border-radius: 10px;\r\n    padding: 0.125rem 0.625rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    width: 100%;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    padding-right: 16px;\r\n}\r\n.dropdawn{\r\n    position: absolute;\r\n    top: 100%;\r\n    left: 0;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    width: 100% !important;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    list-style: none;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    background: white !important;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0,0,0,0.15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\r\n    background-clip: padding-box;\r\n\r\n}\r\ndiv > div{\r\n    background: white !important;\r\n}\r\n.dropdawn > input{\r\n    border: 2px solid #707070;\r\n    width: 100% !important;\r\n    font-size: 1.51429em;\r\n}\r\n.dropdawn > ul{\r\n    list-style: none;\r\n    padding: 5px 0;\r\n    text-align: center;\r\n    font-size: 22px;\r\n    background: white;\r\n    height: 150px;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    width: 100%;\r\n    padding-top: 0;\r\n}\r\n.dropdawn > ul > li > a{\r\n    color: #333;\r\n    color: #333;\r\n    width: 100%;\r\n    margin: 0 !important;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n.dropdawn > ul > li{\r\n    cursor: pointer;\r\n}\r\n.dropdawn > ul > li:hover{\r\n    color: #333;\r\n    text-decoration: none;\r\n    border: 2px solid #707070;\r\n    outline: 0;\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n.active-hover{\r\n  color: #333;\r\n  text-decoration: none;\r\n  border: 2px solid #707070;\r\n  outline: 0;\r\n  background-color: #F5F5F5;\r\n}\r\n\r\n.button-wrap > button > i{\r\n    color: #117ef5;\r\n}\r\n.button-wrap > button > span{\r\n    font-size: 1.64286em;\r\n}\r\n.button-wrap > button:active{\r\n    /*background-color: #4299f7;*/\r\n}\r\n.button-wrap > button:focus{\r\n    outline: 2px solid #707070 !important;\r\n}\r\n.button-wrap > button:hover{\r\n    /*color: #fff;*/\r\n    /*background-color: #0965ca;*/\r\n}\r\n\r\n\r\n.dropdawn > ul::-webkit-scrollbar-thumb{\r\n    height: 10px !important;\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar\r\n  {\r\n    width: 10px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(239, 239, 239);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  @media (max-width: 992px){\r\n    .button-wrap > button{\r\n        border: 1px solid #117ef5;\r\n    }\r\n  }\r\n", ""]);
+exports.push([module.i, ".button-wrap{\r\n    font-family: \"RaananSuper\";\r\n    color: #626262;\r\n    position: relative;\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n}\r\n.button-wrap > button{\r\n    height: 100%;\r\n    border-color: #117ef5;\r\n    padding-right: 0.375rem;\r\n    border: 2px solid #117ef5;\r\n    background-color: transparent;\r\n    border-radius: 10px;\r\n    padding: 0.125rem 0.625rem;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    width: 100%;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: reverse;\r\n        -ms-flex-direction: row-reverse;\r\n            flex-direction: row-reverse;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    padding-right: 16px;\r\n}\r\n.dropdawn{\r\n    position: absolute;\r\n    top: 100%;\r\n    right: 0;\r\n    z-index: 1000;\r\n    /* display: none; */\r\n    float: left;\r\n    min-width: 100% !important;\r\n    padding: 5px 0;\r\n    margin: 2px 0 0;\r\n    list-style: none;\r\n    font-size: 14px;\r\n    text-align: left;\r\n    background: white !important;\r\n    border: 1px solid #ccc;\r\n    border: 1px solid rgba(0,0,0,0.15);\r\n    border-radius: 4px;\r\n    box-shadow: 0 6px 12px rgba(0,0,0,0.175);\r\n    background-clip: padding-box;\r\n\r\n}\r\ndiv > div{\r\n    background: white !important;\r\n}\r\n.dropdawn > input{\r\n    border: 2px solid #707070;\r\n    width: 100% !important;\r\n    font-size: 1.51429em;\r\n}\r\n.dropdawn > ul{\r\n    list-style: none;\r\n    padding: 5px 0;\r\n    text-align: center;\r\n    font-size: 22px;\r\n    background: white;\r\n    height: 150px;\r\n    overflow: hidden;\r\n    overflow-y: auto;\r\n    width: 100%;\r\n    padding-top: 0;\r\n}\r\n.dropdawn > ul > li > a{\r\n    color: #333;\r\n    color: #333;\r\n    width: 100%;\r\n    margin: 0 !important;\r\n    cursor: pointer;\r\n    text-decoration: none;\r\n}\r\n.dropdawn > ul > li{\r\n    cursor: pointer;\r\n}\r\n.dropdawn > ul > li:hover{\r\n    color: #333;\r\n    text-decoration: none;\r\n    border: 2px solid #707070;\r\n    outline: 0;\r\n    background-color: #F5F5F5;\r\n}\r\n\r\n.active-hover{\r\n  color: #333;\r\n  text-decoration: none;\r\n  border: 2px solid #707070;\r\n  outline: 0;\r\n  background-color: #F5F5F5;\r\n}\r\n\r\n.button-wrap > button > i{\r\n    color: #117ef5;\r\n}\r\n.button-wrap > button > span{\r\n    font-size: 1.64286em;\r\n}\r\n.button-wrap > button:active{\r\n    /*background-color: #4299f7;*/\r\n}\r\n.button-wrap > button:focus{\r\n    outline: 2px solid #707070 !important;\r\n}\r\n.button-wrap > button:hover{\r\n    /*color: #fff;*/\r\n    /*background-color: #0965ca;*/\r\n}\r\n\r\n\r\n.dropdawn > ul::-webkit-scrollbar-thumb{\r\n    height: 10px !important;\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-track\r\n  {\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar\r\n  {\r\n    width: 10px;\r\n    background-color: rgba(255, 255, 255, 0);\r\n  }\r\n  .dropdawn > ul::-webkit-scrollbar-thumb\r\n  {\r\n    background-color: rgb(239, 239, 239);\r\n    border: 1px solid rgb(232, 232, 232);\r\n    border-radius: 1px;\r\n    height: 2px;\r\n    margin: 3px;\r\n  }\r\n  @media (max-width: 992px){\r\n    .button-wrap > button{\r\n        border: 1px solid #117ef5;\r\n    }\r\n  }\r\n", ""]);
 
 // exports
 
@@ -501,7 +632,7 @@ var AutocomplitComponent = (function () {
         this.change = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
     }
     AutocomplitComponent.prototype.ngOnInit = function () {
-        if (this.data[0]) {
+        if (this.data && this.data[0]) {
             this.label = this.data[0].label;
             this.firstSelect = this.data[0];
         }
@@ -1160,6 +1291,586 @@ CalculatorsummaryComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".selected > span{ \r\n   color:  white !important;\r\n}\r\n\r\n.hasSmoked-input{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.modalStatus{\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] {\r\n    display:none;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label {\r\n    color:#f2f2f2;\r\n    width: 20%;\r\n    border: 1px solid #117ef5;\r\n    padding: 0 1.9rem;\r\n    line-height: 22px;\r\n    background:#f7f7f7;;\r\n    cursor:pointer;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    height: 40px;    \r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label span {\r\n    display:inline-block;\r\n    vertical-align:middle;\r\n    text-align: center;\r\n    color: #626262;\r\n}\r\n\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label{\r\n    background: #117ef5;\r\n    color: white;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"]:checked + label > span{\r\n    color: white;\r\n}\r\n.center-block{\r\n    height: 40px;\r\n}\r\n/* .smoke-input{\r\n    display: flex;\r\njustify-content: center;\r\n} */\r\n.smoke-input > input[type=\"radio\"] + label {\r\n    border: 1px solid #117ef5;\r\n    width: 30%;\r\n}\r\n.intut-wrapper-inside > input[type=\"radio\"] + label {\r\n    border: 1px solid #117ef5;\r\n}\r\n.smole-buttons > input[type=\"radio\"] + label {\r\n    padding: 0 24px;\r\n}\r\n.field-validation-error{\r\n    margin-top: 2px !important;\r\n}\r\n.hasSmoked-input > input[type=\"radio\"] + label:focus{\r\n    outline: 2px solid #707070 !important;\r\n    outline-offset: -2px !important;\r\n}\r\n.subject{\r\n    font-size: 1.78571em;\r\n}\r\n.medium2{\r\n    width: 100%;\r\n    max-width: 130px;\r\n    height: 43px;\r\n    font-size: 1.64286em;\r\n    border: 1px #117ef5 solid;\r\n    background-color: transparent;\r\n    border-radius: 4px;\r\n    text-align: right;\r\n    padding-right: 10px;\r\n    color: #626262;\r\n}\r\n@media (min-width: 992px){\r\n    .field-validation-error{\r\n        bottom: -20px !important;\r\n    }\r\n    .input-wrap-top, .input-wrap-bot{\r\n        padding-right: 0;\r\n    }\r\n}\r\n@media (max-width: 992px){\r\n    .checkup-error-position {\r\n        text-align: center !important;\r\n    }\r\n    .input-wrap-top, .input-wrap-bot{\r\n        padding-right: 0;\r\n    }\r\n    .childGenderForm{\r\n        height: 40px !important;\r\n    }\r\n    .statusForm{\r\n        height: 40px !important;\r\n    }\r\n}\r\n@media (max-width: 570px){\r\n    .hasSmoked-input > input[type=\"radio\"] + label {\r\n        padding: 0 1rem;  \r\n    }\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n    <div class=\"checkUp\">\n      <div class=\"checkUpHead col-xs-12 col-md-6 col-md-push-3\">\n        <h2>מילוי שאלון צ'קאפ לצורך קבלת תמונת מצב של העולם הפיננסי שלך</h2>\n        <p>\n          מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n        </p>\n        <span>זה יקח כמה דקות, אבל זה חד פעמי</span>\n      </div>\n\n      <div class=\"checkUpProgressBar col-xs-12 col-md-10 col-md-push-1\" role=\"tablist\">\n        <div class=\"wrapper center-block\">\n          <div class=\"personal col-xs-4 col-md-2 noPadding currentState\" role=\"presentation\">\n            <span class=\"tab-title\">פרטים אישיים</span>\n          </div>\n          <div class=\"overview col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n            <span class=\"tab-title\">תמונת מצב</span>\n          </div>\n          <div class=\"optional col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n            <span class=\"tab-title\">שאלות משלימות</span>\n            <span class=\"optionalTitle\">אופציונלי</span>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"checkUpForm tab-content col-xs-12\">\n\n        <div role=\"tabpanel\" class=\"tab-pane active\" id=\"personalData\">\n          <h3 class=\"sr-only\">פרטים אישיים</h3>\n          <div class=\"peronalPager\">\n            <div class=\"wrapper center-block\">\n              <span class=\"active\"></span>\n              <span></span>\n            </div>\n          </div>\n          <div class=\"personalDataForm\">\n            <div class=\"step1\">\n              <div class=\"genderSelect\">\n                <input type=\"hidden\" name=\"gender\" id=\"hdnGender\" value=\"\" />\n                <div class=\"male\" (click)=\"obj.gender= 'male'\" [ngClass]=\"{'active-male selected': obj.gender === 'male'}\" role=\"button\" data-value=\"0\" tabindex=\"0\">\n                  <span>גבר</span>\n                </div>\n                <div class=\"female\" (click)=\"obj.gender= 'female'\" [ngClass]=\"{'active-female selected': obj.gender === 'female'}\" role=\"button\" data-value=\"1\" tabindex=\"0\">\n                  <span>אישה</span>\n                </div>\n                <span class=\"pull-right field-validation-error small\" *ngIf=\"showError && !obj.gender\">\n                                        <span>\n                                            אנא בחר ערך\n                                        </span>\n                                    </span>\n              </div>\n              <div class=\"personalDetails formAreaBox\">\n                <form role=\"form\" action=\"#\" method=\"post\">\n                  <div class=\"topSectionWrapper\">\n                    <fieldset>\n                      <legend class=\"sr-only\">###</legend>\n                      <div class=\"birthDate formSection noPadding col-md-4\">\n                        <span>תאריך לידה</span>\n                        <div class=\"wrapper\">\n                                <div class=\"wrapper center-block button-checkup-top\" id=\"button-helth-top\">\n                                    <div class=\"selectWrapper\"  style=\"width: 21%;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                    <div class=\"selectWrapper\" style=\"width: 28%;;margin-right: 2px;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                    <div class=\"selectWrapper\" style=\"width: 28%;margin-right: 3px;height: 100%;\">\n                                      <div style=\"width: 100%;height: 100%;\">\n                                        <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n                                      </div>\n                                    </div>\n                                  </div>\n\n                          <div class=\"visible-xs visible-sm hidden-md\"></div>\n                          <!--<div class=\"col-md-12 no-padding\"><span class=\"field-validation-error small\">אנא בחר ערך</span></div>-->\n                        </div>\n                      </div>\n                      <div class=\"status formSection noPadding col-md-8\">\n                        <span>מצב משפחתי:</span>\n                        <div class=\"wrapper\">\n                          <div class=\"form-group col-xs-12 noPadding\">\n                            <div class=\"statusForm\">\n                                <div class=\"hasSmoked-input intut-wrapper-inside\">\n                                  <input type=\"radio\" id=\"radio1\" name=\"chose\" value=\"9\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                                  <label for=\"radio1\" style=\"border-bottom-right-radius: 17px;border-top-right-radius: 17px;\"><span >רווק</span></label>\n                                  <input type=\"radio\" id=\"radio2\" name=\"chose\" value=\"10\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                                  <label for=\"radio2\" style=\"border-right:0px;\"><span >נשוי</span></label>\n                                  <input type=\"radio\" id=\"radio3\" name=\"chose\" value=\"11\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                                  <label for=\"radio3\" style=\"border-right:0px;\"><span >גרוש</span></label>\n                                  <input type=\"radio\" id=\"radio4\" name=\"chose\" value=\"12\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                                  <label for=\"radio4\" style=\"border-right:0px;\"><span >אלמן</span></label>\n                                  <input type=\"radio\" id=\"radio5\" name=\"chose\" value=\"13\" [(ngModel)]=\"obj.raiodMaritalStatus\"/>\n                                  <label for=\"radio5\" style=\"border-right:0px;border-bottom-left-radius: 17px;border-top-left-radius: 17px;\"><span >אחר</span></label>\n                                  </div>\n\n                            </div>\n                            <span class=\"field-validation-error small\" *ngIf=\"!obj.raiodMaritalStatus && showError\">אנא בחר ערך</span>\n                          </div>\n                        </div>\n                      </div>\n                    </fieldset>\n                  </div>\n                  <div class=\"children formSection\">\n                    <fieldset>\n                      <legend class=\"sr-only\">###</legend>\n                      <div class=\"wrapper\">\n                        <div class=\"childrenAmountWrapper noPadding col-md-2\">\n                          <span class=\"childrenTitle\">ילדים:</span>\n                          <input class=\"form-control childAmount\" type=\"text\" name=\"childAmount\" placeholder=\"0\"  [(ngModel)]=\"obj.childAmount\" (ngModelChange)=\"doChangeChildren($event)\">\n                        </div>\n\n                        <div class=\"childrenListWrapper noPadding col-md-10\">\n                          <div class=\"child row\" *ngFor=\"let child of obj.childrens; let i = index\">\n                              <div class=\"col-md-3 col-xs-12 pull-right input-wrap-top\">\n                                  <label class=\"subject\">בן/בת {{i + 1}}</label>\n                                  <div class=\"form-group\" style=\"margin-bottom:0;\">\n                                    <input type=\"text\" name=\"childname1\" value=\"שם\" class=\"medium2\" [(ngModel)]=\"child.name\"/>\n                                  </div>\n                                  <!-- <span class=\"field-validation-error small\" *ngIf=\"!obj.wifeName && showError\">שדה שם פרטי הוא שדה חובה</span> -->\n                                  <span class=\"field-validation-error small\" *ngIf=\"showError && !child.name\">אנא בחר ערך</span>\n                                </div>\n                            <div class=\"childGender col-md-3 col-xs-4 noPadding pull-right\">\n                              <span>ילד </span>\n                              <div class=\"form-group\">\n                                <div class=\"childGenderForm\">\n                                    <div class=\"hasSmoked-input intut-wrapper-inside\">\n                                      <input type=\"radio\" id=\"radio18{{i}}\" name=\"status{{i}}\" value=\"18\" [(ngModel)]=\"child.radio\"/>\n                                      <label for=\"radio18{{i}}\" style=\"border-bottom-right-radius: 4px;\n                                    border-top-right-radius: 4px;\"><span >זכר</span></label>\n                                      <input type=\"radio\" id=\"radio19{{i}}\" name=\"status{{i}}\" value=\"19\" [(ngModel)]=\"child.radio\"/>\n                                      <label for=\"radio19{{i}}\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >נקבה</span></label>\n                                      </div>\n                                </div>\n                                <span class=\"field-validation-error small\" *ngIf=\"showError && !child.radio\">אנא בחר ערך</span>\n                              </div>\n                            </div>\n                            <div class=\"childBDate col-xs-12 col-md-6 noPadding\">\n                              <span>תאריך לידה</span>\n                              <div class=\"clearfix\">\n                                <div class=\"childBDateForm\">\n                                    <div class=\"wrapper center-block button-checkup-top\" id=\"button-helth-top\">\n                                      <div class=\"selectWrapper\"  style=\"width: 19%;height: 100%;\">\n                                        <div style=\"width: 100%;height: 100%;\">\n                                          <app-autocomplit [data]=\"daysData\"  (change)=\"daysChange($event)\"></app-autocomplit>\n                                        </div>\n                                      </div>\n                                      <div class=\"selectWrapper\" style=\"width: 38%;margin-right: 2px;height: 100%;\">\n                                        <div style=\"width: 100%;height: 100%;\">\n                                          <app-autocomplit [data]=\"monthData\" (change)=\"monthChange($event)\"></app-autocomplit>\n                                        </div>\n                                      </div>\n                                      <div class=\"selectWrapper\" style=\"width: 27%;margin-right: 3px;height: 100%;\">\n                                        <div style=\"width: 100%;height: 100%;\">\n                                          <app-autocomplit [data]=\"yearsData\" (change)=\"yearsChange($event)\"></app-autocomplit>\n                                        </div>\n                                      </div>\n                                      </div>\n\n                                </div>\n                              </div>\n                              <!--<span class=\"field-validation-error small\">אנא בחר ערך</span>-->\n                            </div>\n                          </div>\n\n                        </div>\n                      </div>\n\n                    </fieldset>\n                  </div>\n                </form>\n              </div>\n              <div class=\"checkUpControlls center-block\">\n                <a (click)=\"save()\" class=\"btn nextBtn center-block\">\n                  <span>הבא</span>\n                </a>\n              </div>\n            </div>\n          </div>\n        </div>\n\n        <div role=\"tabpanel\" class=\"tab-pane\" id=\"overviewData\">\n\n        </div>\n\n        <div role=\"tabpanel\" class=\"tab-pane\" id=\"optionalData\">\n\n        </div>\n      </div>\n      <div class=\"checkUpSecurityInfo col-xs-12\">\n        <p>אבטחת מידע: כל המידע במערכת מועבר באופן מוצפן ובסטנדרט SSL, המוביל בתחום אבטחת הנתונים הפיננסיים בעולם</p>\n      </div>\n    </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckupT1S1Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CheckupT1S1Component = (function () {
+    function CheckupT1S1Component(storeService) {
+        this.storeService = storeService;
+        this.yearsData = [];
+        this.monthData = [
+            {
+                label: "1",
+                value: "1"
+            },
+            {
+                label: "2",
+                value: "2"
+            },
+            {
+                label: "3",
+                value: "3"
+            },
+        ];
+        this.daysData = [];
+        this.obj = {
+            day: "1",
+            month: "1",
+            year: "1925",
+            yearSmokin: "",
+            raiodMaritalStatus: "",
+            radioWifeSmoke: "",
+            wifeName: "",
+            wifV1: "",
+            childAmount: 0,
+            smoking: null,
+            childrens: [],
+            gender: ""
+        };
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+        this.setYear();
+        this.setDays();
+    }
+    CheckupT1S1Component.prototype.ngOnInit = function () {
+        var store = this.storeService.getByKey("checkup-t1-s1");
+        if (store) {
+            this.obj = store;
+        }
+    };
+    CheckupT1S1Component.prototype.setDays = function () {
+        for (var i = 1; i <= 31; i++) {
+            this.daysData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    CheckupT1S1Component.prototype.setYear = function () {
+        for (var i = 1925; i <= 2018; i++) {
+            this.yearsData.push({
+                label: i.toString(),
+                value: i.toString()
+            });
+        }
+    };
+    CheckupT1S1Component.prototype.daysChange = function (e) {
+        this.obj.day = e;
+    };
+    CheckupT1S1Component.prototype.monthChange = function (e) {
+        this.obj.month = e;
+    };
+    CheckupT1S1Component.prototype.yearsChange = function (e) {
+        this.obj.year = e;
+    };
+    CheckupT1S1Component.prototype.doChangeChildren = function () {
+        this.obj.childrens = [];
+        for (var i = 0; i < this.obj.childAmount; i++) {
+            this.obj.childrens.push({ stat: "", radio: "", name: "" });
+        }
+    };
+    CheckupT1S1Component.prototype.save = function () {
+        var childFlag;
+        if (!this.obj.year ||
+            !this.obj.month ||
+            !this.obj.year
+            || !this.obj.raiodMaritalStatus) {
+            this.showError = true;
+            console.log(22);
+        }
+        else {
+            for (var i = 0; i < this.obj.childAmount; i++) {
+                if (!this.obj.childrens[i].name || !this.obj.childrens[i].radio) {
+                    childFlag = true;
+                    break;
+                }
+            }
+            if (!this.obj.gender) {
+                this.showError = true;
+            }
+            if (childFlag) {
+                this.showError = true;
+                return;
+            }
+            this.next.emit(({
+                naxtPage: 't1-s2',
+                date: this.obj.day + '-' + this.obj.month + '-' + this.obj.year,
+                smoking: this.obj.smoking,
+                raiodMaritalStatus: this.obj.raiodMaritalStatus,
+                childrens: this.obj.childrens,
+                smokeInLast3Years: this.obj.yearSmokin,
+                type: "checkup-t1-s1"
+            }));
+            this.storeService.setByKey("checkup-t1-s1", this.obj);
+        }
+    };
+    return CheckupT1S1Component;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckupT1S1Component.prototype, "next", void 0);
+CheckupT1S1Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-checkup-t1-s1',
+        template: __webpack_require__("../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/checkup-t1-s1/checkup-t1-s1.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
+], CheckupT1S1Component);
+
+var _a;
+//# sourceMappingURL=checkup-t1-s1.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".button-checkup-top{\r\n    height: 40px;\r\n}\r\n.selected > span{ \r\n    color:  white !important;\r\n }\r\n .hasSmoked-input{\r\n     display: -webkit-box;\r\n     display: -ms-flexbox;\r\n     display: flex;\r\n }\r\n .modalStatus{\r\n     display: -webkit-box;\r\n     display: -ms-flexbox;\r\n     display: flex;\r\n }\r\n .hasSmoked-input > input[type=\"radio\"] {\r\n     display:none;\r\n }\r\n .hasSmoked-input > input[type=\"radio\"] + label {\r\n     color:#f2f2f2;\r\n     width: 24.8%;\r\n     border: 1px solid #117ef5;\r\n     padding: 0 0rem;\r\n     line-height: 22px;\r\n     background:#f7f7f7;;\r\n     cursor:pointer;\r\n     text-align: center;\r\n     display: -webkit-box;\r\n     display: -ms-flexbox;\r\n     display: flex;\r\n     -webkit-box-pack: center;\r\n         -ms-flex-pack: center;\r\n             justify-content: center;\r\n     -webkit-box-align: center;\r\n         -ms-flex-align: center;\r\n             align-items: center;\r\n     height: 40px;    \r\n }\r\n .hasSmoked-input > input[type=\"radio\"] + label span {\r\n     display:inline-block;\r\n     vertical-align:middle;\r\n     text-align: center;\r\n     color: #626262;\r\n }\r\n .hasSmoked-input > input[type=\"radio\"]:checked + label{\r\n     background: #117ef5;\r\n     color: white;\r\n }\r\n .hasSmoked-input > input[type=\"radio\"]:checked + label > span{\r\n     color: white;\r\n }\r\n .center-block{\r\n     height: 40px;\r\n }\r\n .smoke-input > input[type=\"radio\"] + label {\r\n     border: 1px solid #117ef5;\r\n     width: 30%;\r\n }\r\n .intut-wrapper-inside > input[type=\"radio\"] + label {\r\n     border: 1px solid #117ef5;\r\n }\r\n .smole-buttons > input[type=\"radio\"] + label {\r\n     padding: 0 24px;\r\n }\r\n .field-validation-error{\r\n     margin-top: 2px !important;\r\n }\r\n .hasSmoked-input > input[type=\"radio\"] + label:focus{\r\n     outline: 2px solid #707070 !important;\r\n     outline-offset: -2px !important;\r\n }\r\n .field-validation-error{\r\n     white-space: nowrap;\r\n }\r\n .errorOccurredPersonalDetails{\r\n     margin-bottom: 20px;\r\n }\r\n .errorOccurredPersonalDetails > span, .userExistsErrorMsg > span{\r\n    text-align: center !important;\r\n }\r\n\r\n @media (min-width: 991px){\r\n    .field-validation-error{\r\n     position: absolute !important;\r\n     bottom: -51px !important;\r\n    }\r\n}\r\n \r\n @media (max-width: 991px) and (min-width: 768px){\r\n    .center-block{\r\n        height: 80px;\r\n        width: 100% !important;\r\n    }\r\n    #personalData > div.personalDataForm > div > div.personalDetails2.formAreaBox > form > fieldset.contactDetails.formSection.noPadding > div:nth-child(3) > div > div.noPadding.col-md-4.clearfix > div > div{\r\n        margin-left: 0;\r\n    }\r\n    #button-helth-top > div{\r\n        margin-left: 0;\r\n    }\r\n    .IsSmokedPast3Years-error{\r\n        position: relative;\r\n        top: 30px;\r\n    }\r\n }\r\n @media (max-width: 768px){\r\n    .center-block{\r\n        height: 40px;\r\n        width: 100% !important;\r\n    }\r\n    .errorOccurredPersonalDetails{\r\n        text-align: center;\r\n        right: 0 !important;\r\n    }\r\n    .userExistsErrorMsg{\r\n        right: 0 !important;\r\n        text-align: center;\r\n    }\r\n }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <div class=\"checkUp\">\n    <div class=\"checkUpHead col-xs-12 col-md-6 col-md-push-3\">\n      <h2>מילוי שאלון צ'קאפ לצורך קבלת תמונת מצב של העולם הפיננסי שלך</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>זה יקח כמה דקות, אבל זה חד פעמי</span>\n    </div>\n\n    <div class=\"checkUpProgressBar col-xs-12 col-md-10 col-md-push-1\" role=\"tablist\">\n      <div class=\"wrapper center-block\">\n        <div class=\"personal col-xs-4 col-md-2 noPadding currentState\" role=\"presentation\">\n          <span class=\"tab-title\">פרטים אישיים</span>\n        </div>\n        <div class=\"overview col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n          <span class=\"tab-title\">תמונת מצב</span>\n        </div>\n        <div class=\"optional col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n          <span class=\"tab-title\">שאלות משלימות</span>\n          <span class=\"optionalTitle\">אופציונלי</span>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"checkUpForm tab-content col-xs-12\">\n\n      <div role=\"tabpanel\" class=\"tab-pane active\" id=\"personalData\">\n        <h3 class=\"sr-only\">פרטים אישיים</h3>\n        <div class=\"peronalPager\">\n          <div class=\"wrapper center-block\">\n            <span class=\"active\"></span>\n            <span class=\"active\"></span>\n          </div>\n        </div>\n        <div class=\"personalDataForm\">\n          <div class=\"step2\">\n            <div class=\"personalDetails2 formAreaBox\">\n              <form role=\"form\" action=\"#\" method=\"post\">\n                <fieldset class=\"step2TopSectionWrapper noPadding\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"occupation formSection col-md-3 noPadding\">\n                    <span>אני עוסק/ת ב:</span>\n                    <div class=\"wrapper\">\n                      <div class=\"selectWrapper noPadding col-xs-12\">\n                          <div class=\"wrapper center-block button-checkup-top button-select\" id=\"button-helth-top\">\n                              <div class=\"selectWrapper\"  style=\"width: 100%;height: 100%;\">\n                                <div style=\"width: 100%;height: 100%;\">\n                                  <app-autocomplit [data]=\"jobsData\" (change)=\"jobsChange($event)\"></app-autocomplit>\n                                </div>\n                              </div>\n                            </div>\n                      </div>\n                      <!--<span class=\"field-validation-error\">אנא בחר ערך</span>-->\n                    </div>\n                  </div>\n                  <div class=\"salary formSection col-md-3 col-md-pull-1 noPadding\">\n                    <span>שכר:</span>\n                    <div class=\"wrapper\">\n                      <div class=\"selectWrapper noPadding col-xs-12\">\n                          <div class=\"wrapper center-block button-checkup-top\" id=\"button-helth-top\">\n                              <div class=\"selectWrapper\"  style=\"width: 100%;height: 100%;\">\n                                <div style=\"width: 100%;height: 100%;\">\n                                  <app-autocomplit [data]=\"rateData\" (change)=\"rateChange($event)\"></app-autocomplit>\n                                </div>\n                              </div>\n                            </div>\n                      </div>\n                      <!--<span class=\"field-validation-error\">אנא בחר ערך</span>-->\n                    </div>\n                  </div>\n                </fieldset>\n                <fieldset class=\"step2MedicalSectionWrapper\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"clinic formSection col-md-7 noPadding\">\n                    <span>קופת חולים:</span>\n                    <div class=\"wrapper\">\n                      <div class=\"form-group col-xs-12 noPadding\">\n                        <div class=\"clinicForm\">\n                            <div class=\"hasSmoked-input intut-wrapper-inside\">\n                                <input type=\"radio\" id=\"radio1\" name=\"manHMO\" value=\"9\" [(ngModel)]=\"obj.hmo\"/>\n                                <label for=\"radio1\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >מאוחדת</span></label>\n                                <input type=\"radio\" id=\"radio2\" name=\"manHMO\" value=\"10\" [(ngModel)]=\"obj.hmo\"/>\n                                <label for=\"radio2\" style=\"border-right:0px;\"><span >כללית</span></label>\n                                <input type=\"radio\" id=\"radio3\" name=\"manHMO\" value=\"11\" [(ngModel)]=\"obj.hmo\"/>\n                                <label for=\"radio3\" style=\"border-right:0px;\"><span >מכבי</span></label>\n                                <input type=\"radio\" id=\"radio5\" name=\"manHMO\" value=\"13\" [(ngModel)]=\"obj.hmo\"/>\n                                <label for=\"radio5\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לאומית</span></label>\n                              </div>\n\n                        </div>\n                        <span class=\"field-validation-error\" *ngIf=\"showError && !obj.hmo\">אנא בחר ערך</span>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"medigap formSection col-md-4 col-md-pull-1 noPadding\">\n                    <span>ביטוח משלים:</span>\n                    <div class=\"wrapper\">\n                      <div class=\"form-group col-xs-12 noPadding\">\n                        <div class=\"medigapForm\">\n                            <div class=\"hasSmoked-input intut-wrapper-inside\">\n                                <input type=\"radio\" id=\"radio6\" name=\"hmoextra\" value=\"9\"  [(ngModel)]=\"obj.extra\"/>\n                                <label for=\"radio6\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >כן</span></label>\n                                <input type=\"radio\" id=\"radio7\" name=\"hmoextra\" value=\"10\" [(ngModel)]=\"obj.extra\"/>\n                                <label for=\"radio7\" style=\"border-right:0px;\"><span >לא</span></label>\n                                <input type=\"radio\" id=\"radio8\" name=\"hmoextra\" value=\"13\" [(ngModel)]=\"obj.extra\"/>\n                                <label for=\"radio8\" style=\"border-right:0px;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא יודע</span></label>\n                              </div>\n\n                        </div>\n                        <span class=\"field-validation-error\" *ngIf=\"showError && !obj.extra\">אנא בחר ערך</span>\n                      </div>\n                    </div>\n                  </div>\n                </fieldset>\n                <fieldset class=\"step2SmokingSectionWrapper\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"smoking formSection col-md-6 noPadding\">\n                    <div class=\"isSmoking\">\n                      <input type=\"hidden\" name=\"smoking\" id=\"hdnSmoking\" value=\"\" />\n                      <div class=\"yes \" (click)=\"obj.smoking = true\" [ngClass]=\"{'yes-active': obj.smoking === true}\" role=\"button\" data-value=\"1\" tabindex=\"0\">\n                        <span>מעשן</span>\n                      </div>\n                      <div class=\"no\" (click)=\"obj.smoking = false\" [ngClass]=\"{'no-active': obj.smoking === false}\" role=\"button\" data-value=\"0\" tabindex=\"0\">\n                        <span>לא מעשן</span>\n                      </div>\n                    </div>\n                    <span class=\"field-validation-error\" *ngIf=\"showError && !obj.smoking && obj.smoking !== false\">אנא בחר ערך</span>\n                  </div>\n                  <div class=\"lastSmoked formSection col-md-4 noPadding\" style=\"\" *ngIf=\"obj.smoking === false\">\n                    <span>האם עישנת ב-3 שנים האחרונות?</span>\n                    <div class=\"wrapper\">\n                      <div class=\"form-group col-xs-12 noPadding\">\n                        <div class=\"lastSmokedForm center-block\">\n\n                          <div class=\"hasSmoked-input intut-wrapper-inside\">\n                            <input type=\"radio\" id=\"radio10\" name=\"status1\" value=\"כן\" [(ngModel)]=\"obj.yearSmokin\"/>\n                            <label for=\"radio10\" style=\"border-bottom-right-radius: 4px;border-top-right-radius: 4px;\"><span >כן</span></label>\n                            <input type=\"radio\" id=\"radio11\" name=\"status1\"  value=\"לא\" [(ngModel)]=\"obj.yearSmokin\"/>\n                            <label for=\"radio11\" style=\"margin-right: 30px;;border-bottom-left-radius: 4px;border-top-left-radius: 4px;\"><span >לא</span></label>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <span *ngIf=\"showError && obj.smoking === false && !obj.yearSmokin\" class=\"field-validation-error\" data-valmsg-for=\"IsSmokedPast3Years\" data-valmsg-replace=\"true\"><span id=\"IsSmokedPast3Years-error\" class=\"IsSmokedPast3Years-error\">אנא בחר ערך</span></span>\n                  </div>\n                </fieldset>\n                <div class=\"detailsInfo formSection\">\n                  <div class=\"sticker\">\n                    <div class=\"wrapper\">\n                                                    <span class=\"stickerTitle\">\n                                                        חשוב להזין פרטים\n                                                    </span>\n                      <span class=\"stickerText\">\n                                                        פרטים אלו יישמו לצורך יצירת פרופיל משתמש וזיהוי עתידי\n                                                    </span>\n                    </div>\n                  </div>\n                </div>\n                <fieldset class=\"contactDetails formSection noPadding\">\n                  <legend class=\"sr-only\">###</legend>\n                  <div class=\"row\">\n                    <div class=\"wrapper\">\n                      <div class=\"noPadding col-md-4\">\n                        <span>שם פרטי:</span>\n                        <input class=\"form-control\" [(ngModel)]=\"obj.firstName\" type=\"text\" name=\"firstName\" placeholder=\"הזן שם פרטי\">\n                        <span *ngIf=\"showError && !obj.firstName\" class=\"field-validation-error\">אנא בחר ערך</span>\n                      </div>\n                      <div class=\"noPadding col-md-4\">\n                        <span>שם משפחה:</span>\n                        <input class=\"form-control\" [(ngModel)]=\"obj.lastName\" type=\"text\" name=\"lastName\" placeholder=\"הזן שם משפחה\">\n                        <span *ngIf=\"showError && !obj.lastName\" class=\"field-validation-error\">אנא בחר ערך</span>\n                      </div>\n                      <div class=\"noPadding col-md-4\">\n                        <span>תעודת זהות:</span>\n                        <input [(ngModel)]=\"obj.id\" class=\"form-control disabled-control\" type=\"text\" name=\"id\" placeholder=\"הזן תעודת זהות\">\n                        <span *ngIf=\"showError && !obj.id\" class=\"field-validation-error\">אנא בחר ערך</span>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"wrapper\">\n                      <div class=\"noPadding col-md-4 clearfix\">\n                        <span>טלפון:</span>\n                        <div class=\"contactPhone noPadding col-xs-12\">\n                          <input [(ngModel)]=\"obj.phone\" class=\"form-control\" type=\"text\" name=\"phone\" placeholder=\"הזן נייד\">\n                          <div class=\"selectWrapper noPadding\" style=\"margin:0\">\n                              <div class=\"wrapper center-block button-checkup-top button-50\" id=\"button-helth-top\">\n                                  <div class=\"selectWrapper\"  style=\"width: 100%;height: 100%;padding:0;\">\n                                    <div style=\"width: 100%;height: 100%;\">\n                                      <app-autocomplit [data]=\"phoneData\" (change)=\"phoneChange($event)\"></app-autocomplit>\n                                    </div>\n                                  </div>\n                                </div>\n\n                          </div>\n                          <span class=\"field-validation-error\" *ngIf=\"showError && !obj.phone\">שדה טלפון הוא שדה חובה</span>\n                        </div>\n                      </div>\n                      <div class=\"noPadding col-md-4\">\n                        <span>מייל:</span>\n                        <input [(ngModel)]=\"obj.email\" class=\"form-control col-md-4\" type=\"text\" name=\"email\" placeholder=\"הזן מייל\">\n                        <span class=\"field-validation-error\" *ngIf=\"showError && !obj.email\">\n                                                            <span>אנא בחר ערך</span>\n                                                        </span>\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"row\">\n                    <div class=\"wrapper\">\n                      <div class=\"confirmBox noPadding col-md-11\">\n                        <input type=\"checkbox\" name=\"confirm\" value=\"1\" id=\"confirmBoxInput\" [(ngModel)]=\"obj.approve\" />\n                        <label class=\"checkbox-label\" for=\"confirmBoxInput\">\n                          אישור קבלת חומר שיווקי אישור קבלת חומר שיווקי אישור קבלת חומר שיווקי אישור קבלת חומר שיווקי אישור קבלת חומר שיווקי אישור קבלת חומר שיווקי\n                        </label>\n                        <div class=\"clearfix visible-xs visible-sm hidden-md\"></div>\n                        <span class=\"field-validation-error\" *ngIf=\"showError && !obj.approve\">אנא בחר ערך</span>\n                      </div>\n                    </div>\n                  </div>\n                </fieldset>\n              </form>\n            </div>\n            <div class=\"checkUpControlls center-block\">\n              <a (click)=\"back()\" class=\"btn backBtn\">\n                <span>חזור</span>\n              </a>\n              <a (click)=\"save()\" class=\"btn nextBtn\">\n                <span>הבא</span>\n              </a>\n            </div>\n            <div *ngIf=\"showError \" class=\"col-xs-12 text-center checkup-general-error checkup-error-position errorOccurredPersonalDetails\" style=\"/* display: none; */\" id=\"errorOccurredPersonalDetails\" aria-hidden=\"true\">\n                                    <span class=\"field-validation-error\" aria-hidden=\"true\">\n                                        אירעה שגיאה. אנא נסה שנית מאוחר יותר.\n                                    </span>\n            </div>\n            <div *ngIf=\"showError \" class=\"col-xs-12 text-center checkup-general-error checkup-error-position userExistsErrorMsg\" style=\"\" id=\"userExistsErrorMsg\" aria-hidden=\"false\">\n                                    <span class=\"field-validation-error\" aria-hidden=\"true\">\n                                        משתמש קיים, אנא התחבר.\n                                    </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div role=\"tabpanel\" class=\"tab-pane\" id=\"overviewData\">\n      </div>\n\n      <div role=\"tabpanel\" class=\"tab-pane\" id=\"optionalData\">\n\n      </div>\n    </div>\n    <div class=\"checkUpSecurityInfo col-xs-12 col-md-6 col-md-push-3\">\n      <p>אבטחת מידע: כל המידע במערכת מועבר באופן מוצפן ובסטנדרט SSL, המוביל בתחום אבטחת הנתונים הפיננסיים בעולם</p>\n    </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckupT1S2Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__ = __webpack_require__("../../../../../src/app/shared/service/store.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CheckupT1S2Component = (function () {
+    function CheckupT1S2Component(storeService) {
+        this.storeService = storeService;
+        this.obj = {
+            hmo: "",
+            extra: "",
+            smoking: "",
+            yearSmokin: "",
+            email: "",
+            phone: "",
+            firstName: "",
+            lastName: "",
+            id: "",
+            job: "בחר מקצוע",
+            rate: "1000 - 10000"
+        };
+        this.jobsData = [
+            {
+                label: "בחר מקצוע",
+                value: "בחר מקצוע"
+            },
+            {
+                label: "דייל/דיילת מכירו",
+                value: "דייל/דיילת מכירו"
+            },
+        ];
+        this.rateData = [
+            {
+                label: "1000 - 10000",
+                value: "1000 - 10000"
+            },
+            {
+                label: "10000 - 20000",
+                value: "10000 - 20000"
+            },
+        ];
+        this.phoneData = [
+            {
+                label: "050",
+                value: "050"
+            },
+            {
+                label: "040",
+                value: "040"
+            },
+            {
+                label: "060",
+                value: "060"
+            },
+            {
+                label: "070",
+                value: "070"
+            },
+        ];
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CheckupT1S2Component.prototype.ngOnInit = function () {
+        var store = this.storeService.getByKey("checkup-t1-s1");
+        if (store) {
+            this.obj = store;
+        }
+    };
+    CheckupT1S2Component.prototype.jobsChange = function (e) {
+        this.obj.job = e;
+    };
+    CheckupT1S2Component.prototype.rateChange = function (e) {
+        this.obj.rate = e;
+    };
+    CheckupT1S2Component.prototype.save = function () {
+        if (!this.obj.job || !this.obj.rate || !this.obj.extra || !this.obj.hmo || (!this.obj.smoking && !(this.obj.smoking === false))) {
+            this.showError = true;
+        }
+        else {
+            if (this.obj.smoking === false && !this.obj.yearSmokin) {
+                this.showError = true;
+                return;
+            }
+            this.next.emit(({
+                naxtPage: 't2-s1',
+                type: 'checkup-t1-s2',
+                modal: {},
+            }));
+            this.storeService.setByKey("checkup-t1-s1", this.obj);
+        }
+    };
+    CheckupT1S2Component.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 't1-s1'
+        }));
+    };
+    return CheckupT1S2Component;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckupT1S2Component.prototype, "next", void 0);
+CheckupT1S2Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-checkup-t1-s2',
+        template: __webpack_require__("../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/checkup-t1-s2/checkup-t1-s2.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_service_store_service__["a" /* StoreService */]) === "function" && _a || Object])
+], CheckupT1S2Component);
+
+var _a;
+//# sourceMappingURL=checkup-t1-s2.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <div class=\"checkUp\">\n    <div class=\"checkUpHead\">\n      <h2>מילוי שאלון צ'קאפ לצורך קבלת תמונת מצב של העולם הפיננסי שלך</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>זה יקח כמה דקות, אבל זה חד פעמי</span>\n    </div>\n\n    <div class=\"checkUpProgressBar col-xs-12 col-md-10 col-md-push-1\" role=\"tablist\">\n      <div class=\"wrapper center-block\">\n        <div class=\"personal col-xs-4 col-md-2 noPadding passed\" role=\"presentation\">\n          <span class=\"tab-title\">פרטים אישיים</span>\n        </div>\n        <div class=\"overview col-xs-4 col-md-2 noPadding currentState\" role=\"presentation\">\n          <span class=\"tab-title\">תמונת מצב</span>\n        </div>\n        <div class=\"optional col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n          <span class=\"tab-title\">שאלות משלימות</span>\n          <span class=\"optionalTitle\">אופציונלי</span>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"checkUpForm tab-content col-xs-12\">\n      <div role=\"tabpanel\" class=\"tab-pane\" id=\"personalData\">\n        <div class=\"pager\"></div>\n        <div class=\"personalDataForm\">\n          <div class=\"step1\">\n            <div class=\"genderSelect\">\n\n            </div>\n            <div class=\"personalDetails\">\n\n            </div>\n          </div>\n          <div class=\"step2\"></div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane active\" id=\"overviewData\">\n        <h3 class=\"sr-only\">תמונת מצב</h3>\n        <div class=\"step1\">\n          <div class=\"formAreaBox\">\n            <h4>כמה שווה החיסכון הפנסיוני שלך?</h4>\n            <p class=\"subtitle\">\n              על מנת לספק לך תמונה מלאה של\n              הכיסויים הביטוחים שלך, יצרנו עבורך טופס\n              קצר שבאמצעותו תוכל לקבל תמונה מדויקת\n              של (מצב הפנסיה שלך ממשרד האוצר\n              (המסלקה הפנסיונית)\n            </p>\n            <ul class=\"overview-items clearfix\">\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_lock.png\" alt=\"\" />\n                </div>\n                <p>\n                  אמצעי אבטחה מתקדמים לשמירת הפרטיות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_label.png\" alt=\"\" />\n                </div>\n                <p>\n                  השירות ניתן ללא עלות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_graph.png\" alt=\"\" />\n                </div>\n                <p>\n                  מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\n                </p>\n              </li>\n            </ul>\n          </div>\n          <div class=\"checkUpControlls center-block\">\n            <a (click)=\"back()\" class=\"btn backBtn\">\n              <span>חזור</span>\n            </a>\n            <a (click)=\"save()\" class=\"btn nextBtn\">\n              <span>התחל בדיקה</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"step2\" style=\"display:none;\">\n          <div class=\"step2-header\">\n            <h4>התחברות למאגר המידע של משרד האוצר (המסלקה)</h4>\n            <div class=\"icons\">\n              <img src=\"sample-images/icon_overview_lock.png\" alt=\"אמצעי אבטחה מתקדמים לשמירת הפרטיות\" />\n              <img src=\"sample-images/icon_overview_label.png\" alt=\"השירות ניתן ללא עלות\" />\n              <img src=\"sample-images/icon_overview_graph.png\" alt=\"מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\" />\n            </div>\n          </div>\n          <div class=\"step2-notice\">\n            כרטיס האשראי <strong>לא</strong> יחוייב פרטייך ישמשו לצורך <strong>אימות זיהוי בלבד</strong>\n          </div>\n          <div class=\"formAreaBox embed-responsive\">\n            <iframe src=\"creditguard.html\" class=\"embed-responsive-item\"></iframe>\n          </div>\n        </div>\n        <div class=\"step3\" style=\"display:none;\">\n          <div class=\"formAreaBox\">\n            <h4 class=\"v-title\">\n              פרטיך התקבלו בהצלחה!\n            </h4>\n            <div class=\"subtitle\">\n              אישור יישלח אליך למייל\n              <br />\n              פניתך התקבלה, פונים בשמך למסלקה הפנסיונית של משרד האוצר\n            </div>\n          </div>\n          <div class=\"results-time\">\n            <div class=\"subtitle\">\n              המידע יתקבל בעוד\n            </div>\n            <span class=\"time\">\n                                    <strong>2</strong> ימים <strong>23</strong> שעות <strong>ו59</strong> דקות\n                                </span>\n          </div>\n          <div class=\"checkUpControlls clearfix\">\n            <a class=\"btn nextBtn\">\n              <span>הבא</span>\n            </a>\n          </div>\n          <div class=\"subtitle\">\n            נשאר עוד קצת...\n          </div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane formAreaBox\" id=\"optionalData\">\n        <h3 class=\"sr-only\">שאלות משלימות (אופציונאלי)</h3>\n        <form role=\"form\" action=\"#\" method=\"post\">\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך חסכונות?</legend>\n              <div class=\"clearfix\">\n                <div class=\"savings-options form-group col-sm-10 pull-right\">\n                  <div class=\"toggle-savings\">\n                    <label>\n                      קרן השתלמות\n                      <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                    </label>\n                    <label>\n                      קרן מנהלים\n                      <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                    </label>\n                    <label>\n                      תכנית חיסכון\n                      <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                    </label>\n                    <label>\n                      קופת גמל\n                      <input type=\"checkbox\" name=\"saving1\" value=\"4\" />\n                    </label>\n                  </div>\n                </div>\n              </div>\n              <div class=\"savings-amount form-group group-delimiter clearfix\" style=\"display:none;\">\n                <div>\n                  <label class=\"section-title\" for=\"\">הזן סכום</label>\n                </div>\n                <div class=\"savings-amount-input\">\n                  <input class=\"form-control\" type=\"text\" name=\"savingsAmount\" placeholder=\"הזן סכום\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך קצבאות למשפחה?</legend>\n              <div class=\"form-group col-xs-12 col-sm-10 pull-right\">\n                <div class=\"toggle-pensions\">\n                  <label>\n                    פנסיה משולמת\n                    <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                  </label>\n                  <label>\n                    ביטוח לאומי\n                    <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                  </label>\n                  <label>\n                    השכרת נכס\n                    <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                  </label>\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך הלוואות?</legend>\n              <div class=\"form-group loans col-xs-5 pull-right\">\n                <div class=\"toggle-loans\">\n                  <label>\n                    כן\n                    <input type=\"radio\" name=\"loans\" value=\"1\" />\n                  </label>\n                  <label>\n                    לא\n                    <input type=\"radio\" name=\"loans\" value=\"0\" />\n                  </label>\n                </div>\n              </div>\n              <div class=\"form-group has-loans\" style=\"display:none;\">\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">הזן סכום:</label>\n                  <input class=\"form-control\" name=\"loanAmount\" type=\"text\" value=\"\" placeholder=\"הזן סכום\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">החזר חודשי:</label>\n                  <input class=\"form-control\" name=\"loanMonthlyAmount\" type=\"text\" value=\"\" placeholder=\"0,000\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanRepayPeriod\">תקופת החזר בחודשים:</label>\n                  <input class=\"form-control\" name=\"loanRepayPeriod\" type=\"text\" value=\"\" placeholder=\"מס' חודשים\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n        </form>\n      </div>\n    </div>\n    <div class=\"checkUpSecurityInfo col-xs-12 col-md-6 col-md-push-3\">\n      <p>אבטחת מידע: כל המידע במערכת מועבר באופן מוצפן ובסטנדרט SSL, המוביל בתחום אבטחת הנתונים הפיננסיים בעולם</p>\n    </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckupT2S1Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CheckupT2S1Component = (function () {
+    function CheckupT2S1Component() {
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CheckupT2S1Component.prototype.ngOnInit = function () {
+    };
+    CheckupT2S1Component.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 't1-s2'
+        }));
+    };
+    CheckupT2S1Component.prototype.save = function () {
+        this.next.emit(({
+            naxtPage: 't2-s2',
+            type: 'profession',
+            modal: {},
+        }));
+    };
+    return CheckupT2S1Component;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckupT2S1Component.prototype, "next", void 0);
+CheckupT2S1Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-checkup-t2-s1',
+        template: __webpack_require__("../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/checkup-t2-s1/checkup-t2-s1.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CheckupT2S1Component);
+
+//# sourceMappingURL=checkup-t2-s1.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <div class=\"checkUp\">\n    <div class=\"checkUpHead\">\n      <h2>מילוי שאלון צ'קאפ לצורך קבלת תמונת מצב של העולם הפיננסי שלך</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>זה יקח כמה דקות, אבל זה חד פעמי</span>\n    </div>\n\n    <div class=\"checkUpProgressBar col-xs-12 col-md-10 col-md-push-1\" role=\"tablist\">\n      <div class=\"wrapper center-block\">\n        <div class=\"personal col-xs-4 col-md-2 noPadding passed\" role=\"presentation\">\n          <span class=\"tab-title\">פרטים אישיים</span>\n        </div>\n        <div class=\"overview col-xs-4 col-md-2 noPadding currentState\" role=\"presentation\">\n          <span class=\"tab-title\">תמונת מצב</span>\n        </div>\n        <div class=\"optional col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n          <span class=\"tab-title\">שאלות משלימות</span>\n          <span class=\"optionalTitle\">אופציונלי</span>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"checkUpForm tab-content col-xs-12\">\n      <div role=\"tabpanel\" class=\"tab-pane\" id=\"personalData\">\n        <div class=\"pager\"></div>\n        <div class=\"personalDataForm\">\n          <div class=\"step1\">\n            <div class=\"genderSelect\">\n\n            </div>\n            <div class=\"personalDetails\">\n\n            </div>\n          </div>\n          <div class=\"step2\"></div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane active\" id=\"overviewData\">\n        <h3 class=\"sr-only\">תמונת מצב</h3>\n        <div class=\"step1\" style=\"display:none;\">\n          <div class=\"formAreaBox\">\n            <h4>כמה שווה החיסכון הפנסיוני שלך?</h4>\n            <p class=\"subtitle\">\n              על מנת לספק לך תמונה מלאה של\n              הכיסויים הביטוחים שלך, יצרנו עבורך טופס\n              קצר שבאמצעותו תוכל לקבל תמונה מדויקת\n              של (מצב הפנסיה שלך ממשרד האוצר\n              (המסלקה הפנסיונית)\n            </p>\n            <ul class=\"overview-items clearfix\">\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_lock.png\" alt=\"\" />\n                </div>\n                <p>\n                  אמצעי אבטחה מתקדמים לשמירת הפרטיות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_label.png\" alt=\"\" />\n                </div>\n                <p>\n                  השירות ניתן ללא עלות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_graph.png\" alt=\"\" />\n                </div>\n                <p>\n                  מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\n                </p>\n              </li>\n            </ul>\n          </div>\n          <div class=\"checkUpControlls center-block\">\n            <a class=\"btn backBtn\">\n              <span>חזור</span>\n            </a>\n            <a class=\"btn nextBtn\">\n              <span>התחל בדיקה</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"step2\">\n          <div class=\"step2-header\">\n            <h4>התחברות למאגר המידע של משרד האוצר (המסלקה)</h4>\n            <div class=\"icons\">\n              <img src=\"sample-images/icon_overview_lock.png\" alt=\"אמצעי אבטחה מתקדמים לשמירת הפרטיות\" />\n              <img src=\"sample-images/icon_overview_label.png\" alt=\"השירות ניתן ללא עלות\" />\n              <img src=\"sample-images/icon_overview_graph.png\" alt=\"מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\" />\n            </div>\n          </div>\n          <div class=\"step2-notice\">\n            כרטיס האשראי <strong>לא</strong> יחוייב פרטייך ישמשו לצורך <strong>אימות זיהוי בלבד</strong>\n          </div>\n          <div class=\"formAreaBox\">\n            <div class=\"cg-iframe embed-responsive\">\n              <iframe src=\"creditguard.html\" class=\"embed-responsive-item\"></iframe>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-xs-12 text-center checkup-general-error\" id=\"cgTryAgainTzErrorMessage\">\n                                    <span class=\"field-validation-error\" aria-hidden=\"true\">\n                                        ת.ז. של בעל כרטיס האשראי חייבת להיות זהה לתעודת הזהות של המשתמש.\n                                    </span>\n            </div>\n          </div>\n          <div class=\"checkUpControlls center-block\">\n            <a (click)=\"save()\" class=\"btn backBtn center-block\">\n              <span>חזור</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"step3\" style=\"display:none;\">\n          <div class=\"formAreaBox\">\n            <h4 class=\"v-title\">\n              פרטיך התקבלו בהצלחה!\n            </h4>\n            <div class=\"subtitle\">\n              אישור יישלח אליך למייל\n              <br />\n              פניתך התקבלה, פונים בשמך למסלקה הפנסיונית של משרד האוצר\n            </div>\n          </div>\n          <div class=\"results-time\">\n            <div class=\"subtitle\">\n              המידע יתקבל בעוד\n            </div>\n            <span class=\"time\">\n                                    <strong>2</strong> ימים <strong>23</strong> שעות <strong>ו59</strong> דקות\n                                </span>\n          </div>\n          <div class=\"checkUpControlls clearfix\">\n            <a (click)=\"save()\" class=\"btn nextBtn\">\n              <span>הבא</span>\n            </a>\n          </div>\n          <div class=\"subtitle\">\n            נשאר עוד קצת...\n          </div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane formAreaBox\" id=\"optionalData\">\n        <h3 class=\"sr-only\">שאלות משלימות (אופציונאלי)</h3>\n        <form role=\"form\" action=\"#\" method=\"post\">\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך חסכונות?</legend>\n              <div class=\"clearfix\">\n                <div class=\"savings-options form-group col-sm-10 pull-right\">\n                  <div class=\"toggle-savings\">\n                    <label>\n                      קרן השתלמות\n                      <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                    </label>\n                    <label>\n                      קרן מנהלים\n                      <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                    </label>\n                    <label>\n                      תכנית חיסכון\n                      <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                    </label>\n                    <label>\n                      קופת גמל\n                      <input type=\"checkbox\" name=\"saving1\" value=\"4\" />\n                    </label>\n                  </div>\n                </div>\n              </div>\n              <div class=\"savings-amount form-group group-delimiter clearfix\" style=\"display:none;\">\n                <div>\n                  <label class=\"section-title\" for=\"\">הזן סכום</label>\n                </div>\n                <div class=\"savings-amount-input\">\n                  <input class=\"form-control\" type=\"text\" name=\"savingsAmount\" placeholder=\"הזן סכום\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך קצבאות למשפחה?</legend>\n              <div class=\"form-group col-xs-12 col-sm-10 pull-right\">\n                <div class=\"toggle-pensions\">\n                  <label>\n                    פנסיה משולמת\n                    <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                  </label>\n                  <label>\n                    ביטוח לאומי\n                    <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                  </label>\n                  <label>\n                    השכרת נכס\n                    <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                  </label>\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך הלוואות?</legend>\n              <div class=\"form-group loans col-xs-5 pull-right\">\n                <div class=\"toggle-loans\">\n                  <label>\n                    כן\n                    <input type=\"radio\" name=\"loans\" value=\"1\" />\n                  </label>\n                  <label>\n                    לא\n                    <input type=\"radio\" name=\"loans\" value=\"0\" />\n                  </label>\n                </div>\n              </div>\n              <div class=\"form-group has-loans\" style=\"display:none;\">\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">הזן סכום:</label>\n                  <input class=\"form-control\" name=\"loanAmount\" type=\"text\" value=\"\" placeholder=\"הזן סכום\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">החזר חודשי:</label>\n                  <input class=\"form-control\" name=\"loanMonthlyAmount\" type=\"text\" value=\"\" placeholder=\"0,000\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanRepayPeriod\">תקופת החזר בחודשים:</label>\n                  <input class=\"form-control\" name=\"loanRepayPeriod\" type=\"text\" value=\"\" placeholder=\"מס' חודשים\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n        </form>\n      </div>\n    </div>\n\n    <div class=\"checkUpSecurityInfo col-xs-12 col-md-6 col-md-push-3\">\n      <p>אבטחת מידע: כל המידע במערכת מועבר באופן מוצפן ובסטנדרט SSL, המוביל בתחום אבטחת הנתונים הפיננסיים בעולם</p>\n    </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckupT2S2Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CheckupT2S2Component = (function () {
+    function CheckupT2S2Component() {
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CheckupT2S2Component.prototype.ngOnInit = function () {
+    };
+    CheckupT2S2Component.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 't2-s1'
+        }));
+    };
+    CheckupT2S2Component.prototype.save = function () {
+        this.next.emit(({
+            naxtPage: 't2-s3',
+            type: 'profession',
+            modal: {},
+        }));
+    };
+    return CheckupT2S2Component;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckupT2S2Component.prototype, "next", void 0);
+CheckupT2S2Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-checkup-t2-s2',
+        template: __webpack_require__("../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/checkup-t2-s2/checkup-t2-s2.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CheckupT2S2Component);
+
+//# sourceMappingURL=checkup-t2-s2.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "  <div class=\"checkUp\">\n    <div class=\"checkUpHead\">\n      <h2>מילוי שאלון צ'קאפ לצורך קבלת תמונת מצב של העולם הפיננסי שלך</h2>\n      <p>\n        מילוי שאלון קצר לצורך הפקת הצעות ביטוח\n      </p>\n      <span>זה יקח כמה דקות, אבל זה חד פעמי</span>\n    </div>\n\n    <div class=\"checkUpProgressBar col-xs-12 col-md-10 col-md-push-1\" role=\"tablist\">\n      <div class=\"wrapper center-block\">\n        <div class=\"personal col-xs-4 col-md-2 noPadding passed\" role=\"presentation\">\n          <span class=\"tab-title\">פרטים אישיים</span>\n        </div>\n        <div class=\"overview col-xs-4 col-md-2 noPadding currentState\" role=\"presentation\">\n          <span class=\"tab-title\">תמונת מצב</span>\n        </div>\n        <div class=\"optional col-xs-4 col-md-2 noPadding\" role=\"presentation\">\n          <span class=\"tab-title\">שאלות משלימות</span>\n          <span class=\"optionalTitle\">אופציונלי</span>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"checkUpForm tab-content col-xs-12\">\n      <div role=\"tabpanel\" class=\"tab-pane\" id=\"personalData\">\n        <div class=\"pager\"></div>\n        <div class=\"personalDataForm\">\n          <div class=\"step1\">\n            <div class=\"genderSelect\">\n\n            </div>\n            <div class=\"personalDetails\">\n\n            </div>\n          </div>\n          <div class=\"step2\"></div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane active\" id=\"overviewData\">\n        <h3 class=\"sr-only\">תמונת מצב</h3>\n        <div class=\"step1\" style=\"display:none;\">\n          <div class=\"formAreaBox\">\n            <h4>כמה שווה החיסכון הפנסיוני שלך?</h4>\n            <p class=\"subtitle\">\n              על מנת לספק לך תמונה מלאה של\n              הכיסויים הביטוחים שלך, יצרנו עבורך טופס\n              קצר שבאמצעותו תוכל לקבל תמונה מדויקת\n              של (מצב הפנסיה שלך ממשרד האוצר\n              (המסלקה הפנסיונית)\n            </p>\n            <ul class=\"overview-items clearfix\">\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_lock.png\" alt=\"\" />\n                </div>\n                <p>\n                  אמצעי אבטחה מתקדמים לשמירת הפרטיות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_label.png\" alt=\"\" />\n                </div>\n                <p>\n                  השירות ניתן ללא עלות\n                </p>\n              </li>\n              <li class=\"col-xs-12 col-md-4\">\n                <div class=\"icon\">\n                  <img class=\"img-responsive center-block\" src=\"sample-images/icon_overview_graph.png\" alt=\"\" />\n                </div>\n                <p>\n                  מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\n                </p>\n              </li>\n            </ul>\n          </div>\n          <div class=\"checkUpControlls clearfix\">\n            <a (click)=\"back()\" class=\"btn backBtn\">\n              <span>חזור</span>\n            </a>\n            <a (click)=\"save()\" class=\"btn nextBtn\">\n              <span>התחל בדיקה</span>\n            </a>\n          </div>\n        </div>\n        <div class=\"step2\" style=\"display:none;\">\n          <div class=\"step2-header\">\n            <h4>התחברות למאגר המידע של משרד האוצר (המסלקה)</h4>\n            <div class=\"icons\">\n              <img src=\"sample-images/icon_overview_lock.png\" alt=\"אמצעי אבטחה מתקדמים לשמירת הפרטיות\" />\n              <img src=\"sample-images/icon_overview_label.png\" alt=\"השירות ניתן ללא עלות\" />\n              <img src=\"sample-images/icon_overview_graph.png\" alt=\"מידע מהימן ועדכני בנוגע לפוליסות הקיימות שלך\" />\n            </div>\n          </div>\n          <div class=\"step2-notice\">\n            כרטיס האשראי <strong>לא</strong> יחוייב פרטייך ישמשו לצורך <strong>אימות זיהוי בלבד</strong>\n          </div>\n          <div class=\"formAreaBox embed-responsive\">\n            <iframe src=\"creditguard.html\" class=\"embed-responsive-item\"></iframe>\n          </div>\n        </div>\n        <div class=\"step3\">\n          <div class=\"formAreaBox\">\n            <h4 class=\"v-title\">\n              פרטיך התקבלו בהצלחה!\n            </h4>\n            <div class=\"subtitle\">\n              אישור יישלח אליך למייל\n              <br />\n              פניתך התקבלה, פונים בשמך למסלקה הפנסיונית של משרד האוצר\n            </div>\n          </div>\n          <div class=\"results-time\">\n            <div class=\"subtitle\">\n              המידע יתקבל בעוד\n            </div>\n            <span class=\"time\">\n                                    <strong>{{days}}</strong> ימים <strong>{{hours}}</strong> שעות <strong>{{minuts}}</strong> דקות <strong>{{seconds}}</strong> Second\n            </span>\n          </div>\n          <div class=\"checkUpControlls center-block\">\n            <a href=\"#\" class=\"btn nextBtn center-block\">\n              <span>הבא</span>\n            </a>\n          </div>\n          <div class=\"subtitle\">\n            נשאר עוד קצת...\n          </div>\n        </div>\n      </div>\n      <div role=\"tabpanel\" class=\"tab-pane formAreaBox\" id=\"optionalData\">\n        <h3 class=\"sr-only\">שאלות משלימות (אופציונאלי)</h3>\n        <form role=\"form\" action=\"#\" method=\"post\">\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך חסכונות?</legend>\n              <div class=\"clearfix\">\n                <div class=\"savings-options form-group col-sm-10 pull-right\">\n                  <div class=\"toggle-savings\">\n                    <label>\n                      קרן השתלמות\n                      <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                    </label>\n                    <label>\n                      קרן מנהלים\n                      <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                    </label>\n                    <label>\n                      תכנית חיסכון\n                      <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                    </label>\n                    <label>\n                      קופת גמל\n                      <input type=\"checkbox\" name=\"saving1\" value=\"4\" />\n                    </label>\n                  </div>\n                </div>\n              </div>\n              <div class=\"savings-amount form-group group-delimiter clearfix\" style=\"display:none;\">\n                <div>\n                  <label class=\"section-title\" for=\"\">הזן סכום</label>\n                </div>\n                <div class=\"savings-amount-input\">\n                  <input class=\"form-control\" type=\"text\" name=\"savingsAmount\" placeholder=\"הזן סכום\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך קצבאות למשפחה?</legend>\n              <div class=\"form-group col-xs-12 col-sm-10 pull-right\">\n                <div class=\"toggle-pensions\">\n                  <label>\n                    פנסיה משולמת\n                    <input type=\"checkbox\" name=\"saving1\" value=\"1\" />\n                  </label>\n                  <label>\n                    ביטוח לאומי\n                    <input type=\"checkbox\" name=\"saving1\" value=\"2\" />\n                  </label>\n                  <label>\n                    השכרת נכס\n                    <input type=\"checkbox\" name=\"saving1\" value=\"3\" />\n                  </label>\n                </div>\n              </div>\n            </fieldset>\n          </div>\n          <div class=\"form-section\">\n            <fieldset>\n              <legend class=\"section-title\">יש לך הלוואות?</legend>\n              <div class=\"form-group loans col-xs-5 pull-right\">\n                <div class=\"toggle-loans\">\n                  <label>\n                    כן\n                    <input type=\"radio\" name=\"loans\" value=\"1\" />\n                  </label>\n                  <label>\n                    לא\n                    <input type=\"radio\" name=\"loans\" value=\"0\" />\n                  </label>\n                </div>\n              </div>\n              <div class=\"form-group has-loans\" style=\"display:none;\">\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">הזן סכום:</label>\n                  <input class=\"form-control\" name=\"loanAmount\" type=\"text\" value=\"\" placeholder=\"הזן סכום\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanAmount\">החזר חודשי:</label>\n                  <input class=\"form-control\" name=\"loanMonthlyAmount\" type=\"text\" value=\"\" placeholder=\"0,000\" />\n                </div>\n                <div class=\"has-loans-section\">\n                  <label class=\"small-section-title text-center\" for=\"loanRepayPeriod\">תקופת החזר בחודשים:</label>\n                  <input class=\"form-control\" name=\"loanRepayPeriod\" type=\"text\" value=\"\" placeholder=\"מס' חודשים\" />\n                </div>\n              </div>\n            </fieldset>\n          </div>\n        </form>\n      </div>\n    </div>\n\n    <div class=\"checkUpSecurityInfo col-xs-12 col-md-6 col-md-push-3\">\n      <p>אבטחת מידע: כל המידע במערכת מועבר באופן מוצפן ובסטנדרט SSL, המוביל בתחום אבטחת הנתונים הפיננסיים בעולם</p>\n    </div>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckupT2S3Component; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CheckupT2S3Component = (function () {
+    function CheckupT2S3Component() {
+        this.seconds = 59;
+        this.minuts = 59;
+        this.hours = 23;
+        this.days = 2;
+        this.next = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
+    }
+    CheckupT2S3Component.prototype.ngOnInit = function () {
+        var _this = this;
+        setInterval(function () {
+            _this.seconds--;
+            if (_this.seconds === 0) {
+                _this.minuts--;
+                _this.seconds = 59;
+                if (_this.minuts === 0) {
+                    _this.minuts = 59;
+                    _this.hours--;
+                    if (_this.hours === 0) {
+                        _this.days--;
+                        _this.hours = 23;
+                    }
+                }
+            }
+        }, 1000);
+    };
+    CheckupT2S3Component.prototype.back = function () {
+        this.next.emit(({
+            naxtPage: 't2-s2'
+        }));
+    };
+    CheckupT2S3Component.prototype.save = function () {
+        // this.next.emit(({
+        //   naxtPage: 't2-s3',
+        //   type: 'profession',
+        //   modal: {
+        //   },
+        // }));
+    };
+    return CheckupT2S3Component;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], CheckupT2S3Component.prototype, "next", void 0);
+CheckupT2S3Component = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-checkup-t2-s3',
+        template: __webpack_require__("../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/wizard/checkup-t2-s3/checkup-t2-s3.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], CheckupT2S3Component);
+
+//# sourceMappingURL=checkup-t2-s3.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/wizard/genderselect/genderselect.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1534,7 +2245,7 @@ var KupotHolimComponent = (function () {
         if (store) {
             this.obj = store;
         }
-        // this.info = this.storeService.getByKey("private-health-personalinfo");
+        this.info = this.storeService.getByKey("private-health-personalinfo");
     };
     KupotHolimComponent.prototype.save = function () {
         if (((!this.obj.manHMO && !(this.obj.manHMO === false)) || !this.obj.manHMOextra) ||
@@ -1731,6 +2442,7 @@ var PrivateHealthPersonalinfoComponent = (function () {
                 smoking: this.obj.smoking,
                 raiodMaritalStatus: this.obj.raiodMaritalStatus,
                 childrens: this.obj.childrens,
+                smokeInLast3Years: this.obj.yearSmokin,
                 type: "private-health-personalinfo"
             }));
             this.storeService.setByKey("private-health-personalinfo", this.obj);

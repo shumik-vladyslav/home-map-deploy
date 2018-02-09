@@ -48,7 +48,18 @@ strong {
   width: 25px;
   height: 18px;
 }
-
+#personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div.selected, #personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div:hover{
+  background-color: #117ef5;
+}
+#personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div.selected, #personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div:hover > span{
+  color: white;
+}
+#confirmBoxInput{
+  display: none;
+}
+#confirmBoxInput:checked + label::before{
+  content: "\F046" !important;
+}
 @media (min-width: 768px) {
   .v-title {
     font-size: 2.71429em;
@@ -1487,7 +1498,12 @@ nav .navControls .textContrast {
     max-width: 500px !important;
   }
 }
-
+@media (max-width: 1366px) and (min-width: 768px){
+    .calculator {
+      max-width: 1225px !important;
+      margin: 0 auto;
+  }
+}
 @media (max-width: 1280px) {
   nav.agentsNav .navbar-offcanvas .navbar-nav {
     max-width: 300px !important;
@@ -4864,11 +4880,18 @@ footer .newsLetter .success {
 #personalData .personalDataForm .step1 .genderSelect > div.selected.male, #personalData .personalDataForm .step1 .genderSelect > div:hover.male {
   background-image: url(../images/checkup/stage1/man_on.png);
 }
-
+#personalData .personalDataForm .step1 .genderSelect > div.selected.male, #personalData .personalDataForm .step1 .genderSelect > div:hover.male > span{
+  color: white;
+}
 #personalData .personalDataForm .step1 .genderSelect > div.selected.female, #personalData .personalDataForm .step1 .genderSelect > div:hover.female {
   background-image: url(../images/checkup/stage1/woman_on.png);
 }
-
+#personalData .personalDataForm .step1 .genderSelect > div.selected.male, #personalData .personalDataForm .step1 .genderSelect > div:hover.female > span{
+  color: white;
+}
+#personalData .personalDataForm .step1 .genderSelect > div.selected, #personalData .personalDataForm .step1 .genderSelect > div:hover{
+  background-color: #117ef5;
+}
 #personalData .personalDataForm .step1 .genderSelect > div.selected::after {
   content: '';
   width: 14px;
@@ -5510,7 +5533,7 @@ footer .newsLetter .success {
 #personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div.selected,
 .yes-active{
   background-color: #117ef5 !important;
-  background-image: url(../images/checkup/stage1/smoke_yes_selected.png) !important;
+  
 }
 
 #personalData .personalDataForm .step2 .personalDetails2 .formSection.smoking .isSmoking > div.selected span,
