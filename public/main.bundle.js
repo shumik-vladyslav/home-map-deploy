@@ -690,7 +690,8 @@ var MiddleChatComponent = /** @class */ (function () {
         });
     };
     MiddleChatComponent.prototype.ngOnDestroy = function () {
-        this.chatInfoSub.unsubscribe();
+        if (this.chatInfoSub)
+            this.chatInfoSub.unsubscribe();
     };
     MiddleChatComponent.prototype.translate = function () {
         // for(let item: any of this.chatMessages){
