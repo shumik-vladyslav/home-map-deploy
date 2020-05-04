@@ -543,7 +543,7 @@ class MainComponent {
                 }
                 var d = {
                     source: {
-                        x: this.data[this.startDrowLine].x + 20,
+                        x: this.data[this.startDrowLine].x + 110,
                         y: this.data[this.startDrowLine].y
                     },
                     target: {
@@ -1063,13 +1063,35 @@ class MainComponent {
     shepClick(s) {
         this.selected = s;
         let id = this.selected;
+        console.log(this.data[this.selected].objectClass, id);
         if (!this.startDrowLine) {
             this.activeArrow = id;
             this.startDrowLine = id;
         }
         else {
+            if ((this.data[this.activeArrow].objectClass === "OR" ||
+                this.data[this.activeArrow].objectClass === "AND") &&
+                (this.data[this.selected].objectClass === "OR" ||
+                    this.data[this.selected].objectClass === "AND")) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
+            if ((this.data[this.activeArrow].objectClass !== "OR" &&
+                this.data[this.activeArrow].objectClass !== "AND") &&
+                (this.data[this.selected].objectClass !== "OR" &&
+                    this.data[this.selected].objectClass !== "AND")) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
             let count = 0;
-            console.log(this.data, id);
             this.data[id].selected.forEach((element, index) => {
                 if (this.data[this.activeArrow].id === element) {
                     count++;

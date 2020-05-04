@@ -1275,7 +1275,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               var d = {
                 source: {
-                  x: _this2.data[_this2.startDrowLine].x + 20,
+                  x: _this2.data[_this2.startDrowLine].x + 110,
                   y: _this2.data[_this2.startDrowLine].y
                 },
                 target: {
@@ -1719,13 +1719,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.selected = s;
           var id = this.selected;
+          console.log(this.data[this.selected].objectClass, id);
 
           if (!this.startDrowLine) {
             this.activeArrow = id;
             this.startDrowLine = id;
           } else {
+            if ((this.data[this.activeArrow].objectClass === "OR" || this.data[this.activeArrow].objectClass === "AND") && (this.data[this.selected].objectClass === "OR" || this.data[this.selected].objectClass === "AND")) {
+              this.activeArrow = null;
+              this.startDrowLine = null;
+              this.removeAll();
+              this.drowLines();
+              this.drow();
+              return;
+            }
+
+            if (this.data[this.activeArrow].objectClass !== "OR" && this.data[this.activeArrow].objectClass !== "AND" && this.data[this.selected].objectClass !== "OR" && this.data[this.selected].objectClass !== "AND") {
+              this.activeArrow = null;
+              this.startDrowLine = null;
+              this.removeAll();
+              this.drowLines();
+              this.drow();
+              return;
+            }
+
             var count = 0;
-            console.log(this.data, id);
             this.data[id].selected.forEach(function (element, index) {
               if (_this6.data[_this6.activeArrow].id === element) {
                 count++;

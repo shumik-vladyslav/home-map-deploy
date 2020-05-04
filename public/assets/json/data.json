@@ -4,7 +4,7 @@
             "id": "008ad949-d84c-402e-ae73-562fb512c873",
             "key": "Test",
             "objectClass": "Data Model",
-            "selected": [],
+            "selected": ["b0360476-7024-46fb-a7e9-586d5bd070bb"],
             "x": 294,
             "y": 143,
             "attributes": [{
@@ -56,8 +56,8 @@
             "id": "e62a3e46-9be8-4324-9f0e-2b054d293cb9",
             "key": "test3",
             "objectClass": "Contextual Rules",
-            "selected": ["008ad949-d84c-402e-ae73-562fb512c873"],
-            "x": 387,
+            "selected": [],
+            "x": 294,
             "y": 275,
             "attributes": [{
                     "name": "numberOfAuthPwd",
@@ -104,6 +104,14 @@
     
                 }
             ]
+        },
+        {
+            "id": "b0360476-7024-46fb-a7e9-586d5bd070bb",
+            "key": "",
+            "objectClass": "AND",
+            "selected": ["378dd33e-4879-4532-8843-32376e11daff"],
+            "x": 383,
+            "y": 216
         }
     ]
 }
