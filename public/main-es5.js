@@ -1539,6 +1539,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   if (model) {
                     console.log(model, id);
 
+                    for (var _index = 0; _index < _this3.data.length; _index++) {
+                      var _element = _this3.data[_index];
+
+                      var _s = _element.selectedIn.indexOf(_this3.data[id].id);
+
+                      _element.selectedIn.splice(_s, 1);
+
+                      var sIn = _element.selected.indexOf(_this3.data[id].id);
+
+                      _element.selected.splice(sIn, 1);
+
+                      console.log(_element);
+                    }
+
                     _this3.data.splice(+id, 1);
 
                     _this3.removeAll();
@@ -1721,6 +1735,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 dialogRef.afterClosed().subscribe(function (model) {
                   if (model) {
                     console.log(model, id);
+
+                    for (var _index2 = 0; _index2 < _this3.data.length; _index2++) {
+                      var _element2 = _this3.data[_index2];
+
+                      var _s2 = _element2.selectedIn.indexOf(_this3.data[id].id);
+
+                      if (_s2) {
+                        _element2.selectedIn.splice(_s2, 1);
+                      }
+
+                      var sIn = _element2.selected.indexOf(_this3.data[id].id);
+
+                      if (sIn) {
+                        _element2.selected.splice(sIn, 1);
+                      }
+                    }
 
                     _this3.data.splice(+id, 1);
 

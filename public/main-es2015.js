@@ -767,6 +767,14 @@ class MainComponent {
                     dialogRef.afterClosed().subscribe(model => {
                         if (model) {
                             console.log(model, id);
+                            for (let index = 0; index < this.data.length; index++) {
+                                const element = this.data[index];
+                                let s = element.selectedIn.indexOf(this.data[id].id);
+                                element.selectedIn.splice(s, 1);
+                                let sIn = element.selected.indexOf(this.data[id].id);
+                                element.selected.splice(sIn, 1);
+                                console.log(element);
+                            }
                             this.data.splice(+id, 1);
                             this.removeAll();
                             this.drow();
@@ -994,6 +1002,17 @@ class MainComponent {
                     dialogRef.afterClosed().subscribe(model => {
                         if (model) {
                             console.log(model, id);
+                            for (let index = 0; index < this.data.length; index++) {
+                                const element = this.data[index];
+                                let s = element.selectedIn.indexOf(this.data[id].id);
+                                if (s) {
+                                    element.selectedIn.splice(s, 1);
+                                }
+                                let sIn = element.selected.indexOf(this.data[id].id);
+                                if (sIn) {
+                                    element.selected.splice(sIn, 1);
+                                }
+                            }
                             this.data.splice(+id, 1);
                             this.removeAll();
                             this.drow();
