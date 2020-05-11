@@ -1284,53 +1284,18 @@ class MainComponent {
                 this.drow();
                 return;
             }
-            // if((this.data[this.activeArrow].objectClass === "OR" || 
-            // this.data[this.activeArrow].objectClass === "AND") && 
-            // (this.data[this.selected].objectClass === "OR" || 
-            // this.data[this.selected].objectClass === "AND")) {
-            //   this.activeArrow = null;
-            //   this.startDrowLine = null;
-            //   this.removeAll();
-            //   this.drowLines();
-            //   this.drow();
-            //   return;
-            // }
-            if ((this.data[this.selected].objectClass !== "OR" &&
-                this.data[this.selected].objectClass !== "AND") &&
-                this.data[this.activeArrow].selected.length === 1) {
-                this.activeArrow = null;
-                this.startDrowLine = null;
-                this.removeAll();
-                this.drowLines();
-                this.drow();
-                return;
-            }
-            if ((this.data[this.selected].objectClass === "OR" &&
-                this.data[this.selected].objectClass === "AND") &&
-                this.data[this.activeArrow].selected.length === 1) {
-                this.activeArrow = null;
-                this.startDrowLine = null;
-                this.removeAll();
-                this.drowLines();
-                this.drow();
-                return;
-            }
-            if ((this.data[this.activeArrow].objectClass === "OR" ||
-                this.data[this.activeArrow].objectClass === "AND") &&
-                this.data[this.selected].selectedIn.length === 1) {
-                this.activeArrow = null;
-                this.startDrowLine = null;
-                this.removeAll();
-                this.drowLines();
-                this.drow();
-                return;
-            }
-            console.log(this.data[this.activeArrow].selectedIn, this.data[this.activeArrow].selectedIn.length, 222);
-            console.log(this.data[this.selected].selectedIn, this.data[this.selected].selectedIn.length, 222);
             if ((this.data[this.activeArrow].objectClass !== "OR" &&
                 this.data[this.activeArrow].objectClass !== "AND") &&
                 (this.data[this.selected].objectClass !== "OR" &&
                     this.data[this.selected].objectClass !== "AND")) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
+            if (this.data[this.selected].selectedIn.length === 1) {
                 this.activeArrow = null;
                 this.startDrowLine = null;
                 this.removeAll();
@@ -1365,6 +1330,8 @@ class MainComponent {
                 //   selected: this.activeArrow
                 // });
             }
+            console.log(this.data[this.activeArrow].selectedIn, this.data[this.activeArrow].selected, 222);
+            console.log(this.data[this.selected].selectedIn, this.data[this.selected].selected, 222);
             this.activeArrow = null;
             this.startDrowLine = null;
         }
