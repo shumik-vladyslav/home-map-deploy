@@ -1512,7 +1512,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 _this3.activeArrow = null;
                 _this3.startDrowLine = null;
               });
-              var cg = g.append("g");
+              var cg = g.append("g").attr("id", index + "-del");
               cg.append("circle").attr("class", "svg").attr("cx", element.x + 140).attr("cy", element.y - 13).attr("r", 11).attr("stroke", "black").attr("stroke-width", 2).attr("fill", "white");
               cg.append("path").attr("transform", "translate(".concat(element.x + 128, ",").concat(element.y - 25, ")")).attr("d", "M6.25,6.25,17.75,17.75").attr("stroke", "black").attr("stroke-width", 3).attr("fill", "none");
               cg.append("path").attr("transform", "translate(".concat(element.x + 128, ",").concat(element.y - 25, ")")).attr("d", "M6.25,17.75,17.75,6.25").attr("stroke", "black").attr("stroke-width", 3).attr("fill", "none"); // g.append("text")
@@ -1525,6 +1525,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               cg.attr("cursor", "pointer").on("click", function (d, i, s) {
                 d3.event.stopPropagation();
                 var id = s[0].id.split("-")[0];
+                console.log(s[0].id);
 
                 var dialogRef = _this3.dialog.open(_shared_dialog_create_model_dialog_create_model_component__WEBPACK_IMPORTED_MODULE_1__["DialogCreateModelComponent"], {
                   width: '450px',
@@ -1685,7 +1686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 });
               }
 
-              var _cg = g.append("g");
+              var _cg = g.append("g").attr("id", index + "-del");
 
               _cg.append("circle").attr("class", "svg").attr("cx", element.x + 140).attr("cy", element.y - 13).attr("r", 11).attr("stroke", "black").attr("stroke-width", 2).attr("fill", "white");
 
@@ -2016,6 +2017,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // }
 
 
+            if (this.data[this.selected].objectClass !== "OR" && this.data[this.selected].objectClass !== "AND" && this.data[this.activeArrow].selected.length === 1) {
+              this.activeArrow = null;
+              this.startDrowLine = null;
+              this.removeAll();
+              this.drowLines();
+              this.drow();
+              return;
+            }
+
+            if (this.data[this.selected].objectClass === "OR" && this.data[this.selected].objectClass === "AND" && this.data[this.activeArrow].selected.length === 1) {
+              this.activeArrow = null;
+              this.startDrowLine = null;
+              this.removeAll();
+              this.drowLines();
+              this.drow();
+              return;
+            }
+
+            if ((this.data[this.activeArrow].objectClass === "OR" || this.data[this.activeArrow].objectClass === "AND") && this.data[this.selected].selectedIn.length === 1) {
+              this.activeArrow = null;
+              this.startDrowLine = null;
+              this.removeAll();
+              this.drowLines();
+              this.drow();
+              return;
+            }
+
+            console.log(this.data[this.activeArrow].selectedIn, this.data[this.activeArrow].selectedIn.length, 222);
+            console.log(this.data[this.selected].selectedIn, this.data[this.selected].selectedIn.length, 222);
+
             if (this.data[this.activeArrow].objectClass !== "OR" && this.data[this.activeArrow].objectClass !== "AND" && this.data[this.selected].objectClass !== "OR" && this.data[this.selected].objectClass !== "AND") {
               this.activeArrow = null;
               this.startDrowLine = null;
@@ -2047,7 +2078,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
 
             if (id !== this.activeArrow) {
-              this.data[this.activeArrow].selected.push(this.data[id].id); // this.txtQueryChanged.next({
+              this.data[this.activeArrow].selected.push(this.data[id].id);
+              this.data[this.selected].selectedIn.push(this.data[this.activeArrow].id); // this.txtQueryChanged.next({
               //   value: "query",
               //   selected: this.activeArrow
               // });
@@ -2478,6 +2510,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, ComponentClass);
 
       this.key = "";
+      this.selectedIn = [];
     };
     /***/
 

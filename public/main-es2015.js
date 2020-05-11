@@ -724,7 +724,8 @@ class MainComponent {
                     this.activeArrow = null;
                     this.startDrowLine = null;
                 });
-                let cg = g.append("g");
+                let cg = g.append("g")
+                    .attr("id", index + "-del");
                 cg.append("circle")
                     .attr("class", "svg")
                     .attr("cx", element.x + 140)
@@ -755,6 +756,7 @@ class MainComponent {
                     .on("click", (d, i, s) => {
                     d3.event.stopPropagation();
                     let id = s[0].id.split("-")[0];
+                    console.log(s[0].id);
                     const dialogRef = this.dialog.open(_shared_dialog_create_model_dialog_create_model_component__WEBPACK_IMPORTED_MODULE_1__["DialogCreateModelComponent"], {
                         width: '450px',
                         data: {
@@ -945,7 +947,8 @@ class MainComponent {
                         this.startDrowLine = null;
                     });
                 }
-                let cg = g.append("g");
+                let cg = g.append("g")
+                    .attr("id", index + "-del");
                 cg.append("circle")
                     .attr("class", "svg")
                     .attr("cx", element.x + 140)
@@ -1292,6 +1295,38 @@ class MainComponent {
             //   this.drow();
             //   return;
             // }
+            if ((this.data[this.selected].objectClass !== "OR" &&
+                this.data[this.selected].objectClass !== "AND") &&
+                this.data[this.activeArrow].selected.length === 1) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
+            if ((this.data[this.selected].objectClass === "OR" &&
+                this.data[this.selected].objectClass === "AND") &&
+                this.data[this.activeArrow].selected.length === 1) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
+            if ((this.data[this.activeArrow].objectClass === "OR" ||
+                this.data[this.activeArrow].objectClass === "AND") &&
+                this.data[this.selected].selectedIn.length === 1) {
+                this.activeArrow = null;
+                this.startDrowLine = null;
+                this.removeAll();
+                this.drowLines();
+                this.drow();
+                return;
+            }
+            console.log(this.data[this.activeArrow].selectedIn, this.data[this.activeArrow].selectedIn.length, 222);
+            console.log(this.data[this.selected].selectedIn, this.data[this.selected].selectedIn.length, 222);
             if ((this.data[this.activeArrow].objectClass !== "OR" &&
                 this.data[this.activeArrow].objectClass !== "AND") &&
                 (this.data[this.selected].objectClass !== "OR" &&
@@ -1324,6 +1359,7 @@ class MainComponent {
             }
             if (id !== this.activeArrow) {
                 this.data[this.activeArrow].selected.push(this.data[id].id);
+                this.data[this.selected].selectedIn.push(this.data[this.activeArrow].id);
                 // this.txtQueryChanged.next({
                 //   value: "query",
                 //   selected: this.activeArrow
@@ -1539,6 +1575,7 @@ __webpack_require__.r(__webpack_exports__);
 class ComponentClass {
     constructor() {
         this.key = "";
+        this.selectedIn = [];
     }
 }
 
