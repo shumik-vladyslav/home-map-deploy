@@ -1548,12 +1548,20 @@ class MainComponent {
                     for (let index = 0; index < this.data.length; index++) {
                         const element = this.data[index];
                         if (element.id === this.selectedLineTo.id) {
-                            let s = element.selectedIn.indexOf(this.selectedLineFrom);
-                            element.selectedIn.splice(s, 1);
+                            for (let index = 0; index < element.selectedIn.length; index++) {
+                                const e = element.selectedIn[index].split('#')[0];
+                                if (e === this.selectedLineFrom.id) {
+                                    element.selectedIn.splice(index, 1);
+                                }
+                            }
                         }
                         if (element.id === this.selectedLineFrom.id) {
-                            let s = element.selectedIn.indexOf(this.selectedLineTo);
-                            element.selected.splice(s, 1);
+                            for (let index = 0; index < element.selected.length; index++) {
+                                const e = element.selected[index].split('#')[0];
+                                if (e === this.selectedLineTo.id) {
+                                    element.selected.splice(index, 1);
+                                }
+                            }
                         }
                         // let sIn = element.selected.indexOf(this.selectedLineTo);
                         // console.log(element, sIn, s, this.selectedLineTo.id, this.selectedLineFrom.id);
